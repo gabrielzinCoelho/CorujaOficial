@@ -1,0 +1,35 @@
+/*
+
+data[
+  {
+    course_id: 1,
+    students: [*todos estudantes do curso, em todos os anos],
+    years: [
+      *ex: 2018-2020 = [{2018}, {2019}, {2020}]
+      {
+        year: 2018,
+        *apenas 1°, exceção quando k==i - firstYear == year (nesse caso 2018)
+        series: [
+          {
+            series: 1,
+            statusStudents: [
+              statusYear --> year - (year + duracao - serie) ou year - yearEnd
+              {
+                statusYear: 2018,
+                status: [
+                  array de matrícula aprovados, reprovados, jubilados...
+                  {
+                    status_id: 1,
+                    enrollments: []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+
+*/

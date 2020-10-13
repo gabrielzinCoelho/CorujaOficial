@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif, Arial;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+.container-student-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.side-menu {
+  width: 30vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-image: linear-gradient(-0deg, #426cf5, rgb(173, 192, 246));
+  background-position: center;
+}
+.header-menu {
+    padding: 0 0 30px 0;
+    margin: 0 0 15px 0;
+    /*border-bottom: 2px solid #fff;*/
+    box-shadow: 0px 1px 3px -2px white;
+    position: relative;
+    
+}
+
+.profile {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile-img {
+  width: 180px;
+  height: 240px;
+  overflow: hidden;
+  border: 2px solid #fff;
+  position: relative;
+}
+
+.profile-img img {
+  max-width: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+  position: absolute;
+}
+
+.profile-name {
+  color: #fff;
+  margin: 10px 0;
+  font-size: 16pt;
+}
+
+.options-menu {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.options-title {
+  color: #fff;
+  position: relative;
+}
+
+.options-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  margin: 0 0 0 10px;
+  height: 2px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 65%;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.options-btn {
+  width: 90%;
+  border-radius: 2px;
+  border-left: 3px solid #f08649;
+  background-color: #426cf5c2;
+  padding: 1em;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 500;
+  margin: 1em 0 0 0;
+}
+
+.side-menu .options-menu .options-btn:hover {
+  background-color: #fff;
+}
+
+.options-btn .options-btn-label {
+  color: #fff;
+}
+
+.options-btn:hover .options-btn-label{
+    color: #426cf5;
+}
+
+.campus-name a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.campus-name a:hover {
+  text-decoration: underline;
+}
+
+.page-content {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 0em 0px 0em 0px;
+}
+
+.menu-bar {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+  min-height: 10vh;
+  background-position: center;
+  box-shadow: 0 1px 5px -2px #426cf5;
+  padding: 0 1em 0 1em;
+  margin: 0 0em 0 0em;
+}
+
+.menu-item {
+  display: inline-block;
+  padding: 1.5em 1em 1.5em 1em;
+  cursor: pointer;
+} .menu-item a{color: #000;}.menu-item:not([id="click"]):hover a {color: #426cf5;}
+
+#click{
+  font-weight: bold;
+}
+
+.menu-item img {
+  height: 15px;
+  margin: -0.15em 0 -0.15em 0;
+}
+
+.pedagogue-img {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #426cf5;
+  border-radius: 200px;
+  position: absolute;
+  right: 0;
+  margin: 7px 5px 0 0;
+  cursor: pointer;
+}
+
+.info {
+    height: 100%;
+    margin: 1.5em 2em;
+}
+.info-title {
+    font-size: 28px;
+    margin-bottom: 1em;
+}
+
+/* CASO SELECIONADO DADOS GERAIS */
+.data {
+    font-size: 16px;
+}
+
+.data .section {
+  margin-bottom: 20px;
+}
+
+.data .section h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.data .items {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(0, 0, 0, 0.7);/*#426cf5;*/
+  background: #e7e7e7;
+}
+
+.data .items .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.data .items .item {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-grow: 1;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin: 15px 5px 0 5px;
+}
+
+.data .items .row:last-child {
+  margin-bottom: 10px;
+}
+
+.data .items .row:first-child .item {
+  margin-top: 10px;
+}
+
+.data .items .item b {
+  color: black;
+  margin-bottom: 5px;
+}
+
+.data .items .item p {
+  border: 1px solid rgba(0, 0, 0, 0.7);/*#426cf5;*/
+  border-radius: 5px;
+  padding: 10px;
+  background: white;
+  margin: 0;
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendances{
+  position: relative;
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendances .theme {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendances .date {
+  margin: 0;
+  display: inline-block;
+  font-size: 15px;
+  position: absolute;
+  right: 0%;
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendances ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 1em;
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendances li{
+    list-style: none;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendance {
+  border-bottom: 1px solid rgb(218, 216, 216);
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendance img {
+  cursor: pointer;
+  height: 10px;
+  margin: -0.15em 0 -0.15em 0;
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendance-info li {
+    font-size: 14px;
+    padding: 0em 0em 0em 2em;
+    margin: 0;
+    cursor: initial;
+}
+
+/* CASO SELECIONADO ATENDIMENTOS */
+.attendance-info .view-more {
+    cursor: pointer;
+}
