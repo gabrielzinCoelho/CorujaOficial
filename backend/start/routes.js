@@ -13,7 +13,7 @@ Route.get(
 Route.get(
   'carograph/seedCarographObject/yearStart/:yearStart/yearEnd/:yearEnd',
   'StudentHistoricController.seedCarographObject'
-).middleware(['auth:jwt'])
+)
 
 Route.get(
   'carograph/newYearObject',
