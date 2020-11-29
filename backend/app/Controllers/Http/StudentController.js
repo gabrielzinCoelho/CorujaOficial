@@ -42,7 +42,7 @@ class StudentController {
 
     if(!checkFields)
       return response.status(406).json({
-        error: `Ao menos um dos campos do aluno deve ser atualizado`
+        error: `Ao menos um dos campos do aluno deve ser atualizado.`
       })
 
     const {id} = request.params

@@ -21,9 +21,14 @@ Route.get(
 )
 
 Route.post(
+  'carograph/newYear',
+  'StudentHistoricController.newYear'
+)
+
+Route.post(
   'carograph/seedCarograph',
   'StudentHistoricController.seedCarograph'
-).middleware(['auth:jwt'])
+)
 
 // modality
 
@@ -82,7 +87,7 @@ Route.put(
 Route.post(
   '/pedagogue',
   'PedagogueController.store'
-).middleware(['auth:jwt'])
+)
 
 // files
 

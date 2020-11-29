@@ -211,8 +211,153 @@ class StudentHistoricController {
 
   }
 
+  //verificação objeto
+  //desfazer alterações
+  //salvar dados antes da atualização final
+  // organizar por turmas?
   async newYear({ request, response }) {
 
+    try {
+
+      const { year, data } = request.body
+
+      const statusInstances = await Status.all()
+
+      const status = {}
+
+      statusInstances.rows.forEach((statusElement, indexStatus) => {
+        status[statusElement.$attributes.id] = statusElement
+      })
+
+      data.map(async (courseCarograph, indexCourse) => {
+
+        const classesInstances = await Class.query().where({
+          course_id: courseCarograph.course_id,
+        }).fetch()
+
+        const classes = {}
+
+        classesInstances.rows.forEach((classElement, indexClass) => {
+          classes[classElement.series] = classElement
+        })
+
+        for (const currentSeries of courseCarograph.currentClassStatus) {
+
+          const studentHistoricInstances = {}, studentInstances = {}
+
+          for (const student of currentSeries.students) {
+            studentHistoricInstances[student.student_id] = await StudentHistoric.find(student.studentHistoric_id)
+            studentInstances[student.student_id] = await Student.find(student.student_id)
+          }
+
+          for (const statusElement of currentSeries.statusStudents) {
+
+            for (const student_id of statusElement.students_id) {
+
+              // atualizando status do ano atual:
+              //puxar a instancia -> editar status_id (cursando -> x), manter o year/statusYear
+              studentHistoricInstances[student_id].status_id = statusElement.status_id
+              await studentHistoricInstances[student_id].save()
+
+              // se year == statusYear && aprovado-> year + 1/statusYear + 1, status_id: cursando (serie + 1)
+              // se year == statusYear && não aprovado
+              // -> year + 1/statusYear + 1, status_id: cursando (serie)
+              // -> year + 1/statusYear, mantem status_id (serie + 1)
+
+              if (classes[currentSeries.series + 1]) {
+                //existe serie seguinte
+                // nova instancia no ano sguinte
+                const [statusNextSerie, statusYearNextSerie] = (statusElement.status_id == 5 ? [1, year + 1] : [statusElement.status_id, year])
+
+                const studentHistoric = await StudentHistoric.create({
+                  year: year + 1,
+                  statusYear: statusYearNextSerie
+                })
+
+                await studentInstances[student_id].historic().save(studentHistoric)
+                await classes[currentSeries.series + 1].historic().save(studentHistoric)
+                await status[statusNextSerie].historic().save(studentHistoric)
+
+              }
+
+              if (statusElement.status_id == 2) {
+                //reprovado -> nova instancia na mesma série no ano seguinte
+                const studentHistoric = await StudentHistoric.create({
+                  year: year + 1,
+                  statusYear: year + 1
+                })
+
+                await studentInstances[student_id].historic().save(studentHistoric)
+                await classes[currentSeries.series].historic().save(studentHistoric)
+                await status[1].historic().save(studentHistoric)
+              }
+            }
+          }
+
+          // atualizando redundancias antigas:
+          // se year != statusYear -> year + 1/statusYear, mantem status_id (serie + 1)
+
+          if (classes[currentSeries.series + 1]) {
+
+            const redundanceHistoricInstances = await Database
+              .table('student_historics')
+              .select(
+                'student_historics.id as studentHistoric_id',
+                'student_historics.statusYear',
+                'student_historics.student_id',
+                'student_historics.status_id'
+              )
+              .where({
+                class_id: classes[currentSeries.series].$attributes.id,
+                year
+              })
+              .whereBetween('statusYear', [0, year - 1])
+
+            for (const redundanceHistoric of redundanceHistoricInstances) {
+
+              await Database
+                .table('student_historics')
+                .insert({
+                  class_id: classes[currentSeries.series + 1].$attributes.id,
+                  status_id: redundanceHistoric.status_id,
+                  student_id: redundanceHistoric.student_id,
+                  year: year + 1,
+                  statusYear: redundanceHistoric.statusYear
+                })
+            }
+          }
+
+        }
+        // criando a turma de calouros
+        const studentsNextClassInstances = await Student.createMany(courseCarograph.nextClassStudents)
+
+        const studentsNextClass = {}
+
+        studentsNextClassInstances.forEach((student, indexStudent) => {
+          studentsNextClass[student.$attributes.id] = student
+        })
+
+        for (const student in studentsNextClass) {
+
+          const studentHistoric = await StudentHistoric.create({
+            year: year + 1,
+            statusYear: year + 1
+          })
+
+          await studentsNextClass[student].historic().save(studentHistoric)
+          await classes[1].historic().save(studentHistoric)
+          await status[1].historic().save(studentHistoric)
+
+        }
+
+
+      })
+      return response.status(200).json({ success: "O sistema foi atualizado com sucesso." })
+
+    }
+    catch (err) {
+      return response.status(406).json({ error: "Houve problemas na atualização do sistema." })
+    }
   }
 
   async newYearObject({ request, response }) {
@@ -247,7 +392,8 @@ class StudentHistoricController {
             'students.id as student_id',
             'students.name',
             'students.enrollment',
-            'status.id as status_id'
+            'status.id as status_id',
+            //'statusYear'
           )
           .innerJoin('classes', 'student_historics.class_id', 'classes.id')
           .innerJoin('students', 'student_historics.student_id', 'students.id')
@@ -256,6 +402,7 @@ class StudentHistoricController {
             course_id,
             series,
             year,
+            statusYear: year
           })
 
         currentClassStatus.push({
@@ -266,6 +413,7 @@ class StudentHistoricController {
               student_id: element.student_id,
               name: element.name,
               enrollment: element.enrollment,
+              //statusYear: element.statusYear
             }
           }),
           statusStudents: (() => {
@@ -282,7 +430,7 @@ class StudentHistoricController {
 
             })
 
-            for(const element of studentHistoric){
+            for (const element of studentHistoric) {
               statusStudents.map((statusElement, index) => {
                 if (element.status_id == statusElement.status_id)
                   statusStudents[index].students_id.push(element.student_id)

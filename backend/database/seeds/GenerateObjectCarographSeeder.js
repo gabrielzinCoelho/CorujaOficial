@@ -18,12 +18,15 @@ const Factory = use('Factory')
 const Course = use('App/Models/Course')
 const Status = use('App/Models/Status')
 
+const fileName = "CarographSeederOutput"
+const path = "./database/seeds/JSONSeedersFiles/"
+
 class GenerateObjectCarographSeeder {
   async run() {
 
     const yearStart = 2018
     const yearEnd = 2022
-    const maxStudentsPerClass = 35
+    const maxStudentsPerClass = 30
     const minStudentsPerClass = 30
 
     const coursesInstances = await Course.all()
@@ -187,7 +190,7 @@ class GenerateObjectCarographSeeder {
           data: coursesCarograph
         })
 
-        fs.writeFile('./database/seeds/JSONSeedersFiles/test.json', jsonString, err => {
+        fs.writeFile(`${path}${fileName}.json`, jsonString, err => {
           if (err) {
             console.log('Erro ao gravar arquivo', err)
           } else {
