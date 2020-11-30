@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
-import './index.css'
+import './style.css'
 import api from '../../services/api'
 import Alert from '../../pages/components/Alert'
 
@@ -12,6 +12,11 @@ export default class ForgotPassword extends Component {
         password: "",
         confirmPassword : "",
 
+        passwordColor: "#777",
+        passwordBorder: { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+        confirmPasswordColor: "#777",
+        confirmPasswordBorder: { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+
         alertSettings: {
             open: false,
             alertTitle: "",
@@ -21,6 +26,23 @@ export default class ForgotPassword extends Component {
         redirect: false,
         successReset: false
 
+    }
+
+    handleColorInputs = (id, action) => {
+        if (id === 1)
+            this.setState({
+                passwordColor: action === "focus" ? "#3f65e2" : "#777",
+                passwordBorder: action === "focus" ?
+                    { borderBottom: "1px solid #3f65e2", boxShadow: "0px 1px 0px 0px #3f65e2" } :
+                    { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+            })
+        else 
+            this.setState({
+                confirmPasswordColor: action === "focus" ? "#3f65e2" : "#777",
+                confirmPasswordBorder: action === "focus" ?
+                    { borderBottom: "1px solid #3f65e2", boxShadow: "0px 1px 0px 0px #3f65e2" } :
+                    { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+            })
     }
 
     handleUpdateForm = (forceData) => {
@@ -110,30 +132,56 @@ export default class ForgotPassword extends Component {
 
         return (
             <>
-                <div>
-                    <div class="container">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"></link>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <div className="resetPassword">
+                    <div className="container">
                         <img src={require('../../assets/logo.png')} alt="Coruja" />
-                        <div class="content">
+
+                        <div className="content">
                             <form onSubmit={this.handleSubmit}>
-                                <label htmlFor="senha">SENHA *</label>
-                                <input 
-                                    id="senha" 
-                                    type="password" 
-                                    placeholder="Sua senha" 
-                                    required
-                                    value={this.state.password}
-                                    onChange={(e) => {this.handleUpdateForm({password: e.target.value})}} 
-                                />
-                                <label htmlFor="senha">CONFIRMAR SENHA *</label>
-                                <input 
-                                    id="senha" 
-                                    type="password" 
-                                    placeholder="Confirme sua senha" 
-                                    required
-                                    value={this.state.confirmPassword}
-                                    onChange={(e) => {this.handleUpdateForm({confirmPassword: e.target.value})}} 
-                                />
-                                <button class="btn" type="submit">Enviar</button>
+                                <div class="col s12">
+                                    <label>SENHA *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons-outlined prefix" style={{color: this.state.passwordColor}}>lock</i>
+                                    <input
+                                        id="senha" 
+                                        type="password" 
+                                        placeholder="Sua senha" 
+                                        required
+                                        value={this.state.password}
+                                        style={{
+                                            color: this.state.passwordColor,
+                                            ...this.state.passwordBorder,
+                                        }}
+                                        onFocus={() => { this.handleColorInputs(1, "focus") }}
+                                        onBlur={() => { this.handleColorInputs(1, "blur") }}
+                                        onChange={(e) => {this.handleUpdateForm({password: e.target.value}) }}
+                                    />
+                                </div>
+                                <div class="col s12">
+                                    <label>CONFIRMAR SENHA *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons-outlined prefix" style={{color: this.state.confirmPasswordColor}}>lock</i>
+                                    <input
+                                        id="senha" 
+                                        type="password" 
+                                        placeholder="Confirme sua senha" 
+                                        required
+                                        value={this.state.confirmPassword}
+                                        style={{
+                                            color: this.state.confirmPasswordColor,
+                                            ...this.state.confirmPasswordBorder,
+                                        }}
+                                        onFocus={() => { this.handleColorInputs(2, "focus") }}
+                                        onBlur={() => { this.handleColorInputs(2, "blur") }}
+                                        onChange={(e) => {this.handleUpdateForm({confirmPassword: e.target.value}) }}
+                                    />
+                                </div>
+                                <button class="btn">Enviar</button>
                             </form>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import './index.css'
+import './style.css'
 import api from '../../services/api'
 import Alert from '../../pages/components/Alert'
 
@@ -9,6 +9,9 @@ export default class ForgotPassword extends Component {
 
     state = {
         email: "",
+
+        emailColor: "#777",
+        emailBorder: { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
 
         alertSettings: {
             open: false,
@@ -19,6 +22,15 @@ export default class ForgotPassword extends Component {
 
     }
 
+    handleColorInput = (action) => {
+        this.setState({
+            emailColor: action === "focus" ? "#3f65e2" : "#777",
+            emailBorder: action === "focus" ?
+                { borderBottom: "1px solid #3f65e2", boxShadow: "0px 1px 0px 0px #3f65e2" } :
+                { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+        })
+    }
+
     handleUpdateEmail = (e) => {
 
         this.setState({
@@ -27,7 +39,7 @@ export default class ForgotPassword extends Component {
 
     }
 
-    handleForgotPassword = async (e) => {
+    handleSubmit = async (e) => {
 
         e.preventDefault()
 
@@ -96,21 +108,36 @@ export default class ForgotPassword extends Component {
 
         return (
             <>
-                <div>
-                    <div class="container">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"></link>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <div className="forgotPassword">
+                    <div className="container">
                         <img src={require('../../assets/logo.png')} alt="Coruja" />
-                        <div class="content">
-                            <form onSubmit={this.handleForgotPassword}>
-                                <label htmlFor="email">EMAIL *</label>
-                                <input 
-                                    id="email" 
-                                    type="text" 
-                                    placeholder="Informe seu email" 
-                                    required
-                                    value={this.state.email}
-                                    onChange={this.handleUpdateEmail}
-                                />
-                                <button class="btn" type="submit">Enviar</button>
+
+                        <div className="content">
+                            <form onSubmit={this.handleSubmit}>
+                                <div class="col s12">
+                                    <label>EMAIL *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons-outlined prefix" style={{color: this.state.emailColor}}>mail</i>
+                                    <input
+                                        id="email" 
+                                        type="email" 
+                                        placeholder="Seu email" 
+                                        required
+                                        value={this.state.email}
+                                        style={{
+                                            color: this.state.emailColor,
+                                            ...this.state.emailBorder,
+                                        }}
+                                        onFocus={() => { this.handleColorInput("focus") }}
+                                        onBlur={() => { this.handleColorInput("blur") }}
+                                        onChange={ this.handleUpdateEmail }
+                                    />
+                                </div>
+                                <button class="btn">Enviar</button>
                             </form>
                             <Link to="/"><p><b>Voltar para Login</b></p><br/></Link>
                         </div>

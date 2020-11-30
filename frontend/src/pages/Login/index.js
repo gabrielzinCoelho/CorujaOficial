@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Redirect, Link} from 'react-router-dom'
 
 import api from '../../services/api'
-import './index.css'
+import './style.css'
 import Alert from '../../pages/components/Alert'
 import Authentication from '../components/Authentication'
 
@@ -13,6 +13,11 @@ export default class Login extends Component {
         cpf: "",
         password: "",
 
+        CPFColor: "#777",
+        CPFBorder: { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+        passwordColor: "#777",
+        passwordBorder: { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+
         redirect: false,
 
         alertSettings: {
@@ -22,6 +27,23 @@ export default class Login extends Component {
             alertSeverity: "success"
         }
 
+    }
+
+    handleColorInputs = (id, action) => {
+        if (id === 1)
+            this.setState({
+                CPFColor: action === "focus" ? "#3f65e2" : "#777",
+                CPFBorder: action === "focus" ?
+                    { borderBottom: "1px solid #3f65e2", boxShadow: "0px 1px 0px 0px #3f65e2" } :
+                    { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+            })
+        else 
+            this.setState({
+                passwordColor: action === "focus" ? "#3f65e2" : "#777",
+                passwordBorder: action === "focus" ?
+                    { borderBottom: "1px solid #3f65e2", boxShadow: "0px 1px 0px 0px #3f65e2" } :
+                    { borderBottom: "0.1px solid #777", boxShadow: "0 0.1px 0 0 #777" },
+            })
     }
 
     handleUpdateForm = (forceData) => {
@@ -81,34 +103,55 @@ export default class Login extends Component {
         return (
             <>
                 <Authentication redirectWhenLogged={true} redirectUrl="/carograph" />
-                <div>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"></link>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <div className="login">
                     <div className="container">
                         <img src={require('../../assets/logo.png')} alt="Coruja" />
 
                         <div className="content">
                             <form onSubmit={this.handleSubmit}>
-                                <label htmlFor="cpf">CPF *</label>
-                                <input 
-                                    id="cpf" 
-                                    type="text" 
-                                    placeholder="Seu CPF" 
-                                    required
-                                    value={this.state.cpf}
-                                    onChange={(e) => {
-                                        this.handleUpdateForm({cpf: e.target.value})
-                                    }} 
-                                />
-                                <label htmlFor="senha">SENHA *</label>
-                                <input 
-                                    id="senha" 
-                                    type="password" 
-                                    placeholder="Sua senha" 
-                                    required
-                                    value={this.state.password}
-                                    onChange={(e) => {
-                                        this.handleUpdateForm({password: e.target.value})
-                                    }}  
-                                />
+                                <div class="col s12">
+                                    <label>CPF *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix" style={{color: this.state.CPFColor}}>perm_identity</i>
+                                    <input
+                                        id="cpf" 
+                                        type="text" 
+                                        placeholder="Seu CPF"
+                                        required
+                                        value={this.state.cpf}
+                                        style={{
+                                            color: this.state.CPFColor,
+                                            ...this.state.CPFBorder,
+                                        }}
+                                        onFocus={() => { this.handleColorInputs(1, "focus") }}
+                                        onBlur={() => { this.handleColorInputs(1, "blur") }}
+                                        onChange={(e) => { this.handleUpdateForm({cpf: e.target.value}) }}
+                                    />
+                                </div>
+                                <div class="col s12">
+                                    <label>SENHA *</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons-outlined prefix" style={{color: this.state.passwordColor}}>lock</i>
+                                    <input
+                                        id="senha" 
+                                        type="password" 
+                                        placeholder="Sua senha" 
+                                        required
+                                        value={this.state.password}
+                                        style={{
+                                            color: this.state.passwordColor,
+                                            ...this.state.passwordBorder,
+                                        }}
+                                        onFocus={() => { this.handleColorInputs(2, "focus") }}
+                                        onBlur={() => { this.handleColorInputs(2, "blur") }}
+                                        onChange={(e) => { this.handleUpdateForm({password: e.target.value}) }}  
+                                    />
+                                </div>
                                 <button className="btn">Entrar</button>
                             </form>
                            <Link to="/forgotPassword"><p><b>Esqueci minha senha</b></p><br/></Link>
