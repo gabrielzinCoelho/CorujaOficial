@@ -14,9 +14,9 @@ html, body, #root, .App {
 }
 
 body {
-  /* background: #000 url('../../assets/imagemC.jpg') no-repeat;
+  /* background: #000 url('./assets/imagemC.jpg') no-repeat;
   background-size: cover; */
-  background-color: #f3f3f3;
+  background-color: #fff;
   -webkit-font-smoothing: antialiased !important;
 }
 
