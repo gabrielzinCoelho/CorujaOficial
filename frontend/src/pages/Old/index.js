@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
 import api from '../../services/api'
-// import './index.css'
+import './index.css'
 import Authentication from '../components/Authentication'
 
 export default class Old extends Component {
@@ -82,7 +82,7 @@ export default class Old extends Component {
 
     render() {
         return (
-            <div className="Carograph">
+            <div className="old">
                 <Authentication redirectWhenLogged={false} redirectUrl="/" />
                 <nav className="side-menu">
                     {this.state.studentSelectedId ? (

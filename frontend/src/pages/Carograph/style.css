@@ -18,6 +18,7 @@
   transition: margin .25s ease-out;
   box-shadow: 0 0px 5px 3px #426cf5;
   z-index: 2;
+  overflow: hidden;
 }
 
 .carograph-page .without-content {
@@ -72,6 +73,7 @@
   cursor: pointer;
   padding: 12px;
   margin: 5% 0 0 0;
+  overflow: hidden;
 }
 
 .carograph-page .options-btn:hover {

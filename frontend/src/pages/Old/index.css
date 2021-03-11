@@ -23,13 +23,13 @@ textarea:focus, input:focus, select:focus {
   outline: 0;
 }
 
-.Carograph {
+.old {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.side-menu {
+.old .side-menu {
   width: 30vw;
   height: 100vh;
   display: -webkit-box;
@@ -45,7 +45,7 @@ textarea:focus, input:focus, select:focus {
   background-image: linear-gradient(-0deg, #426cf5, rgb(173, 192, 246));
   background-position: center;
 }
-.header-menu {
+.old .header-menu {
     padding: 0 0 30px 0;
     margin: 0 0 15px 0;
     /*border-bottom: 2px solid #fff;*/
@@ -54,7 +54,7 @@ textarea:focus, input:focus, select:focus {
     
 }
 
-.profile {
+.old .profile {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -73,7 +73,7 @@ textarea:focus, input:focus, select:focus {
           flex-direction: column;
 }
 
-.profile-img {
+.old .profile-img {
   position: relative;
   width: 100%;
   height: 100%;
@@ -85,31 +85,31 @@ textarea:focus, input:focus, select:focus {
   border: 2px solid #fff;
 }
 
-.profile-img img {
+.old .profile-img img {
     max-width: 120%;
     top: 50%;
     transform: translate(0, -50%);
   position: absolute;
 }
 
-.profile-name {
+.old .profile-name {
   color: #fff;
   margin: 10px 0;
   font-size: 16pt;
 }
 
-.options-menu {
+.old .options-menu {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.options-title {
+.old .options-title {
   color: #fff;
   position: relative;
 }
 
-.options-title::after {
+.old .options-title::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -125,7 +125,7 @@ textarea:focus, input:focus, select:focus {
   background-color: #fff;
 }
 
-.options-btn {
+.old .options-btn {
   width: 90%;
   border-radius: 2px;
   border-left: 3px solid #f08649;
@@ -139,36 +139,36 @@ textarea:focus, input:focus, select:focus {
   margin: 1em 0 0 0;
 }
 
-.side-menu .options-menu .options-btn:hover {
+.old .side-menu .options-menu .options-btn:hover {
   background-color: #fff;
 }
 
-.options-btn .options-btn-label {
+.old .options-btn .options-btn-label {
   color: #fff;
 }
 
-.options-btn:hover .options-btn-label{
+.old .options-btn:hover .options-btn-label{
     color: #426cf5;
 }
 
-.campus-name a {
+.old .campus-name a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
 }
 
-.campus-name a:hover {
+.old .campus-name a:hover {
   text-decoration: underline;
 }
 
-.page-content {
+.old .page-content {
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
   padding: 0em 0px 0em 0px;
 }
 
-.select-bar {
+.old .select-bar {
   position: sticky;
   top: 0;
   background-color: #fff;
@@ -182,29 +182,29 @@ textarea:focus, input:focus, select:focus {
   padding: 0 3em;
 }
 
-.select-filter {
+.old .select-filter {
   flex-grow: 1;
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
 }
 
-.select-item {
+.old .select-item {
   margin-right: 1em;
 }
 
-.select-item select {
+.old .select-item select {
   border: 2px solid rgb(129, 158, 236);
   border-radius: 5px;
   color: #426cf5;
   padding: 5px;
 }
 
-.select-item select::-ms-expand {
+.old .select-item select::-ms-expand {
   border-radius: 0;
 }
 
-.pedagogue-img {
+.old .pedagogue-img {
   height: 50px;
   width: 50px;
   border: 1px solid #426cf5;
@@ -212,7 +212,7 @@ textarea:focus, input:focus, select:focus {
   cursor: pointer;
 }
 
-.carograph {
+.old .carograph {
   width: 100%;
   margin-top: 1em;
   display: -webkit-box;
@@ -230,7 +230,7 @@ textarea:focus, input:focus, select:focus {
           align-items: center;
 }
 
-.students-container {
+.old .students-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,7 +241,7 @@ textarea:focus, input:focus, select:focus {
           justify-content: center;
 }
 
-.student {
+.old .student {
   display: flex;
   flex-direction: column;
   width: 150px;
@@ -253,11 +253,11 @@ textarea:focus, input:focus, select:focus {
   overflow: hidden;
 }
 
-.student img {
+.old .student img {
   width: 100%;
 }
 
-.student_name {
+.old .student_name {
   display: flex;
   flex-grow: 1;
   width: 100%;/*rgb(173, 192, 246);
@@ -265,7 +265,7 @@ textarea:focus, input:focus, select:focus {
   border-radius: 5px;*/
 }
 
-.student_name p {
+.old .student_name p {
   display: flex;
   align-items: center;
   justify-content: center;
