@@ -1,0 +1,120 @@
+/* CAROGRAPH */
+.carograph {
+    display: flex;
+    margin: 0px !important;
+    padding: 0;
+  }
+  
+  .carograph .page-content {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+  }
+  
+  .carograph .select-bar {
+    position: sticky;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 1px 5px -2px #426cf5;
+    width: 100vw;
+    min-height: 10vh;
+    padding: 0 42px;
+    overflow: hidden;
+  }
+  
+  .carograph .select-filter {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .carograph .select-filter form {
+    margin-right: 16px;
+    width: 100%;
+  }
+  
+  .carograph .select-item {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .carograph .select-item select{
+    flex-grow: 1;
+    font-size: 14px;
+    margin-left: 6px;
+  }
+  
+  .carograph .pedagogue-img {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #426cf5;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .carograph {
+    width: 100%;
+    margin-top: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .students-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+  .student {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 270px;
+    margin: 2px;
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0, 0.5);
+    /*rgb(129, 158, 236);#426cf5c2*/
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .student img {
+    width: 100%;
+  }
+  
+  .student_name {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    /*rgb(173, 192, 246);
+    border: 1px solid white;
+    border-radius: 5px;*/
+  }
+  
+  .student_name p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    background: white;
+  }
