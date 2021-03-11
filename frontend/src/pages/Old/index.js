@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
 import api from '../../services/api'
-import './style.css'
+// import './index.css'
 import Authentication from '../components/Authentication'
 
-export default class Carograph extends Component {
+export default class Old extends Component {
 
     state = {
 
@@ -22,15 +22,12 @@ export default class Carograph extends Component {
 
         //gambiarra
         minYear: 2000,
-        maxYear: 2022,
+        maxYear: 2022
 
-        // styles
-        iconMenuName: "close",
-        sideMenuWidth: "25vw"
 
     }
 
-    componentDidMount = async () => {
+    async componentDidMount() {
 
         const token = sessionStorage.getItem('token');
 
@@ -47,7 +44,7 @@ export default class Carograph extends Component {
 
     }
 
-    componentDidUpdate = async (prevProps, prevState) => {
+    async componentDidUpdate(prevProps, prevState) {
         if (prevState.modalitySelectedId !== this.state.modalitySelectedId) {
 
             const token = sessionStorage.getItem('token');
@@ -80,64 +77,59 @@ export default class Carograph extends Component {
                 students: data
             })
         }
-    }
 
-    handleSideMenu = () => {
-        this.setState({
-            iconMenuName: this.state.iconMenuName === "keyboard_arrow_right" ? "close" : "keyboard_arrow_right",
-            sideMenuWidth: this.state.iconMenuName === "keyboard_arrow_right" ? "25vw" : "0vw",
-        })
     }
 
     render() {
         return (
-            <>
+            <div className="Carograph">
                 <Authentication redirectWhenLogged={false} redirectUrl="/" />
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"></link>
-                <div className="carograph">
-                    <div className="side-container" style={{
-                        minWidth: this.state.sideMenuWidth,
-                        maxWidth: this.state.sideMenuWidth,
-                        padding: this.state.sideMenuWidth === "25vw" ? "30px" : "0px"
-                    }}>
-                        
-                        <a class="close-menu-icon" onClick={ () => { this.handleSideMenu() } }>
-                            <i class="material-icons">close</i>
-                        </a>
-                        <div className="profile">
-                            <img className="profile-img" src={require('../../assets/gabriel2.jpg')} />
-                            <h2 className="profile-name">Yuri Farnesio Sousa Silva</h2>
-                            <h2 className="profile-enrollment">201815TII0351</h2>
-                        </div>
-                        <div className="options">
-                            <Link to={`/studentProfile/${this.state.studentSelectedId}`}>
-                                <button className="btn">
-                                    <i class="material-icons-outlined prefix">visibility</i>
-                                    Visualizar Perfil
-                                </button>
-                            </Link>
-                            <Link to={`/attendance/${this.state.studentSelectedId}`}>
-                                <button className="btn" style={{ margin: "0" }}>
-                                    <i class="material-icons-outlined prefix">assignment_late</i>
-                                    <p>Fazer Atendimento</p>
-                                </button>
-                            </Link>
-                        </div>
-                        <div className="campus">
+                <nav className="side-menu">
+                    {this.state.studentSelectedId ? (
+                        <>
+                            <div className="profile">
+                                <div className="profile-img">
+                                    <img src={require('../../assets/gabriel2.jpg')} alt=""/>
+                                </div>
+                                {
+                                    (()=>{
+                                        for(let i=0;i<this.state.students.length;i++){
+                                            if(this.state.students[i].student_id == this.state.studentSelectedId){
+                                                return (
+                                                    <>
+                                                        <h2 className="profile-name">{this.state.students[i].name}</h2>
+                                                        <h2 className="profile-name">{this.state.students[i].enrollment}</h2>
+                                                    </>
+                                                )
+                                            }
+                                        }
+                                    })()
+                                }
+                            </div>
+                            <div className="options-menu">
+                                <h4 className="options-title">Opções</h4>
+                                <Link to={`/studentProfile/${this.state.studentSelectedId}`}>
+                                    <div className="options-btn">
+                                        <span className="options-btn-label">Visualizar Perfil</span>
+                                    </div>
+                                </Link>
+                                <a href="attendance.html">
+                                    <div className="options-btn">
+                                        <span className="options-btn-label">Fazer Atendimento</span>
+                                    </div>
+                                </a>
+                            </div>
                             <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
-                        </div>
-                    </div>
-                    <div className="page-content">
-                        <a
-                            class="open-menu-icon"
-                            style={{ display: this.state.iconMenuName === "keyboard_arrow_right" ? "flex" : "none" }}
-                            onClick={ () => { this.handleSideMenu() } }
-                        >
-                            <i class="material-icons">keyboard_arrow_right</i>
-                        </a>
-                        <div className="select-bar">
+                        </>
+                    ) : (
+                            <>
+                                <img src={require('../../assets/owl-animation.jpg')} alt="" />
+                            </>
+                        )}
+                </nav>
+
+                <section className="page-content">
+                    <div className="select-bar">
                         <div className="select-filter">
                             <div className="select-item">
                                 <label>Forma: </label>
@@ -270,9 +262,37 @@ export default class Carograph extends Component {
                         </div>
                         <img className="pedagogue-img" src={require('../../assets/gabriel1.jpg')} alt="" />
                     </div>
+                    <div class="carograph">
+                        <div class="students-container">
+                            {
+
+                                this.state.students.map(student => (
+                                    <div class="student" id={student.student_id} onClick={() => {
+                                        this.setState({
+                                            studentSelectedId: student.student_id
+                                        })
+                                    }}>
+                                        <img src={require('../../assets/gabriel1.jpg')} alt="" />
+                                        <div class="student_name">
+                                            <p>{student.name}</p>
+                                        </div>
+                                        <div class="student_name">
+                                            {
+                                            (student.year != student.statusYear) ?
+                                                <p>Status: {student.status} ({student.statusYear})</p>
+                                                :
+                                                <p>Status: {student.status}</p>
+                                            }
+                                        </div>
+                                    </div>
+                                ))
+
+                            }
+                        </div>
                     </div>
-                </div>
-            </>
+                </section>
+
+            </div>
         )
     }
 

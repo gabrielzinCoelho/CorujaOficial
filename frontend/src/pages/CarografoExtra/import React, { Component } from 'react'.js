@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Image, Navbar, Form, Button, Card } from 'react-bootstrap'
+import { Navbar, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 
 import api from '../../services/api'
 import Authentication from '../components/Authentication'
@@ -11,22 +11,16 @@ export default class Carograph extends Component {
     modalityOptions: [],
     courseOptions: [],
 
-    menuOpen: false,
     modalitySelectedId: null,
-    disabledModality: false,
     courseSelectedId: null,
-    disabledCourse: true,
     seriesSelected: null,
-    disabledSeries: true,
     yearSelected: null,
-    disabledYear: true,
 
     students: [],
     studentSelectedId: null,
-    studentSelectedStatus: null,
 
     //gambiarra
-    minYear: 2018,
+    minYear: 2020,
     maxYear: 2022
   }
 
@@ -83,110 +77,22 @@ export default class Carograph extends Component {
 
   render() {
     return (
-      <div className="carograph-page">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+      <div className="carograph">
         <Authentication redirectWhenLogged={false} redirectUrl="/" />
 
-        <div className="side-menu"
-          style={{
-            marginLeft: this.state.studentSelectedId ? (this.state.menuOpen ? "0" : "-25vw") : "-25vw"
-          }}>
-          {this.state.studentSelectedId ? (
-            <>
-              <div className="profile">
-                <div className="profile-img" style={{
-                  border: this.state.studentSelectedStatus === 0 ?
-                    "1px solid green" :
-                    (this.state.studentSelectedStatus === 5 ?
-                      "1px solid green" :
-                      "1px solid red"
-                    )
-                }}>
-                  <Image src={require('../../assets/yuri.jpg')} />
-                </div>
-                {
-                  (() => {
-                    for (let i = 0; i < this.state.students.length; i++) {
-                      if (this.state.students[i].student_id == this.state.studentSelectedId) {
-                        return (
-                          <>
-                            <h2 className="profile-name">{this.state.students[i].name}</h2>
-                            <h2 className="profile-enrollment">{this.state.students[i].enrollment}</h2>
-                          </>
-                        )
-                      }
-                    }
-                  })()
-                }
-              </div>
-              <div className="options-menu">
-                <hr className="divider rounded" style={{
-                  border: this.state.studentSelectedStatus === 0 ?
-                    "1px solid green" :
-                    (this.state.studentSelectedStatus === 5 ?
-                      "1px solid green" :
-                      "1px solid red"
-                    )
-                }} />
-                <Link to={`/studentProfile/${this.state.studentSelectedId}`}>
-                  <div className="options-btn" style={{
-                    borderLeft: this.state.studentSelectedStatus === 0 ?
-                      "3px solid green" :
-                      (this.state.studentSelectedStatus === 5 ?
-                        "3px solid green" :
-                        "3px solid red"
-                      )
-                  }}>
-                    <span className="options-btn-label">Visualizar Perfil</span>
-                  </div>
-                </Link>
-                <a href="attendance.html">
-                  <div className="options-btn" style={{
-                    borderLeft: this.state.studentSelectedStatus === 0 ?
-                      "3px solid green" :
-                      (this.state.studentSelectedStatus === 5 ?
-                        "3px solid green" :
-                        "3px solid red"
-                      )
-                  }}>
-                    <span className="options-btn-label">Fazer Atendimento</span>
-                  </div>
-                </a>
-              </div>
-              <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
-            </>
-          ) : (
-            <>
-              <Image className="without-content" src={require('../../assets/logo.png')} />
-            </>
-          )}
-        </div>
-
-        <div className="page-content">
+        <section className="page-content">
           <Navbar className="select-bar">
-            <Button variant="light" className="menu-button"
-              disabled={this.state.studentSelectedId ? 0 : 1}
-              onClick={(e) => {
-                this.setState({
-                  menuOpen: !this.state.menuOpen,
-                })
-              }}
-            >
-              <i class="fa fa-bars"></i>
-            </Button>
             <div className="select-filter">
               <Form inline>
-                <Form.Group className="select-item">
-                  <Form.Control as="select" custom disabled={this.state.disabledModality}
+                <Form.Group className="select-item" controlId="exampleForm.SelectCustom">
+                  <Form.Label>Forma: </Form.Label>
+                  <Form.Control as="select" custom
                     onChange={(e) => {
                       this.setState({
                         modalitySelectedId: e.target.value,
                         courseSelectedId: null,
-                        disabledCourse: Number.isInteger(parseInt(e.target.value)) ? false : true,
                         seriesSelected: null,
-                        disabledSeries: true,
-                        yearSelected: null,
-                        disabledYear: true,
+                        yearSelected: null
                       })
                     }}
                   >
@@ -194,7 +100,7 @@ export default class Carograph extends Component {
                       (() => {
                         if (this.state.modalityOptions.length > 0) {
                           let arrayModalities = []
-                          arrayModalities.push(<option value={null}>Forma:</option>)
+                          arrayModalities.push(<option value={null}>Escolha aqui</option>)
 
                           for (let j = 0; j < this.state.modalityOptions.length; j++) {
                             if (this.state.modalitySelectedId == this.state.modalityOptions[j].id)
@@ -206,21 +112,21 @@ export default class Carograph extends Component {
                           return arrayModalities
                         }
 
-                        return <option selected>Forma:</option>
+                        return <option selected disabled>Desabilitado</option>
                       })()
                     }
                   </Form.Control>
                 </Form.Group>
-
-                <Form.Group className="select-item">
-                  <Form.Control as="select" custom disabled={this.state.disabledCourse}
+              </Form>
+              <Form inline>
+                <Form.Group className="select-item" controlId="exampleForm.SelectCustom">
+                  <Form.Label>Curso: </Form.Label>
+                  <Form.Control as="select" custom
                     onChange={(e) => {
                       this.setState({
                         courseSelectedId: e.target.value,
                         seriesSelected: null,
-                        disabledSeries: Number.isInteger(parseInt(e.target.value)) ? false : true,
-                        yearSelected: null,
-                        disabledYear: true,
+                        yearSelected: null
                       })
                     }}
                   >
@@ -228,7 +134,7 @@ export default class Carograph extends Component {
                       (() => {
                         if (this.state.courseOptions.length > 0 && this.state.modalitySelectedId) {
                           let arrayCourses = []
-                          arrayCourses.push(<option value={null}>Curso:</option>)
+                          arrayCourses.push(<option value={null}>Escolha aqui</option>)
 
                           for (let j = 0; j < this.state.courseOptions.length; j++) {
                             if (this.state.courseSelectedId == this.state.courseOptions[j].id)
@@ -240,19 +146,20 @@ export default class Carograph extends Component {
                           return arrayCourses
                         }
 
-                        return <option selected>Curso:</option>
+                        return <option selected disabled>Desabilitado</option>
                       })()
                     }
                   </Form.Control>
                 </Form.Group>
-
-                <Form.Group className="select-item">
-                  <Form.Control as="select" custom disabled={this.state.disabledSeries}
+              </Form>
+              <Form inline>
+                <Form.Group className="select-item" controlId="exampleForm.SelectCustom">
+                  <Form.Label>Série: </Form.Label>
+                  <Form.Control as="select" custom
                     onChange={(e) => {
                       this.setState({
                         seriesSelected: e.target.value,
-                        yearSelected: null,
-                        disabledYear: Number.isInteger(parseInt(e.target.value)) ? false : true,
+                        yearSelected: null
                       })
                     }}
                   >
@@ -260,7 +167,7 @@ export default class Carograph extends Component {
                       (() => {
                         if (this.state.courseOptions.length > 0 && this.state.courseSelectedId) {
                           let arraySeries = []
-                          arraySeries.push(<option selected value={null} >Série:</option>)
+                          arraySeries.push(<option value={null} >Escolha aqui</option>)
 
                           for (let j = 0; j < this.state.courseOptions.length; j++) {
                             if (this.state.courseOptions[j].id == this.state.courseSelectedId) {
@@ -276,14 +183,16 @@ export default class Carograph extends Component {
                           }
                         }
 
-                        return <option selected>Série:</option>
+                        return <option selected disabled>Desabilitado</option>
                       })()
                     }
                   </Form.Control>
                 </Form.Group>
-
-                <Form.Group className="select-item">
-                  <Form.Control as="select" custom disabled={this.state.disabledYear}
+              </Form>
+              <Form inline>
+                <Form.Group className="select-item" controlId="exampleForm.SelectCustom">
+                  <Form.Label>Ano: </Form.Label>
+                  <Form.Control as="select" custom
                     onChange={(e) => {
                       this.setState({
                         yearSelected: e.target.value,
@@ -296,7 +205,7 @@ export default class Carograph extends Component {
                       (() => {
                         if (this.state.seriesSelected) {
                           let arrayYears = []
-                          arrayYears.push(<option value={null}>Ano:</option>)
+                          arrayYears.push(<option value={null}>Escolha aqui</option>)
 
                           for (let j = this.state.minYear; j <= this.state.maxYear; j++) {
                             if (this.state.yearSelected == j)
@@ -307,47 +216,46 @@ export default class Carograph extends Component {
 
                           return arrayYears
                         }
-
-                        return <option selected>Ano:</option>
+                        
+                        return <option selected disabled>Desabilitado</option>
                       })()
                     }
                   </Form.Control>
                 </Form.Group>
               </Form>
             </div>
-            <img className="pedagogue-img" src={require('../../assets/yuri.jpg')} alt="" />
+            <img className="pedagogue-img" src={require('../../assets/gabriel1.jpg')} alt="" />
           </Navbar>
 
-          <div className="carograph">
-            <div className="students-container">
+          <div class="carograph">
+            <div class="students-container">
               {
+
                 this.state.students.map(student => (
-                  <Card className="student" id={student.student_id} onClick={() => {
+                  <div class="student" id={student.student_id} onClick={() => {
                     this.setState({
-                      studentSelectedId: student.student_id,
-                      studentSelectedStatus: student.status_id,
-                      menuOpen: true,
+                      studentSelectedId: student.student_id
                     })
                   }}>
-                    <Card.Img variant="top" src={require('../../assets/yuri.jpg')} />
-                    <Card.Title className="student-name"><p>{student.name}</p></Card.Title>
-                    <Card.Text className="student-status" style={{
-                      color: student.status_id === 0 ? "green" : (student.status_id === 5 ? "green" : "red")
-                    }}>
+                    <img src={require('../../assets/gabriel1.jpg')} alt="" />
+                    <div class="student_name">
+                      <p>{student.name}</p>
+                    </div>
+                    <div class="student_name">
                       {
                         (student.year != student.statusYear) ?
-                          <p>{student.status} ({student.statusYear})</p>
+                          <p>Status: {student.status} ({student.statusYear})</p>
                           :
-                          <p>{student.status}</p>
+                          <p>Status: {student.status}</p>
                       }
-                    </Card.Text>
-                  </Card>
+                    </div>
+                  </div>
                 ))
+
               }
             </div>
           </div>
-        </div>
-
+        </section>
       </div>
     )
   }

@@ -33,7 +33,7 @@ class ForgotPasswordController {
         message => {
           message
             .to(pedagogue.email)
-            .from('coelhocostag@gmail.com' , 'test')
+            .from('yuri.farnesio@gmail.com' , 'test')
             .subject('Redefinação de Senha')
         }
       )
