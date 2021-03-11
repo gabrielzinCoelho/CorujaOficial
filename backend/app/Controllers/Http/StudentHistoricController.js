@@ -22,6 +22,7 @@ class StudentHistoricController {
         'students.name',
         'students.enrollment',
         'students.yearEntry',
+        'status.id as status_id',
         'status.name as status',
         'student_historics.year',
         'student_historics.statusYear'
@@ -34,6 +35,7 @@ class StudentHistoricController {
         series,
         year
       })
+      .groupBy('students.name')
 
     if (studentHistoric.length == 0)
       return response.status(406).json({ error: "Nenhuma turma foi encontrada." })
@@ -47,6 +49,7 @@ class StudentHistoricController {
           name: element.name,
           enrollment: element.enrollment,
           yearEntry: element.yearEntry,
+          status_id: element.status_id,
           status: element.status,
           year: element.year,
           statusYear: element.statusYear
