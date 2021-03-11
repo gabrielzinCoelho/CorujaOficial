@@ -1,0 +1,23 @@
+perfil do pedagogo -> 	página do pedagogo
+			rota read by id
+			adicionar campos: telefone, endereço, idade * file_id
+
+página de virada de ano -> tabela turma x status da virada de ano x add virada de ano x excluir virada de ano 
+
+* virada de ano separada por turma
+* não terá mecanismos de verificação de virada de ano (sistema considera usuário ideal)
+* critério para definir ano: ano escolar -> pedagogo controla ano escolar (avançar ano)
+
+			-> refazer backend virada de ano (adaptar para turmas e series separadas)
+
+
+			-> planilha de virada de ano
+					. currentClassStatus: dados = nome, matrícula, imagem, idade, contato, status*
+					. nextClassStudents: dados = imagem, nome, matrícula, idade, contato 
+
+*status=cursando, o restante deve ser preenchido no perfil individual
+
+
+________________________________________________________________________________________________________________________________________________________________________
+
+atendimento*

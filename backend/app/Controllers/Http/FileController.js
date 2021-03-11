@@ -1,5 +1,5 @@
 'use strict'
-//REAFTORAÇÃO ()
+//REAFTORAÇÃO (OK)
 const crypto = require('crypto')
 const { extname, resolve } = require('path')
 
@@ -11,12 +11,14 @@ class FileController {
   async store({ request, response }) {
 
     const file = request.file('file', {
-      extnames: ['png', 'jpg', 'jpeg'],
-      size: '2mb'
+      extnames: ['png', 'jpg', 'jpeg'], //extensões de arquivos aceitas
+      size: '2mb' //tamanho máximo dos arquivos
     })
 
+    // nome aleatório e único gerado para cada arquivo,mantendo a extensão do nome original
     const fileName = `${crypto.randomBytes(16).toString('hex')}${extname(file.clientName)}`
 
+    //é inserido a instância do arquivo no banco
     const fileInstanceId = await Database
       .table('files')
       .insert({
@@ -25,15 +27,18 @@ class FileController {
         updated_at: Database.fn.now()
       })
 
+    // depois o arquivo é movido para o diretório ./backend/app/uploads
     await file.move(resolve(__dirname, '..', '..', 'uploads'), {
       name: fileName,
       overwrite: true
     })
 
+    // exceção gerada caso o arquivo não seja movido corretamente
     if (!file.moved()) {
       return profilePic.error()
     }
 
+    //o id da instância do arquivo salva no banco é retornada
     return {
       fileId: fileInstanceId
     }
@@ -43,3 +48,9 @@ class FileController {
 }
 
 module.exports = FileController
+
+
+//a ideia é que a rota de inserir arquivos seja exclusiva
+//no caso de fazer um upload de arquivo que está vinculado a um usuário, por exemplo,
+//primeiro é realizado o upload do arquivo, separadamente, após isso, o id do arquivo salvo é retornado,
+// e então esse id é salvo na tabela desse usuário

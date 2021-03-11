@@ -23,7 +23,7 @@ const numStudentsNextClass = 30
 
 class GenerateObjectNewYearSeeder {
   async run() {
-
+    //lendo o arquivo de input
     fs.readFile(`${path}${fileNameInput}.json`, 'utf8', async (err, data) => {
       if (err) {
         return console.log(err);

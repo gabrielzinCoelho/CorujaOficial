@@ -1,328 +1,324 @@
 {
-  "year": 2024,
+  "year": 2022,
   "data": [
     {
-      "course_id": 2,
+      "course_id": 3,
       "currentClassStatus": [
         {
           "series": 1,
           "students": [
             {
-              "studentHistoric_id": 2185,
-              "student_id": 574,
-              "name": "Teresa Sara Griffith",
-              "enrollment": "HPAV74IN3LTEU1BBCXQFMHEO63"
+              "studentHistoric_id": 271,
+              "student_id": 539,
+              "name": "Janie Lucy Medina",
+              "enrollment": "FMAH21QIVQ27SIK9N4WJWBXYJ8"
             },
             {
-              "studentHistoric_id": 2193,
-              "student_id": 577,
-              "name": "Lucile Madge Wood",
-              "enrollment": "IEIOFQT6SOKPA8A7J4YRKNNY01"
+              "studentHistoric_id": 272,
+              "student_id": 551,
+              "name": "Brandon Ernest Ellis",
+              "enrollment": "SHIVJML4R88X9L3ISGS9YDPMJM"
             },
             {
-              "studentHistoric_id": 2199,
-              "student_id": 612,
-              "name": "Aaron Alejandro Stanley",
-              "enrollment": "OCMVYNEYJRYUX40CSA92JFXSUN"
+              "studentHistoric_id": 273,
+              "student_id": 560,
+              "name": "Isabella Elizabeth Alvarado",
+              "enrollment": "W144L70BRVTVCTVMYTVPAGCIZK"
             },
             {
-              "studentHistoric_id": 2205,
-              "student_id": 524,
-              "name": "Lydia Barbara Phillips",
-              "enrollment": "2DBH8M4X57VPUBCRC9D0UQBAJ5"
+              "studentHistoric_id": 274,
+              "student_id": 566,
+              "name": "Elijah Bernard Erickson",
+              "enrollment": "BCPG5R42FRZD0DJSLZC7U13K8J"
             },
             {
-              "studentHistoric_id": 2211,
-              "student_id": 667,
-              "name": "Sally Lucile Strickland",
-              "enrollment": "X4P6OK1RJHQLH0LLCFC4CGV3RZ"
+              "studentHistoric_id": 275,
+              "student_id": 593,
+              "name": "Edith Loretta Rodgers",
+              "enrollment": "VMWEUIS66849XBQMM1N9TCTTUR"
             },
             {
-              "studentHistoric_id": 2217,
-              "student_id": 670,
-              "name": "Vera Hester Wilkerson",
-              "enrollment": "XWSS1WUZC93DTCM9PAMCYZBGEO"
+              "studentHistoric_id": 276,
+              "student_id": 596,
+              "name": "Ethan Lewis Cortez",
+              "enrollment": "H8N1MMTZLVRQY6Z1IV35VDUPUY"
             },
             {
-              "studentHistoric_id": 2223,
-              "student_id": 672,
-              "name": "Ellen Alice Garcia",
-              "enrollment": "BMVAL0WBD4WMC62NIXZDOUJEYD"
+              "studentHistoric_id": 277,
+              "student_id": 599,
+              "name": "Todd Duane Gill",
+              "enrollment": "VXOX6JVFOGHCVRJZW7TE5GIOJ9"
             },
             {
-              "studentHistoric_id": 2228,
-              "student_id": 687,
-              "name": "Cody Andre Morris",
-              "enrollment": "DM7V4509KGYWF8Z0RAZ8OM68WW"
+              "studentHistoric_id": 278,
+              "student_id": 608,
+              "name": "Micheal Frank Cohen",
+              "enrollment": "7ZGPUUM78NP1N1571YX2DPSTKU"
             },
             {
-              "studentHistoric_id": 2233,
-              "student_id": 691,
-              "name": "Charles Terry Moss",
-              "enrollment": "28TK3V4OARGUQ00TQQCV15JFI2"
+              "studentHistoric_id": 279,
+              "student_id": 611,
+              "name": "Eugene Lawrence Martinez",
+              "enrollment": "J6CVXD6M9OA2PHVZ2WKWKAPLH3"
             },
             {
-              "studentHistoric_id": 2239,
-              "student_id": 698,
-              "name": "Jackson Melvin Strickland",
-              "enrollment": "YF8T6CGBUZV1L1KGJCCKS8TLZZ"
+              "studentHistoric_id": 280,
+              "student_id": 617,
+              "name": "Adelaide Georgia Turner",
+              "enrollment": "CM29Q2EKD206PYETO9J9KIZQMY"
             },
             {
-              "studentHistoric_id": 2245,
-              "student_id": 700,
-              "name": "Pauline Lola Harrington",
-              "enrollment": "6NQOC7YSDQF60PR90QZWG2218J"
+              "studentHistoric_id": 281,
+              "student_id": 620,
+              "name": "Clayton Vincent Thomas",
+              "enrollment": "3SARL2BI9ZUDV99XILJVRF81GD"
             },
             {
-              "studentHistoric_id": 2251,
-              "student_id": 702,
-              "name": "Ophelia Janie Clayton",
-              "enrollment": "TG3C7DADYG48BRH0SC3ZG59EYF"
+              "studentHistoric_id": 282,
+              "student_id": 392,
+              "name": "Theresa Ada Valdez",
+              "enrollment": "480QTX3BMY0I07P6N201ANT01J"
             },
             {
-              "studentHistoric_id": 2505,
-              "student_id": 781,
-              "name": "Bertie Ann Lamb",
-              "enrollment": "C8LINWW5VHRJ4K54A6QEIM17TH"
+              "studentHistoric_id": 283,
+              "student_id": 399,
+              "name": "Dustin Owen Palmer",
+              "enrollment": "5FTLGYKJ9WSGXJ0CUW28YCCXBT"
             },
             {
-              "studentHistoric_id": 2510,
-              "student_id": 782,
-              "name": "Arthur Duane Welch",
-              "enrollment": "7RG8K0UD04PGHYCH2BWBM2CD0A"
+              "studentHistoric_id": 284,
+              "student_id": 405,
+              "name": "Ian Walter Santiago",
+              "enrollment": "SLEDFNGOV16J05NFDQW1ZIEWEQ"
             },
             {
-              "studentHistoric_id": 2513,
-              "student_id": 783,
-              "name": "Alan Nicholas Nash",
-              "enrollment": "HPQAP4D9PAOZKRJ84YYTEYC9SC"
+              "studentHistoric_id": 285,
+              "student_id": 548,
+              "name": "Cynthia Cora Arnold",
+              "enrollment": "2402E8BVZS8YR6RDR16HP0GQFN"
             },
             {
-              "studentHistoric_id": 2516,
-              "student_id": 784,
-              "name": "Marion Lucille Riley",
-              "enrollment": "NHQGDHE8Y95XP1GRZOTPSWWS3V"
+              "studentHistoric_id": 286,
+              "student_id": 575,
+              "name": "Victoria Winnie Caldwell",
+              "enrollment": "D7H41SBHE0VSOEK9KEC9JOMC9G"
             },
             {
-              "studentHistoric_id": 2519,
-              "student_id": 785,
-              "name": "Martin Scott Sims",
-              "enrollment": "SVTLDSEGZSIHTAOVBVOYS510AC"
+              "studentHistoric_id": 287,
+              "student_id": 581,
+              "name": "Nellie Julia Snyder",
+              "enrollment": "0AEPH7ZECBQA3BZ93RC8GA43M6"
             },
             {
-              "studentHistoric_id": 2522,
-              "student_id": 786,
-              "name": "Leon Roger Stewart",
-              "enrollment": "96EQ1U8CDNUZ785XFK0M3S8Z5K"
+              "studentHistoric_id": 288,
+              "student_id": 587,
+              "name": "Lina Catherine Roberson",
+              "enrollment": "XWY4JNTS5X4P7DR79Q48KHDWT6"
             },
             {
-              "studentHistoric_id": 2525,
-              "student_id": 787,
-              "name": "Jessie Polly Parks",
-              "enrollment": "QATWIBGHZM2LVBJWDM0JM85VMN"
+              "studentHistoric_id": 289,
+              "student_id": 614,
+              "name": "Louisa Lelia Zimmerman",
+              "enrollment": "RJH38I3YF9QKP9VDV7N6Q2PEDH"
             },
             {
-              "studentHistoric_id": 2528,
-              "student_id": 788,
-              "name": "Etta Anne Bates",
-              "enrollment": "MC1NS0XKBULXBIVK3OY85RRG25"
+              "studentHistoric_id": 290,
+              "student_id": 473,
+              "name": "Winifred Willie Freeman",
+              "enrollment": "NYYORNOANBX8ZVFNHCH9MWTJPM"
             },
             {
-              "studentHistoric_id": 2531,
-              "student_id": 789,
-              "name": "Mathilda Estella Mendez",
-              "enrollment": "F04UUE9LHI1F3B4IHVYSTH67Z3"
+              "studentHistoric_id": 291,
+              "student_id": 500,
+              "name": "Susan Olive Stone",
+              "enrollment": "QVCJW76221VIYK1EVS8AG9KBJ5"
             },
             {
-              "studentHistoric_id": 2534,
-              "student_id": 790,
-              "name": "Mittie Sarah Gibson",
-              "enrollment": "L10UE8VE0NMHOML8UG43167003"
+              "studentHistoric_id": 292,
+              "student_id": 554,
+              "name": "Joseph Wayne Warren",
+              "enrollment": "ITFLF67JJQHBG6PPOJG9R9C3G7"
             },
             {
-              "studentHistoric_id": 2536,
-              "student_id": 791,
-              "name": "Mable Kate Griffin",
-              "enrollment": "PABYDR7XO6Y5X7KH9C70KKYH86"
+              "studentHistoric_id": 293,
+              "student_id": 563,
+              "name": "Abbie Lydia Warner",
+              "enrollment": "LXAC9TYUC8YSG9TBL3DTFXKXN2"
             },
             {
-              "studentHistoric_id": 2539,
-              "student_id": 792,
-              "name": "Travis Harvey Hanson",
-              "enrollment": "MEKR42I4V940HYS1PJE5W9IBX5"
+              "studentHistoric_id": 294,
+              "student_id": 584,
+              "name": "Maude Rhoda Cooper",
+              "enrollment": "LXSL2JTK80X1I09W3S6BY75I81"
             },
             {
-              "studentHistoric_id": 2542,
-              "student_id": 793,
-              "name": "Jim Clifford Logan",
-              "enrollment": "VRD3U8NNHY0EG7NWTBYYET7QPF"
+              "studentHistoric_id": 295,
+              "student_id": 605,
+              "name": "Gerald Anthony Luna",
+              "enrollment": "STFRKEEG31RXMYGG4F5I5M114J"
             },
             {
-              "studentHistoric_id": 2546,
-              "student_id": 794,
-              "name": "Helena Josie Harper",
-              "enrollment": "RI6USC8V7DOB1BK4585VTVNU3D"
+              "studentHistoric_id": 296,
+              "student_id": 623,
+              "name": "Amanda Hester Willis",
+              "enrollment": "KNVUDEZ9QCBJFPYVENNND8IG1D"
             },
             {
-              "studentHistoric_id": 2549,
-              "student_id": 795,
-              "name": "Harriet Lora Greene",
-              "enrollment": "5WTPOPQTN0YROOT902XOAN6ZA7"
+              "studentHistoric_id": 297,
+              "student_id": 458,
+              "name": "Micheal Mark Wilkerson",
+              "enrollment": "RWFAYSYAIUX3D2VQ7CQRIO6AKS"
             },
             {
-              "studentHistoric_id": 2552,
-              "student_id": 796,
-              "name": "Lulu Lelia Jensen",
-              "enrollment": "RPJBY812HWM12VN87SCC2PWISQ"
+              "studentHistoric_id": 298,
+              "student_id": 464,
+              "name": "Leo Brandon Curry",
+              "enrollment": "N8A7Y0V1VO51C2HTNXUUZ2IU23"
             },
             {
-              "studentHistoric_id": 2554,
-              "student_id": 797,
-              "name": "Lucile Jennie Brown",
-              "enrollment": "NDXRGED49GLBWXE95RBSLMYASZ"
+              "studentHistoric_id": 299,
+              "student_id": 488,
+              "name": "Marian Pearl Garner",
+              "enrollment": "WOHVVFBRTFRW141TWQ6SU2CMAI"
             },
             {
-              "studentHistoric_id": 2556,
-              "student_id": 798,
-              "name": "Gordon Blake Wilkins",
-              "enrollment": "3SC7DCQRY3EJNW8IYL9I2DUEWC"
+              "studentHistoric_id": 300,
+              "student_id": 530,
+              "name": "Olga Jessie Washington",
+              "enrollment": "KNVGVUJEWO2K98T5SLQ3F12BVV"
             },
             {
-              "studentHistoric_id": 2558,
-              "student_id": 799,
-              "name": "Virgie Ruby Snyder",
-              "enrollment": "J9KB62XG8U8BXAWO6TNHQNUZ3L"
+              "studentHistoric_id": 301,
+              "student_id": 542,
+              "name": "Ella Celia Torres",
+              "enrollment": "PMZ2WKVIRJ4Y4SAI4ISB9IM9RK"
             },
             {
-              "studentHistoric_id": 2559,
-              "student_id": 800,
-              "name": "Nannie Essie Stone",
-              "enrollment": "XX5NQ8W10SE9AA4R81UVYM64G2"
+              "studentHistoric_id": 302,
+              "student_id": 545,
+              "name": "Bertha Lena Hudson",
+              "enrollment": "O2JIU2F2FK0PAOVQ13I1R4GELD"
             },
             {
-              "studentHistoric_id": 2561,
-              "student_id": 801,
-              "name": "Randall Shawn Osborne",
-              "enrollment": "8DBCJNRQOFNPVX93M4YNRL2XFQ"
+              "studentHistoric_id": 303,
+              "student_id": 557,
+              "name": "David Oscar McBride",
+              "enrollment": "5YY63R79D3SL4ID5TV0LMO5CH9"
             },
             {
-              "studentHistoric_id": 2563,
-              "student_id": 802,
-              "name": "Lenora Susan Perez",
-              "enrollment": "4LU39BZYXT0R5LN2FX85YJNQQN"
+              "studentHistoric_id": 304,
+              "student_id": 569,
+              "name": "Julia Eunice Pena",
+              "enrollment": "R4YK4UWFHYDNS42IJIAG6MTLPT"
             },
             {
-              "studentHistoric_id": 2565,
-              "student_id": 803,
-              "name": "Benjamin Connor Mathis",
-              "enrollment": "9FVKW3RWUEUSZ7XND15242Q61I"
+              "studentHistoric_id": 305,
+              "student_id": 572,
+              "name": "Elmer Eddie Foster",
+              "enrollment": "IHDIR2X9CPVNT80WHICUOYJCYX"
             },
             {
-              "studentHistoric_id": 2567,
-              "student_id": 804,
-              "name": "Ernest Maurice Mullins",
-              "enrollment": "ISBJ9NTQ7E4DUGJESS1BYM1P3P"
+              "studentHistoric_id": 306,
+              "student_id": 578,
+              "name": "Georgie Eugenia Fletcher",
+              "enrollment": "8B1G4E1IR0BLS56O4RKRNMKE43"
             },
             {
-              "studentHistoric_id": 2568,
-              "student_id": 805,
-              "name": "Bradley Jay Kennedy",
-              "enrollment": "CW79MIZC1NYP7MOCKCWSESSE7X"
+              "studentHistoric_id": 307,
+              "student_id": 590,
+              "name": "Gertrude Sue Willis",
+              "enrollment": "AR7PQFJ7B3I8QZJPHGX3V8XROO"
             },
             {
-              "studentHistoric_id": 2569,
-              "student_id": 806,
-              "name": "Christina Essie Hampton",
-              "enrollment": "D9FWM1V5QHD5FELO7IWTHKKZU2"
+              "studentHistoric_id": 308,
+              "student_id": 602,
+              "name": "Lawrence Cody Mann",
+              "enrollment": "JYZL9P0H97BQVZ9J53HE4KE4LY"
             },
             {
-              "studentHistoric_id": 2570,
-              "student_id": 807,
-              "name": "Patrick Terry Evans",
-              "enrollment": "B2M8ISBDR8CMW4793TI3GGX7Z0"
+              "studentHistoric_id": 309,
+              "student_id": 626,
+              "name": "Gene Jacob Hammond",
+              "enrollment": "V2ZJKHKFXC9VXIGF3QZRPYUMBY"
             },
             {
-              "studentHistoric_id": 2571,
-              "student_id": 808,
-              "name": "Maud Sophie McGuire",
-              "enrollment": "7W1J7T9V9H7PV5LRARLIRSJO37"
+              "studentHistoric_id": 310,
+              "student_id": 476,
+              "name": "Mable Luella Owens",
+              "enrollment": "UA4L28XUBYHYXQ4M6LITO3LM8D"
             },
             {
-              "studentHistoric_id": 2572,
-              "student_id": 809,
-              "name": "Mabel Claudia Herrera",
-              "enrollment": "M26X8F3U89C0FJ1QAODMK73BOU"
-            },
-            {
-              "studentHistoric_id": 2573,
-              "student_id": 810,
-              "name": "Gertrude Lura Little",
-              "enrollment": "L3H9ZK2TLLXLY3OMRD44JR8K2H"
+              "studentHistoric_id": 311,
+              "student_id": 497,
+              "name": "Vincent Steven Chambers",
+              "enrollment": "1G3S8GMNJTNURNQXTEKXOEYIU9"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                574,
-                577,
-                612,
-                524,
-                667,
-                670,
-                672,
-                687,
-                691,
-                698,
-                700,
-                702,
-                781,
-                782,
-                783,
-                784,
-                785,
-                786,
-                787,
-                788,
-                789,
-                790,
-                791,
-                792,
-                793,
-                794,
-                795,
-                796,
-                797,
-                798,
-                799,
-                800,
-                801,
-                802,
-                803,
-                804,
-                805,
-                806,
-                807,
-                808,
-                809,
-                810
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                539,
+                551,
+                560,
+                566,
+                593,
+                596,
+                599,
+                608,
+                611,
+                617,
+                620,
+                392,
+                399,
+                405
+              ]
             },
             {
               "status_id": 3,
-              "students_id": []
+              "students_id": [
+                548,
+                575,
+                581,
+                587,
+                614,
+                473,
+                500
+              ]
             },
             {
               "status_id": 4,
-              "students_id": []
+              "students_id": [
+                554,
+                563,
+                584,
+                605,
+                623,
+                458,
+                464,
+                488,
+                530
+              ]
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                542,
+                545,
+                557,
+                569,
+                572,
+                578,
+                590,
+                602,
+                626,
+                476,
+                497
+              ]
             }
           ]
         },
@@ -330,139 +326,100 @@
           "series": 2,
           "students": [
             {
-              "studentHistoric_id": 2308,
-              "student_id": 615,
-              "name": "Lucy Katharine Williamson",
-              "enrollment": "CJSB7HZ76XK6ZBHNNR2645AK6F"
+              "studentHistoric_id": 261,
+              "student_id": 420,
+              "name": "Dustin Ricardo Jordan",
+              "enrollment": "15WWGMDOPUIMWL7YYSYEPIM498"
             },
             {
-              "studentHistoric_id": 2311,
-              "student_id": 425,
-              "name": "Jane Essie Smith",
-              "enrollment": "Q9WJ1VKGMKHJN5VZFAGQZ90YNV"
+              "studentHistoric_id": 262,
+              "student_id": 521,
+              "name": "Irene Francis Maldonado",
+              "enrollment": "KT4YYOSZW5S5JOFXVQOPZ5PFYL"
             },
             {
-              "studentHistoric_id": 2314,
-              "student_id": 663,
-              "name": "Pearl Kate Cain",
-              "enrollment": "X9KL9AFO5S4CRC380VIEG2UOUE"
+              "studentHistoric_id": 263,
+              "student_id": 374,
+              "name": "Hattie Emma Soto",
+              "enrollment": "GS70Z6E2KQMFWKP6C43TJIDS2I"
             },
             {
-              "studentHistoric_id": 2317,
-              "student_id": 664,
-              "name": "Theodore Howard Johnson",
-              "enrollment": "8HDPW377I7AO1WSBUT23OBNZJO"
+              "studentHistoric_id": 264,
+              "student_id": 449,
+              "name": "Brian Frederick Wade",
+              "enrollment": "T6253EPLLY8OFXWL3JEBR8Z7JE"
             },
             {
-              "studentHistoric_id": 2319,
-              "student_id": 673,
-              "name": "Carrie Dollie Graham",
-              "enrollment": "PN2M1B9F0SLOZ0FLL9DTTZVX3R"
+              "studentHistoric_id": 265,
+              "student_id": 494,
+              "name": "Lela Charlotte Franklin",
+              "enrollment": "8W20LCZN9O2AMQQ1X58MQCDZVO"
             },
             {
-              "studentHistoric_id": 2322,
-              "student_id": 674,
-              "name": "Bessie Leah Tucker",
-              "enrollment": "PBCP1HHBRO3ETYL4QI32YZBUUB"
+              "studentHistoric_id": 266,
+              "student_id": 524,
+              "name": "Maggie Olga Abbott",
+              "enrollment": "KVJM8OGN0XDH4Y1KTDUKSHYE1G"
             },
             {
-              "studentHistoric_id": 2325,
-              "student_id": 675,
-              "name": "Raymond Ronald Paul",
-              "enrollment": "0S7RYU92XCH5UVZBST643P8PS9"
+              "studentHistoric_id": 267,
+              "student_id": 377,
+              "name": "Helen Etta Stevenson",
+              "enrollment": "QSZI2OD43JO3H4OUAQZT9EATPI"
             },
             {
-              "studentHistoric_id": 2328,
-              "student_id": 677,
-              "name": "Louise Ada McGee",
-              "enrollment": "A7BFTWF9X46C5HA9A32N7FV6Z7"
+              "studentHistoric_id": 268,
+              "student_id": 371,
+              "name": "Jeff Willie Welch",
+              "enrollment": "K4O9XUMN3S22OJMJC5QSH59GU5"
             },
             {
-              "studentHistoric_id": 2332,
-              "student_id": 679,
-              "name": "Lawrence Marvin Schneider",
-              "enrollment": "5MSGDEJZDQTSSZ4YNAC1LJZJ3R"
+              "studentHistoric_id": 269,
+              "student_id": 470,
+              "name": "Emily Nancy Vega",
+              "enrollment": "PJ1BLBN1KVFCI645R4KZGD8ZUQ"
             },
             {
-              "studentHistoric_id": 2335,
-              "student_id": 689,
-              "name": "Amelia Matilda Rodriquez",
-              "enrollment": "05RH3WN5C5ZALNH2S1Q4EKBEPA"
-            },
-            {
-              "studentHistoric_id": 2338,
-              "student_id": 696,
-              "name": "Bryan Jeffery Beck",
-              "enrollment": "BN3VRV3KGX3USYBG4S9SFFEFUD"
-            },
-            {
-              "studentHistoric_id": 2344,
-              "student_id": 542,
-              "name": "Sara Ora Alvarez",
-              "enrollment": "3TJB3OXB4YDTJTJSH7TC0TVFSH"
-            },
-            {
-              "studentHistoric_id": 2350,
-              "student_id": 556,
-              "name": "Arthur Gregory Barber",
-              "enrollment": "XG1MJBRA82H8JGS2SYC01KP3F8"
-            },
-            {
-              "studentHistoric_id": 2355,
-              "student_id": 603,
-              "name": "Erik Gabriel Warner",
-              "enrollment": "N9SZRB2DO3KJCABJLUVWNO3059"
-            },
-            {
-              "studentHistoric_id": 2362,
-              "student_id": 610,
-              "name": "Nathaniel Aaron Wood",
-              "enrollment": "9EVRRIF00HSM65O51C5ZXOU4S3"
-            },
-            {
-              "studentHistoric_id": 2367,
-              "student_id": 440,
-              "name": "Jeremiah Stanley McGee",
-              "enrollment": "9ZWDMFDAPA3B02RFAV15F2DRBZ"
+              "studentHistoric_id": 270,
+              "student_id": 509,
+              "name": "Trevor Edwin Fowler",
+              "enrollment": "0O02DB78AKG90LG9OAYRZVZVQK"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                615,
-                425,
-                663,
-                664,
-                673,
-                674,
-                675,
-                677,
-                679,
-                689,
-                696,
-                542,
-                556,
-                603,
-                610,
-                440
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                420,
+                521,
+                374
+              ]
             },
             {
               "status_id": 3,
-              "students_id": []
+              "students_id": [
+                449,
+                494,
+                524,
+                377,
+                371
+              ]
             },
             {
               "status_id": 4,
-              "students_id": []
+              "students_id": [
+                470
+              ]
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                509
+              ]
             }
           ]
         },
@@ -470,78 +427,28 @@
           "series": 3,
           "students": [
             {
-              "studentHistoric_id": 2402,
-              "student_id": 594,
-              "name": "Louisa Nellie Hernandez",
-              "enrollment": "N8PDH5IX182O9PMET254JY8BU9"
+              "studentHistoric_id": 222,
+              "student_id": 384,
+              "name": "Mike Clayton Shelton",
+              "enrollment": "FBZLK4RGEB282W8SPFJ6QG6RK8"
             },
             {
-              "studentHistoric_id": 2408,
-              "student_id": 598,
-              "name": "Myra Claudia Pena",
-              "enrollment": "QXJ7CPF0O7EOTPDRZ2FYDOMPJZ"
-            },
-            {
-              "studentHistoric_id": 2416,
-              "student_id": 624,
-              "name": "Cory Austin Bass",
-              "enrollment": "4XKW7UIR9PD9LIDAZALTOKSTZV"
-            },
-            {
-              "studentHistoric_id": 2421,
-              "student_id": 527,
-              "name": "Clayton Gabriel Wright",
-              "enrollment": "IDQW15AQ221IGYWTLYDMLM3L4W"
-            },
-            {
-              "studentHistoric_id": 2480,
-              "student_id": 503,
-              "name": "Oscar Victor Murphy",
-              "enrollment": "MP49HIB79LVFJYW7CADN1DZCCA"
-            },
-            {
-              "studentHistoric_id": 2483,
-              "student_id": 506,
-              "name": "Hulda Susie Taylor",
-              "enrollment": "C7PY4H60X1NGML9L11ZMBQYCEL"
-            },
-            {
-              "studentHistoric_id": 2485,
-              "student_id": 530,
-              "name": "Ophelia Lucile Sandoval",
-              "enrollment": "CDIS54TAIPUSHSDDY80OOXDW97"
-            },
-            {
-              "studentHistoric_id": 2487,
-              "student_id": 536,
-              "name": "Lillie Roxie Holland",
-              "enrollment": "XKURWEV9M70F47YNV9CWVS491E"
-            },
-            {
-              "studentHistoric_id": 2489,
-              "student_id": 385,
-              "name": "Leroy Theodore Mathis",
-              "enrollment": "WNQ7XLNPJLQAFTS236EECTDP6D"
+              "studentHistoric_id": 223,
+              "student_id": 279,
+              "name": "Madge Cecelia Curtis",
+              "enrollment": "T82VR2VOWUCTFZV45OYELMYKK8"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                594,
-                598,
-                624,
-                527,
-                503,
-                506,
-                530,
-                536,
-                385
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                384
+              ]
             },
             {
               "status_id": 3,
@@ -553,7 +460,9 @@
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                279
+              ]
             }
           ]
         }
@@ -567,286 +476,303 @@
           "series": 1,
           "students": [
             {
-              "studentHistoric_id": 2187,
+              "studentHistoric_id": 939,
               "student_id": 547,
-              "name": "Bradley Paul Patterson",
-              "enrollment": "16T37SGCDM7WNT4IYFN4HRBP0S"
+              "name": "Viola Lulu Reese",
+              "enrollment": "D0K5JZ9Z0GLQIEEW06KN6ONY4T"
             },
             {
-              "studentHistoric_id": 2192,
-              "student_id": 558,
-              "name": "Ora Dollie Mendoza",
-              "enrollment": "AOY51JPX7P9I8DY28B0BSYT3H3"
+              "studentHistoric_id": 940,
+              "student_id": 552,
+              "name": "Dollie Laura Schwartz",
+              "enrollment": "D92CA78Y726WSOXJNHPTQAKAAG"
             },
             {
-              "studentHistoric_id": 2198,
-              "student_id": 692,
-              "name": "Fanny Eula Estrada",
-              "enrollment": "27ES1FG0A3MP7A6D6Z9UNO6JLN"
+              "studentHistoric_id": 941,
+              "student_id": 559,
+              "name": "Irene Blanche Bridges",
+              "enrollment": "LHV2SZ92W4F9GS1TDUQPX5SEXW"
             },
             {
-              "studentHistoric_id": 2204,
-              "student_id": 703,
-              "name": "Rhoda Josephine Willis",
-              "enrollment": "L4OO2GK0O5GVCFLV7N098P3JIJ"
+              "studentHistoric_id": 942,
+              "student_id": 583,
+              "name": "Henry Dean French",
+              "enrollment": "NL5TJBWVCY8C4UZVOJFCCQVOSY"
             },
             {
-              "studentHistoric_id": 2210,
-              "student_id": 710,
-              "name": "Linnie Genevieve Vasquez",
-              "enrollment": "XDAW7DSLX7Z8X0EC2HU1FFBZAC"
+              "studentHistoric_id": 943,
+              "student_id": 598,
+              "name": "Eula Elizabeth Robbins",
+              "enrollment": "EZ3D1SW2BZ7LXG4DW7HRLMW6ZQ"
             },
             {
-              "studentHistoric_id": 2216,
-              "student_id": 712,
-              "name": "Jerry Isaac Barrett",
-              "enrollment": "CWDSMLHJCFUAZMTXHJ8V6NCCXO"
+              "studentHistoric_id": 944,
+              "student_id": 607,
+              "name": "Andre Angel Hansen",
+              "enrollment": "Y8BRNQ5EE87D70PMM97E0BDF35"
             },
             {
-              "studentHistoric_id": 2222,
-              "student_id": 715,
-              "name": "Jane Cynthia Webster",
-              "enrollment": "5B9CA7C8MCCW01IAE1UGR6YD9B"
+              "studentHistoric_id": 945,
+              "student_id": 609,
+              "name": "Harold Joshua Turner",
+              "enrollment": "XWQAQVATRXWFH3WLU131CVXA1Y"
             },
             {
-              "studentHistoric_id": 2492,
-              "student_id": 751,
-              "name": "Nellie Lilly Robertson",
-              "enrollment": "UVRUF0BYPJCRVIVJRZPIUUUOGB"
+              "studentHistoric_id": 946,
+              "student_id": 622,
+              "name": "Calvin Theodore Day",
+              "enrollment": "F8URNN01PDKVNXFI10S27XT6MW"
             },
             {
-              "studentHistoric_id": 2494,
-              "student_id": 752,
-              "name": "Leah Mable Clark",
-              "enrollment": "2QB6D4CG5H275LRJGPR7IV50AU"
+              "studentHistoric_id": 947,
+              "student_id": 628,
+              "name": "Carrie Estelle Norris",
+              "enrollment": "NL8XKM9N0W4WZKOKUNLTN8CZGH"
             },
             {
-              "studentHistoric_id": 2496,
-              "student_id": 753,
-              "name": "Sara Hulda Cummings",
-              "enrollment": "T4T72M9JCSAET4ICV2SXIYA1QF"
+              "studentHistoric_id": 948,
+              "student_id": 457,
+              "name": "Kathryn Barbara Carson",
+              "enrollment": "B8XE6Q2DOALCSWP1WLDPDJAZCX"
             },
             {
-              "studentHistoric_id": 2498,
-              "student_id": 754,
-              "name": "Genevieve Hilda Stewart",
-              "enrollment": "R7YNQ0PNN9PCD225Q6HRAPE4DE"
+              "studentHistoric_id": 949,
+              "student_id": 540,
+              "name": "Bess Rosetta Maxwell",
+              "enrollment": "Z3F2J46EHDOGK7H55EGUT020FS"
             },
             {
-              "studentHistoric_id": 2500,
-              "student_id": 755,
-              "name": "Alan Roger Gutierrez",
-              "enrollment": "EXL3JGRWGE01BYN36H0CAIANBO"
+              "studentHistoric_id": 950,
+              "student_id": 293,
+              "name": "John Gary Reid",
+              "enrollment": "1TITP25DI4IT34XUEZZ2YWV62Q"
             },
             {
-              "studentHistoric_id": 2502,
-              "student_id": 756,
-              "name": "Susan Edna Cummings",
-              "enrollment": "1VAS4NTYUVEZLWU240YYKPTGEN"
+              "studentHistoric_id": 951,
+              "student_id": 550,
+              "name": "Thomas Isaac Harper",
+              "enrollment": "61E571FR8W2BPRIWCC5647MSPY"
             },
             {
-              "studentHistoric_id": 2504,
-              "student_id": 757,
-              "name": "Delia Mildred Hodges",
-              "enrollment": "HBRKA9MIXCNSMGDIZ4WPBGJ23K"
+              "studentHistoric_id": 952,
+              "student_id": 580,
+              "name": "Matilda Mary Ellis",
+              "enrollment": "MACXKAXQ39QUDKLQJG0I5G8MFI"
             },
             {
-              "studentHistoric_id": 2507,
-              "student_id": 758,
-              "name": "Chester Samuel Peters",
-              "enrollment": "AXDK2PSJ67IUQ91IFAWI9RU86F"
+              "studentHistoric_id": 953,
+              "student_id": 630,
+              "name": "Janie Lura Delgado",
+              "enrollment": "GYIA0ILFPP5UKJ8OT8CGKSN4G5"
             },
             {
-              "studentHistoric_id": 2509,
-              "student_id": 759,
-              "name": "Timothy Derek Fleming",
-              "enrollment": "OJ5VQVXQZX2R07W4X702CHAEJP"
+              "studentHistoric_id": 954,
+              "student_id": 532,
+              "name": "Iva Cornelia Burke",
+              "enrollment": "P9MAB7TJRCWWJF60G6D4AEL8JG"
             },
             {
-              "studentHistoric_id": 2512,
-              "student_id": 760,
-              "name": "Clara Victoria Stephens",
-              "enrollment": "QSVJ99UQW1NAOML8KC4EMZHCU8"
+              "studentHistoric_id": 955,
+              "student_id": 556,
+              "name": "Gabriel Dylan Bryant",
+              "enrollment": "IGYX3L1EUMMJ606QW6OKR9MGOU"
             },
             {
-              "studentHistoric_id": 2515,
-              "student_id": 761,
-              "name": "David Chris Boone",
-              "enrollment": "1KOUOIS9F518IPFMGRHVQX9UM0"
+              "studentHistoric_id": 956,
+              "student_id": 561,
+              "name": "Alex Randall Williamson",
+              "enrollment": "XUL8EFC0YQPWQ8FP15IHUMTBGG"
             },
             {
-              "studentHistoric_id": 2517,
-              "student_id": 762,
-              "name": "Clayton Russell Chapman",
-              "enrollment": "B3SBAUNWOEU9TU4HCKXBEI80I7"
+              "studentHistoric_id": 957,
+              "student_id": 564,
+              "name": "Winnie Dora Rogers",
+              "enrollment": "DL2N9JW6UWY072XO1ODHW5BHMJ"
             },
             {
-              "studentHistoric_id": 2520,
-              "student_id": 763,
-              "name": "Rosie Bess Bowen",
-              "enrollment": "1Z57YFP28REKLCP41ZCS07NEB3"
+              "studentHistoric_id": 958,
+              "student_id": 567,
+              "name": "Gilbert Carl Logan",
+              "enrollment": "81FIVL5A4MHDZF8XLB6RCH2J72"
             },
             {
-              "studentHistoric_id": 2524,
-              "student_id": 764,
-              "name": "Lula Emma Little",
-              "enrollment": "1RILGUJP8FIDL3E0QFNXYPUMPZ"
+              "studentHistoric_id": 959,
+              "student_id": 571,
+              "name": "Joshua Micheal Ryan",
+              "enrollment": "AMYJGR8E08FRTHQJKORAFH37PN"
             },
             {
-              "studentHistoric_id": 2527,
-              "student_id": 765,
-              "name": "Jorge Leon Thomas",
-              "enrollment": "3DZJIG97DEX61B7M43574L7L4B"
+              "studentHistoric_id": 960,
+              "student_id": 576,
+              "name": "Robert Eddie Tucker",
+              "enrollment": "MV6CIVWXPDFBSCVWEOJHZ9A6TG"
             },
             {
-              "studentHistoric_id": 2530,
-              "student_id": 766,
-              "name": "Lela Cordelia Carson",
-              "enrollment": "XPIPYKFAGQBSR5D01N70YIE4DP"
+              "studentHistoric_id": 961,
+              "student_id": 586,
+              "name": "Kenneth Jorge King",
+              "enrollment": "PUOAIBEY0AHQMLFBUGRDY9IWY5"
             },
             {
-              "studentHistoric_id": 2533,
-              "student_id": 767,
-              "name": "Lois Eula Ferguson",
-              "enrollment": "XTTPT588K2W9ZSBC7A91QNUEZS"
+              "studentHistoric_id": 962,
+              "student_id": 588,
+              "name": "Lawrence Alan Rowe",
+              "enrollment": "2R0TSYW3XH65X5OQF90ZC64WNI"
             },
             {
-              "studentHistoric_id": 2537,
-              "student_id": 768,
-              "name": "Allie Jeanette Garcia",
-              "enrollment": "C34NG64Y05T01HA6UW507PCD2I"
+              "studentHistoric_id": 963,
+              "student_id": 591,
+              "name": "Jeremiah Larry Garza",
+              "enrollment": "C7PNNEMNJ4YXM25IQFFNSZ9GWA"
             },
             {
-              "studentHistoric_id": 2540,
-              "student_id": 769,
-              "name": "Birdie Rosa Romero",
-              "enrollment": "ZXSZFM8PH7C6MWOJMH4MM9S64I"
+              "studentHistoric_id": 964,
+              "student_id": 601,
+              "name": "Ola Ida Duncan",
+              "enrollment": "AUZMU9L7J9VW718F774O1UV5UJ"
             },
             {
-              "studentHistoric_id": 2543,
-              "student_id": 770,
-              "name": "Pearl Rosa McKenzie",
-              "enrollment": "8II8HZFVHAYETJ2ZU4IMV6CA68"
+              "studentHistoric_id": 965,
+              "student_id": 604,
+              "name": "Ora Ethel Lewis",
+              "enrollment": "T4BI3ZZB1U9KD250GOSD04X20S"
             },
             {
-              "studentHistoric_id": 2545,
-              "student_id": 771,
-              "name": "Bessie Adele Holloway",
-              "enrollment": "U7RGK1P4OCGPNQDTXAR6SRBFQP"
+              "studentHistoric_id": 966,
+              "student_id": 615,
+              "name": "Mollie Hettie Gonzalez",
+              "enrollment": "Y8YQWOHDKXYO0QD90SCYNO43E0"
             },
             {
-              "studentHistoric_id": 2548,
-              "student_id": 772,
-              "name": "Todd Oscar Alvarado",
-              "enrollment": "GLJGGQ2EUIH20MSA4O3PDWX7Y1"
+              "studentHistoric_id": 967,
+              "student_id": 619,
+              "name": "Adeline Florence Cooper",
+              "enrollment": "TXC7QFM7OY2IPMJM9TTGLBG46B"
             },
             {
-              "studentHistoric_id": 2551,
-              "student_id": 773,
-              "name": "Logan Thomas Fisher",
-              "enrollment": "3YM3SU722LUT07F269QT7WLIN4"
+              "studentHistoric_id": 968,
+              "student_id": 624,
+              "name": "Chris Jeremy Benson",
+              "enrollment": "D02YJIWOO3Y0AG8UULKF10TCFI"
             },
             {
-              "studentHistoric_id": 2553,
-              "student_id": 774,
-              "name": "Alejandro Mark Mitchell",
-              "enrollment": "SKNEAI65UX23U2TOGK2KY58D9B"
+              "studentHistoric_id": 969,
+              "student_id": 453,
+              "name": "Glen Alexander Powers",
+              "enrollment": "BCLE7B4JL0YGXVDV5HYXW4BWOW"
             },
             {
-              "studentHistoric_id": 2555,
-              "student_id": 775,
-              "name": "Florence Anne Fernandez",
-              "enrollment": "IVPPOG276WSZ6S4QBRZQ0C0AZZ"
+              "studentHistoric_id": 970,
+              "student_id": 468,
+              "name": "Larry Rodney McDonald",
+              "enrollment": "LVTKR98WI86SUJYD6WBAJR5MW6"
             },
             {
-              "studentHistoric_id": 2557,
-              "student_id": 776,
-              "name": "Warren Johnny Park",
-              "enrollment": "1PIJFTXVJ66OOXF764LO163MT6"
+              "studentHistoric_id": 971,
+              "student_id": 526,
+              "name": "Jay Walter Cortez",
+              "enrollment": "8PK89GQ29HSZKHB2VC8QSHQE95"
             },
             {
-              "studentHistoric_id": 2560,
-              "student_id": 777,
-              "name": "Larry Cameron Drake",
-              "enrollment": "GYRP56I1HXWLERTDV8UDVNE9BS"
+              "studentHistoric_id": 972,
+              "student_id": 543,
+              "name": "Victor Austin Bryan",
+              "enrollment": "D82NDUIVN0XLTPVR0ILBKXIO74"
             },
             {
-              "studentHistoric_id": 2562,
-              "student_id": 778,
-              "name": "Dylan David Frazier",
-              "enrollment": "UA8Q1S7WN20MSIRGDL4SUBOULC"
+              "studentHistoric_id": 973,
+              "student_id": 574,
+              "name": "Louis Brent Rodriquez",
+              "enrollment": "Z9PCSAVPASE3EW6RC0OIQTP6A8"
             },
             {
-              "studentHistoric_id": 2564,
-              "student_id": 779,
-              "name": "Myrtie Henrietta Cain",
-              "enrollment": "884Z4908HTY62KOP8BKBJMBHP2"
+              "studentHistoric_id": 974,
+              "student_id": 594,
+              "name": "Ola Willie Gilbert",
+              "enrollment": "0KHBDOWAYFCLHPU7NLYW4209CC"
             },
             {
-              "studentHistoric_id": 2566,
-              "student_id": 780,
-              "name": "Julian Alfred Parker",
-              "enrollment": "JPGGLOBTVM8ZO379BZDG1TZQOP"
+              "studentHistoric_id": 975,
+              "student_id": 613,
+              "name": "Nancy Ruth Estrada",
+              "enrollment": "GYKF6LDBF0WYJ491A175I8E5PE"
+            },
+            {
+              "studentHistoric_id": 976,
+              "student_id": 465,
+              "name": "Sallie Lettie Francis",
+              "enrollment": "PEUCH0II5GAESFNFT7029PV2DG"
+            },
+            {
+              "studentHistoric_id": 977,
+              "student_id": 513,
+              "name": "Herbert Gabriel Daniel",
+              "enrollment": "69E30QI6ZD48J76VZ4TNTUROSU"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                547,
-                558,
-                692,
-                703,
-                710,
-                712,
-                715,
-                751,
-                752,
-                753,
-                754,
-                755,
-                756,
-                757,
-                758,
-                759,
-                760,
-                761,
-                762,
-                763,
-                764,
-                765,
-                766,
-                767,
-                768,
-                769,
-                770,
-                771,
-                772,
-                773,
-                774,
-                775,
-                776,
-                777,
-                778,
-                779,
-                780
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                547,
+                552,
+                559,
+                583,
+                598,
+                607,
+                609,
+                622,
+                628,
+                457,
+                540,
+                293
+              ]
             },
             {
               "status_id": 3,
-              "students_id": []
+              "students_id": [
+                550,
+                580,
+                630,
+                532
+              ]
             },
             {
               "status_id": 4,
-              "students_id": []
+              "students_id": [
+                556,
+                561,
+                564,
+                567,
+                571,
+                576,
+                586,
+                588,
+                591,
+                601,
+                604,
+                615,
+                619,
+                624,
+                453,
+                468,
+                526
+              ]
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                543,
+                574,
+                594,
+                613,
+                465,
+                513
+              ]
             }
           ]
         },
@@ -854,146 +780,114 @@
           "series": 2,
           "students": [
             {
-              "studentHistoric_id": 2301,
-              "student_id": 580,
-              "name": "Tommy Alan Moss",
-              "enrollment": "3OWIDGQR3DAT6VYUZEC0NAVO5K"
+              "studentHistoric_id": 927,
+              "student_id": 489,
+              "name": "Caroline Mathilda Armstrong",
+              "enrollment": "EEW3O0WDHTOHQ7MSS8F86NNYGT"
             },
             {
-              "studentHistoric_id": 2303,
-              "student_id": 626,
-              "name": "Ralph Dominic Lloyd",
-              "enrollment": "P99EDLMHM5JBIJS1W7NA5WHOYF"
+              "studentHistoric_id": 928,
+              "student_id": 496,
+              "name": "Adrian Victor Cox",
+              "enrollment": "E50KYPLB5LSMTOLJF42MYV033R"
             },
             {
-              "studentHistoric_id": 2306,
-              "student_id": 519,
-              "name": "Eula Bertha Ryan",
-              "enrollment": "66R664MCMGJ38TH3PMADQAG4IN"
+              "studentHistoric_id": 929,
+              "student_id": 417,
+              "name": "Frederick Ray Palmer",
+              "enrollment": "HPFNXK1RDQF8O4QKKN623HLNJU"
             },
             {
-              "studentHistoric_id": 2309,
-              "student_id": 680,
-              "name": "Cornelia Elizabeth Yates",
-              "enrollment": "LBQ1SOVAQIRQKVNFQ39RRTZGF4"
+              "studentHistoric_id": 930,
+              "student_id": 511,
+              "name": "Herbert Alexander Santiago",
+              "enrollment": "RKZWWWTT78UEXBNJO4D88SWWP4"
             },
             {
-              "studentHistoric_id": 2312,
-              "student_id": 682,
-              "name": "Matthew Lewis Morrison",
-              "enrollment": "FMH4NCKHLLZJDL36EYPNMYPB37"
+              "studentHistoric_id": 931,
+              "student_id": 383,
+              "name": "Hunter Albert Berry",
+              "enrollment": "4JC6V4OG3LOA8R2JOBKNUM3XQK"
             },
             {
-              "studentHistoric_id": 2315,
-              "student_id": 684,
-              "name": "Fred Bobby Blair",
-              "enrollment": "97Z7U6DKHQ5LLZSGVIQ20CXNRO"
+              "studentHistoric_id": 932,
+              "student_id": 462,
+              "name": "Olga Francis Klein",
+              "enrollment": "VJG455F4YU6I64HACBT6JP43NL"
             },
             {
-              "studentHistoric_id": 2318,
-              "student_id": 688,
-              "name": "Katie Lillian Gibbs",
-              "enrollment": "C4STO8O7GH9O65ZYJELAESRH6S"
+              "studentHistoric_id": 933,
+              "student_id": 502,
+              "name": "Vernon Derek Walsh",
+              "enrollment": "84EDHL2O4TUXWOYB70NSW6NK8V"
             },
             {
-              "studentHistoric_id": 2321,
-              "student_id": 690,
-              "name": "Mike Eugene Garner",
-              "enrollment": "7WB86V2I2VOXYJ6E5JBFT855MN"
+              "studentHistoric_id": 934,
+              "student_id": 535,
+              "name": "Iva Sophie Powers",
+              "enrollment": "C6KN6VV4333DR3TQ6ZTCLZQHCJ"
             },
             {
-              "studentHistoric_id": 2324,
-              "student_id": 701,
-              "name": "Barry Brent Swanson",
-              "enrollment": "S9B5GXW5EXHD0VVTQMD7GO8BHS"
+              "studentHistoric_id": 935,
+              "student_id": 538,
+              "name": "Belle Minnie Maldonado",
+              "enrollment": "9PK6HMGIIO1K2JPXHA5GUFL0X6"
             },
             {
-              "studentHistoric_id": 2327,
-              "student_id": 705,
-              "name": "Winnie Daisy Ray",
-              "enrollment": "3UVSIL15EGXP3FWQXTLK3NIMSH"
+              "studentHistoric_id": 936,
+              "student_id": 483,
+              "name": "Pauline Harriett Gonzalez",
+              "enrollment": "M0PTXMJBAGZJ1O1G0SPIGNGJLU"
             },
             {
-              "studentHistoric_id": 2330,
-              "student_id": 709,
-              "name": "Minnie Lena Murray",
-              "enrollment": "F686GMTV836COZVUDIO7ZGJH1I"
+              "studentHistoric_id": 937,
+              "student_id": 516,
+              "name": "Wayne Seth Young",
+              "enrollment": "CADMO4Z333LA02MUT9NTC86JTN"
             },
             {
-              "studentHistoric_id": 2333,
-              "student_id": 711,
-              "name": "Mathilda Amanda Palmer",
-              "enrollment": "MRWPVSPMZA7KBC032C0NBW5TO8"
-            },
-            {
-              "studentHistoric_id": 2336,
-              "student_id": 713,
-              "name": "Jessie Helena Kelly",
-              "enrollment": "0JFIJKPMA8C0H5KLXX19TK5CZJ"
-            },
-            {
-              "studentHistoric_id": 2339,
-              "student_id": 714,
-              "name": "Inez Carrie Webster",
-              "enrollment": "7FP2CZ9LF4FX2T0BRPLELSL3QB"
-            },
-            {
-              "studentHistoric_id": 2345,
-              "student_id": 543,
-              "name": "John Jeffrey Barnett",
-              "enrollment": "NKLFY2KHBVRNFMHAZVCFY816W7"
-            },
-            {
-              "studentHistoric_id": 2351,
-              "student_id": 609,
-              "name": "Amy Genevieve Lindsey",
-              "enrollment": "YGWWHB8S5VC97LO4NWCIPGOGDC"
-            },
-            {
-              "studentHistoric_id": 2357,
-              "student_id": 523,
-              "name": "Shane Donald Roberts",
-              "enrollment": "0VZWIYPR6BT7IH7WXD27FY7E7T"
+              "studentHistoric_id": 938,
+              "student_id": 242,
+              "name": "Ray Jerome Byrd",
+              "enrollment": "SBQ2CY8DD5ZJA4IKXTFGUILJDL"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                580,
-                626,
-                519,
-                680,
-                682,
-                684,
-                688,
-                690,
-                701,
-                705,
-                709,
-                711,
-                713,
-                714,
-                543,
-                609,
-                523
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                489,
+                496,
+                417
+              ]
             },
             {
               "status_id": 3,
-              "students_id": []
+              "students_id": [
+                511,
+                383
+              ]
             },
             {
               "status_id": 4,
-              "students_id": []
+              "students_id": [
+                462,
+                502,
+                535,
+                538
+              ]
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                483,
+                516,
+                242
+              ]
             }
           ]
         },
@@ -1001,34 +895,93 @@
           "series": 3,
           "students": [
             {
-              "studentHistoric_id": 2413,
-              "student_id": 197,
-              "name": "Christine Sylvia Freeman",
-              "enrollment": "P8CJ7YM84H5I59QRDDP1MMSKD1"
+              "studentHistoric_id": 879,
+              "student_id": 404,
+              "name": "Ruby Ophelia Ellis",
+              "enrollment": "ZR1EK0RA0MH1HKMEUNUOF4HS3A"
+            },
+            {
+              "studentHistoric_id": 880,
+              "student_id": 422,
+              "name": "Jessie Johanna Brooks",
+              "enrollment": "T3UOJJC9H5VKVP1CVPB6DZRE7N"
+            },
+            {
+              "studentHistoric_id": 881,
+              "student_id": 356,
+              "name": "Edna Hilda Ramsey",
+              "enrollment": "DC7BTP3B548VVWT8709XCA2PZ0"
+            },
+            {
+              "studentHistoric_id": 882,
+              "student_id": 347,
+              "name": "Barry Lester McCoy",
+              "enrollment": "U7F70NVNXM92CZFT6L5OAM9J46"
+            },
+            {
+              "studentHistoric_id": 883,
+              "student_id": 118,
+              "name": "Ola Adelaide Graham",
+              "enrollment": "JY93YZE0MHYA9VAJYNASGVLCC7"
+            },
+            {
+              "studentHistoric_id": 884,
+              "student_id": 338,
+              "name": "Ada Rosalie Hughes",
+              "enrollment": "0Y273OAUA32TVL7PHCO197Q09Q"
+            },
+            {
+              "studentHistoric_id": 885,
+              "student_id": 359,
+              "name": "Nancy Olga Carroll",
+              "enrollment": "JXMS9KSZY9JXMX0E6KV720RURI"
+            },
+            {
+              "studentHistoric_id": 886,
+              "student_id": 131,
+              "name": "Jose Danny Cox",
+              "enrollment": "IB7YDVN468NUZRE67VJKBEAGTT"
+            },
+            {
+              "studentHistoric_id": 887,
+              "student_id": 105,
+              "name": "Logan Arthur Woods",
+              "enrollment": "QE0REPB8MS7IC7W3J173NMCKRS"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                197
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                404,
+                422,
+                356
+              ]
             },
             {
               "status_id": 3,
-              "students_id": []
+              "students_id": [
+                347,
+                118
+              ]
             },
             {
               "status_id": 4,
-              "students_id": []
+              "students_id": [
+                338,
+                359,
+                131
+              ]
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                105
+              ]
             }
           ]
         }
@@ -1036,299 +989,323 @@
       "nextClassStudents": []
     },
     {
-      "course_id": 3,
+      "course_id": 2,
       "currentClassStatus": [
         {
           "series": 1,
           "students": [
             {
-              "studentHistoric_id": 2186,
-              "student_id": 566,
-              "name": "Cynthia Lillie Williams",
-              "enrollment": "VOTK5MTWC378QUKROAIM8GTO9T"
+              "studentHistoric_id": 604,
+              "student_id": 553,
+              "name": "Beatrice Mildred Hicks",
+              "enrollment": "MBYRQ65K4HQ34K07A88NDDFR74"
             },
             {
-              "studentHistoric_id": 2191,
-              "student_id": 593,
-              "name": "Clayton Dennis Ingram",
-              "enrollment": "TI77ECX459XVWGXAT55LVRX4FD"
+              "studentHistoric_id": 605,
+              "student_id": 558,
+              "name": "Annie Mollie Shelton",
+              "enrollment": "6YKA88OULILJBPWR2FZK1P6DIQ"
             },
             {
-              "studentHistoric_id": 2197,
-              "student_id": 608,
-              "name": "Olive Olive Bass",
-              "enrollment": "5ZJIKVQKHESV0ASGLL9TYAW3EU"
+              "studentHistoric_id": 606,
+              "student_id": 568,
+              "name": "Clarence Carlos Munoz",
+              "enrollment": "UCQ0MJ6GA7ZITEH8ZYWH3TS4MQ"
             },
             {
-              "studentHistoric_id": 2203,
-              "student_id": 643,
-              "name": "Samuel Richard Spencer",
-              "enrollment": "6LFJC5OR3EDRN0MH9AO7N3KUP7"
+              "studentHistoric_id": 607,
+              "student_id": 570,
+              "name": "Edgar Bruce Willis",
+              "enrollment": "8H965EB712C6F1OUAYGKEQ07A1"
             },
             {
-              "studentHistoric_id": 2209,
-              "student_id": 645,
-              "name": "Vernon Dean Cunningham",
-              "enrollment": "1DIUAHM4A5Y83OAWGOGNDTMLWW"
+              "studentHistoric_id": 608,
+              "student_id": 577,
+              "name": "Donald Jose Sanders",
+              "enrollment": "TFUP7MXAJ0KCS5QO7KFF6HAVIF"
             },
             {
-              "studentHistoric_id": 2215,
-              "student_id": 648,
-              "name": "Amanda Marion Marsh",
-              "enrollment": "7XN2MEP2V8Y35PN75QRXDMJN7Y"
+              "studentHistoric_id": 609,
+              "student_id": 582,
+              "name": "Jesus Alejandro Spencer",
+              "enrollment": "NVH9I7XGU6Q40M9WCKP82IZEXI"
             },
             {
-              "studentHistoric_id": 2221,
-              "student_id": 653,
-              "name": "Etta Elnora Baldwin",
-              "enrollment": "6P5XS8J93VA3BI5245KAX5DCKN"
+              "studentHistoric_id": 610,
+              "student_id": 589,
+              "name": "Shane Manuel Hernandez",
+              "enrollment": "GSYBXA0KSZV2XEDLNH3YHDLUPQ"
             },
             {
-              "studentHistoric_id": 2227,
-              "student_id": 657,
-              "name": "Abbie Lura Alexander",
-              "enrollment": "PPO5URLCX3IWPAFNJ1O3M5J09U"
+              "studentHistoric_id": 611,
+              "student_id": 616,
+              "name": "Brandon Jay Walton",
+              "enrollment": "FV56XFAGPBHH3D7BT1DLBXNU9G"
             },
             {
-              "studentHistoric_id": 2475,
-              "student_id": 721,
-              "name": "Lena Effie Howard",
-              "enrollment": "I6L73WF0EZI9EUJ5QRJTHJUCC8"
+              "studentHistoric_id": 612,
+              "student_id": 627,
+              "name": "Viola Nannie Sutton",
+              "enrollment": "OHQEN4WIRNR9ZAT3N64Y3YFSIJ"
             },
             {
-              "studentHistoric_id": 2481,
-              "student_id": 722,
-              "name": "Elizabeth Ophelia Logan",
-              "enrollment": "HX88S0C1I68B9MJEDSTHJAUXTJ"
+              "studentHistoric_id": 613,
+              "student_id": 463,
+              "name": "Hallie Winifred Carter",
+              "enrollment": "40M6NXXOWGM876IAN2VKIH2I53"
             },
             {
-              "studentHistoric_id": 2482,
-              "student_id": 723,
-              "name": "Madge Helena Colon",
-              "enrollment": "8ZP2ETDFMAJAIZU7FJ4TMYQQZ0"
+              "studentHistoric_id": 614,
+              "student_id": 534,
+              "name": "Jennie Leah Davis",
+              "enrollment": "2VHP9PFLB2A0P7TNIEFKG4X7VD"
             },
             {
-              "studentHistoric_id": 2484,
-              "student_id": 724,
-              "name": "Hannah Teresa Long",
-              "enrollment": "7UNOFZKXULX4FJDX5FBAOZUKYQ"
+              "studentHistoric_id": 615,
+              "student_id": 400,
+              "name": "Lottie Mildred Ball",
+              "enrollment": "AKWS3CJ68H8VX0HCYNNJA5R830"
             },
             {
-              "studentHistoric_id": 2486,
-              "student_id": 725,
-              "name": "Ora Mable Moore",
-              "enrollment": "7RBB56A33VE1S4YEUE2K9LIQ1V"
+              "studentHistoric_id": 616,
+              "student_id": 435,
+              "name": "Iva Nora Rogers",
+              "enrollment": "QLBDF0T3M62QGKK7MD5EYGB08P"
             },
             {
-              "studentHistoric_id": 2488,
-              "student_id": 726,
-              "name": "Celia Pearl Higgins",
-              "enrollment": "HUXHWAGBGP75LMWP24V2PGIZUA"
+              "studentHistoric_id": 617,
+              "student_id": 546,
+              "name": "Adam Derek Bryan",
+              "enrollment": "CML4QZJP17PD3FR52096QQTUSS"
             },
             {
-              "studentHistoric_id": 2490,
-              "student_id": 727,
-              "name": "Agnes Susan Spencer",
-              "enrollment": "SB2QXGFCMJWYY82KDL5HYYOYBU"
+              "studentHistoric_id": 618,
+              "student_id": 549,
+              "name": "Sadie Harriet Maldonado",
+              "enrollment": "AP22AGW1HSEEOT43KEP3EWKXSM"
             },
             {
-              "studentHistoric_id": 2491,
-              "student_id": 728,
-              "name": "Estella Ada Montgomery",
-              "enrollment": "0BXVAPK9218MB7OTSFPYHAOAVJ"
+              "studentHistoric_id": 619,
+              "student_id": 579,
+              "name": "Devin Willie Grant",
+              "enrollment": "MISZSBJD3619GSRVMHIPRN1RVO"
             },
             {
-              "studentHistoric_id": 2493,
-              "student_id": 729,
-              "name": "Della Helen Carson",
-              "enrollment": "CZF2PS5EWLLXSCNKTJW7YP0DQ5"
+              "studentHistoric_id": 620,
+              "student_id": 585,
+              "name": "Willie Virginia Bush",
+              "enrollment": "W6VIZW3XYBUABOA8IWH8TB5PI1"
             },
             {
-              "studentHistoric_id": 2495,
-              "student_id": 730,
-              "name": "Kevin Charlie Collier",
-              "enrollment": "63B01LFS0EC2VT2WRCF7NXHP5W"
+              "studentHistoric_id": 621,
+              "student_id": 603,
+              "name": "Jesse Joshua Hansen",
+              "enrollment": "F9DOT95Z09UP6UI55VI8KNLMWH"
             },
             {
-              "studentHistoric_id": 2497,
-              "student_id": 731,
-              "name": "Ina Georgie Miller",
-              "enrollment": "1PK62UGDMYR3G4636TISXIFAQA"
+              "studentHistoric_id": 622,
+              "student_id": 612,
+              "name": "Sue Carrie Ruiz",
+              "enrollment": "8N4LZ2ME9P0EHOIA9PFCDLSWYL"
             },
             {
-              "studentHistoric_id": 2499,
-              "student_id": 732,
-              "name": "Stephen Patrick Young",
-              "enrollment": "9X3MWM03SVFK7GP48JT308WNWI"
+              "studentHistoric_id": 623,
+              "student_id": 621,
+              "name": "Theresa Myrtle Stone",
+              "enrollment": "VTK799EWWCQSCKFJQ1Y5WX1QFR"
             },
             {
-              "studentHistoric_id": 2501,
-              "student_id": 733,
-              "name": "Luis Mitchell Wright",
-              "enrollment": "BYQ7X7YPJC6WFDJWK7NAKHEJ63"
+              "studentHistoric_id": 624,
+              "student_id": 625,
+              "name": "Jesse Elijah Lucas",
+              "enrollment": "PIQCMWA51409IQ1XALJPB1QH7P"
             },
             {
-              "studentHistoric_id": 2503,
-              "student_id": 734,
-              "name": "Edgar Craig Simpson",
-              "enrollment": "1IPS1GE712ZO9Y96K9Q9T43GFD"
+              "studentHistoric_id": 625,
+              "student_id": 486,
+              "name": "Emma Hallie Reeves",
+              "enrollment": "9GJ9UIU777NENEFX7TPP8ANII8"
             },
             {
-              "studentHistoric_id": 2506,
-              "student_id": 735,
-              "name": "Ryan Phillip Soto",
-              "enrollment": "2KJU8NR8MNCHCQ2AX4GKSQH98I"
+              "studentHistoric_id": 626,
+              "student_id": 555,
+              "name": "Virgie Sophie Vega",
+              "enrollment": "4Q8J3TZ7PSXUJ7BOH9APAVA9AW"
             },
             {
-              "studentHistoric_id": 2508,
-              "student_id": 736,
-              "name": "Jeanette Lou Bryant",
-              "enrollment": "Y0EHDRY4MQBY0P7H23829ITGKH"
+              "studentHistoric_id": 627,
+              "student_id": 565,
+              "name": "Jay Curtis McCarthy",
+              "enrollment": "O1B248U30NOSRCZD8AF5VRTP4N"
             },
             {
-              "studentHistoric_id": 2511,
-              "student_id": 737,
-              "name": "Mark Howard Alvarado",
-              "enrollment": "9MQMB0DN4IOTWIIMQ6KJVURPRO"
+              "studentHistoric_id": 628,
+              "student_id": 573,
+              "name": "Katie Grace Morrison",
+              "enrollment": "ZUD445PMP5O8KZPEGPBFMSFRQZ"
             },
             {
-              "studentHistoric_id": 2514,
-              "student_id": 738,
-              "name": "Antonio Mike Hines",
-              "enrollment": "QO39ZIT2B61V35DJVKNMRHL9E8"
+              "studentHistoric_id": 629,
+              "student_id": 610,
+              "name": "Estelle Inez Carroll",
+              "enrollment": "FAK5TGR9I66ZCMKT619TE9058Q"
             },
             {
-              "studentHistoric_id": 2518,
-              "student_id": 739,
-              "name": "Owen Frank Russell",
-              "enrollment": "HL3KNNM11VXKO6TA4P040GY6WE"
+              "studentHistoric_id": 630,
+              "student_id": 618,
+              "name": "Ola Lela Swanson",
+              "enrollment": "VZUMIPAQ5NJYN2K7ZHNFHQP47U"
             },
             {
-              "studentHistoric_id": 2521,
-              "student_id": 740,
-              "name": "Keith Ryan Curry",
-              "enrollment": "0JE2CG2FU4PVVOSD74MWOW0VON"
+              "studentHistoric_id": 631,
+              "student_id": 629,
+              "name": "Elnora Lida Underwood",
+              "enrollment": "007MT82IDRIC736T4TTM54ZUQU"
             },
             {
-              "studentHistoric_id": 2523,
-              "student_id": 741,
-              "name": "Estelle Frances Alvarado",
-              "enrollment": "P9IYRWJ5SLCYZSDRE1C8P1RVGS"
+              "studentHistoric_id": 632,
+              "student_id": 469,
+              "name": "Cecelia Nelle Carroll",
+              "enrollment": "IZSLL7Q5U1MVS2XQMW08A0TS8R"
             },
             {
-              "studentHistoric_id": 2526,
-              "student_id": 742,
-              "name": "Sue Betty Rose",
-              "enrollment": "XBBIARYTEPN1EU6EV1G4YX275U"
+              "studentHistoric_id": 633,
+              "student_id": 484,
+              "name": "Patrick Francisco Stephens",
+              "enrollment": "B0IODVGQ5LN25QGNXKONRNNO7C"
             },
             {
-              "studentHistoric_id": 2529,
-              "student_id": 743,
-              "name": "Gordon Jesus Jenkins",
-              "enrollment": "C4L8MFER4O4ZG4LYQGRHLI3EAQ"
+              "studentHistoric_id": 634,
+              "student_id": 514,
+              "name": "Ina Henrietta Vega",
+              "enrollment": "NB1BC94FLCN3Z59Z6GHL391HUK"
             },
             {
-              "studentHistoric_id": 2532,
-              "student_id": 744,
-              "name": "Leon Norman Maxwell",
-              "enrollment": "9WT7BGZTDJO791QVJP6NJ6OB0G"
+              "studentHistoric_id": 635,
+              "student_id": 544,
+              "name": "Susie Gussie Lindsey",
+              "enrollment": "MYZS76OS396N69IN7WY2Q64P7O"
             },
             {
-              "studentHistoric_id": 2535,
-              "student_id": 745,
-              "name": "Gussie Hulda Walton",
-              "enrollment": "FHUHQP76VNQ8Q3VREZX5FN9NWJ"
+              "studentHistoric_id": 636,
+              "student_id": 562,
+              "name": "Lloyd Brett Carter",
+              "enrollment": "CDTE82LP90DLNH1LYOC74VC0B1"
             },
             {
-              "studentHistoric_id": 2538,
-              "student_id": 746,
-              "name": "Henrietta Martha Moody",
-              "enrollment": "NGKPJHAJ99PAVP9GUWL83FT78S"
+              "studentHistoric_id": 637,
+              "student_id": 592,
+              "name": "Daisy Isabella Morton",
+              "enrollment": "SMNI10176KQKOCR3UN8DVSJG0C"
             },
             {
-              "studentHistoric_id": 2541,
-              "student_id": 747,
-              "name": "Cole Francis Robinson",
-              "enrollment": "XJZSA79M74UOHJY1Y8SPU0A3KK"
+              "studentHistoric_id": 638,
+              "student_id": 595,
+              "name": "Christina Annie Rogers",
+              "enrollment": "Y0V3P1REDMUNO4BRHDH79CTKH0"
             },
             {
-              "studentHistoric_id": 2544,
-              "student_id": 748,
-              "name": "Caroline Alberta Alvarez",
-              "enrollment": "AC36EU2CE61AVZ0UUANZKUZXCM"
+              "studentHistoric_id": 639,
+              "student_id": 597,
+              "name": "Helen Nell Stone",
+              "enrollment": "AMGURO10B4LQ9IE7BLP3T0D5K1"
             },
             {
-              "studentHistoric_id": 2547,
-              "student_id": 749,
-              "name": "Lina Pauline Lucas",
-              "enrollment": "MR4XMKIA9EFFNW6N5DTEK0POEV"
+              "studentHistoric_id": 640,
+              "student_id": 600,
+              "name": "Trevor Andre Robbins",
+              "enrollment": "BH851I4K1YFHHFWIRRFW3KDM8B"
             },
             {
-              "studentHistoric_id": 2550,
-              "student_id": 750,
-              "name": "Shawn Bryan Wade",
-              "enrollment": "2N4NMQUPQ89PIWITSMUQ0JKTSK"
+              "studentHistoric_id": 641,
+              "student_id": 606,
+              "name": "Louisa Myrtle Chapman",
+              "enrollment": "A2V49GT3GXSIM1KVATNKTMQ3FA"
+            },
+            {
+              "studentHistoric_id": 642,
+              "student_id": 510,
+              "name": "Gordon Gavin Haynes",
+              "enrollment": "7FD1HRUOXHUOQ285XA2R97YBKL"
+            },
+            {
+              "studentHistoric_id": 643,
+              "student_id": 379,
+              "name": "Albert Harry Logan",
+              "enrollment": "V03VR0JB2DKC611YD1ULBF4C5P"
+            },
+            {
+              "studentHistoric_id": 644,
+              "student_id": 232,
+              "name": "Joe Ralph Hall",
+              "enrollment": "I61GC1DJ6INX6FNV0D5UI7O21D"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                566,
-                593,
-                608,
-                643,
-                645,
-                648,
-                653,
-                657,
-                721,
-                722,
-                723,
-                724,
-                725,
-                726,
-                727,
-                728,
-                729,
-                730,
-                731,
-                732,
-                733,
-                734,
-                735,
-                736,
-                737,
-                738,
-                739,
-                740,
-                741,
-                742,
-                743,
-                744,
-                745,
-                746,
-                747,
-                748,
-                749,
-                750
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                553,
+                558,
+                568,
+                570,
+                577,
+                582,
+                589,
+                616,
+                627,
+                463,
+                534,
+                400,
+                435
+              ]
             },
             {
               "status_id": 3,
-              "students_id": []
+              "students_id": [
+                546,
+                549,
+                579,
+                585,
+                603,
+                612,
+                621,
+                625,
+                486
+              ]
             },
             {
               "status_id": 4,
-              "students_id": []
+              "students_id": [
+                555,
+                565,
+                573,
+                610,
+                618,
+                629,
+                469,
+                484,
+                514
+              ]
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                544,
+                562,
+                592,
+                595,
+                597,
+                600,
+                606,
+                510,
+                379,
+                232
+              ]
             }
           ]
         },
@@ -1336,104 +1313,100 @@
           "series": 2,
           "students": [
             {
-              "studentHistoric_id": 2295,
-              "student_id": 578,
-              "name": "Victoria Cecilia Garcia",
-              "enrollment": "OJJKEM4ETYNETO4OREZNII5L0V"
+              "studentHistoric_id": 594,
+              "student_id": 501,
+              "name": "Bettie Lelia Byrd",
+              "enrollment": "MYHNUCMSME9C1IYQLEGFQREZWT"
             },
             {
-              "studentHistoric_id": 2297,
-              "student_id": 529,
-              "name": "Jason Edward McCarthy",
-              "enrollment": "773N94RILUDVCQWQQZFQZG8965"
+              "studentHistoric_id": 595,
+              "student_id": 406,
+              "name": "Alta Winifred Meyer",
+              "enrollment": "DAUY68CSW62V0UG6C1KIHW2Y6V"
             },
             {
-              "studentHistoric_id": 2300,
-              "student_id": 400,
-              "name": "Lawrence Elijah Owen",
-              "enrollment": "IL12WJIIXCLYSR53HOS16CU2DX"
+              "studentHistoric_id": 596,
+              "student_id": 418,
+              "name": "Ivan Anthony Wood",
+              "enrollment": "V8PRXRMM9R85X75NASKDK1380O"
             },
             {
-              "studentHistoric_id": 2304,
-              "student_id": 636,
-              "name": "Eugenia Maria Dean",
-              "enrollment": "QBZMBM3MC89TQWI6RM0KY33WNY"
+              "studentHistoric_id": 597,
+              "student_id": 459,
+              "name": "Jessie Essie Obrien",
+              "enrollment": "3KIWQYI7JVACVF138MC8ANMLX9"
             },
             {
-              "studentHistoric_id": 2307,
-              "student_id": 638,
-              "name": "Lloyd Louis Reyes",
-              "enrollment": "1YL9M9VA47PGUSU0PBENLG5RU2"
+              "studentHistoric_id": 598,
+              "student_id": 517,
+              "name": "Jeremiah Dustin Alvarez",
+              "enrollment": "6R7VUQ4VJAY6YGZ5MECHRNOA5K"
             },
             {
-              "studentHistoric_id": 2310,
-              "student_id": 649,
-              "name": "Herbert Lawrence Wood",
-              "enrollment": "17GA7FZZQGNBPLNW56OWDHMJLD"
+              "studentHistoric_id": 599,
+              "student_id": 391,
+              "name": "Linnie Lillian Morton",
+              "enrollment": "DK5I5FYWMHF047IE00F4TBO0P6"
             },
             {
-              "studentHistoric_id": 2313,
-              "student_id": 652,
-              "name": "Mina Pearl Barker",
-              "enrollment": "7Q7WRLDEA7QVUJ38PDJFGJWG92"
+              "studentHistoric_id": 600,
+              "student_id": 499,
+              "name": "Roger Shawn Barnes",
+              "enrollment": "LNUJ9MHZYI0BB8G3737G8D853Z"
             },
             {
-              "studentHistoric_id": 2316,
-              "student_id": 654,
-              "name": "Brett Logan Waters",
-              "enrollment": "DXYBJ0CIA4T70S8TT0DAE1LADA"
+              "studentHistoric_id": 601,
+              "student_id": 456,
+              "name": "Rosa Theresa Abbott",
+              "enrollment": "73LOQJZ0L070E1FUQH3J9T36KH"
             },
             {
-              "studentHistoric_id": 2320,
-              "student_id": 656,
-              "name": "James Stanley Lambert",
-              "enrollment": "MBJZLQRXIFYNW8IC63VCXZ651M"
+              "studentHistoric_id": 602,
+              "student_id": 493,
+              "name": "Lottie Ollie Romero",
+              "enrollment": "P2GOCCQ0F4IHKUOI8C8KSZ7VXB"
             },
             {
-              "studentHistoric_id": 2326,
-              "student_id": 596,
-              "name": "Elsie Georgie Lowe",
-              "enrollment": "R598G0HRWPKJ5R2YW24G9IA2D5"
-            },
-            {
-              "studentHistoric_id": 2331,
-              "student_id": 516,
-              "name": "Catherine Marian Brock",
-              "enrollment": "DGM4Z1RGHSSP0JVSW177Q0MFFG"
+              "studentHistoric_id": 603,
+              "student_id": 429,
+              "name": "Dora Charlotte Hughes",
+              "enrollment": "UGJLP8TOWSJ35B8P8C9C0EV3PY"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                578,
-                529,
-                400,
-                636,
-                638,
-                649,
-                652,
-                654,
-                656,
-                596,
-                516
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                501,
+                406,
+                418
+              ]
             },
             {
               "status_id": 3,
-              "students_id": []
+              "students_id": [
+                459,
+                517,
+                391
+              ]
             },
             {
               "status_id": 4,
-              "students_id": []
+              "students_id": [
+                499
+              ]
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                456,
+                493,
+                429
+              ]
             }
           ]
         },
@@ -1441,69 +1414,72 @@
           "series": 3,
           "students": [
             {
-              "studentHistoric_id": 2356,
-              "student_id": 549,
-              "name": "Francis Ella McLaughlin",
-              "enrollment": "4T2JOQ196YVSISRTJGMREY2DOY"
+              "studentHistoric_id": 545,
+              "student_id": 334,
+              "name": "Wesley Gordon Brown",
+              "enrollment": "FL6FXHEPYTVFK650PCCO9J1K8A"
             },
             {
-              "studentHistoric_id": 2358,
-              "student_id": 590,
-              "name": "Ella Bertie Underwood",
-              "enrollment": "RSYMKBV0OIG07L5XDNRIOA1HDN"
+              "studentHistoric_id": 546,
+              "student_id": 358,
+              "name": "Todd Terry Black",
+              "enrollment": "GXT3CSKNIHPAD7UCL2WEGPBYR4"
             },
             {
-              "studentHistoric_id": 2361,
-              "student_id": 611,
-              "name": "Willie Thomas Sparks",
-              "enrollment": "Z33YRY9EE3LOR43RUWQB849LIL"
+              "studentHistoric_id": 547,
+              "student_id": 415,
+              "name": "Rose Lucy Robinson",
+              "enrollment": "S6LA2R1WLHY4G0D11HCL59A822"
             },
             {
-              "studentHistoric_id": 2364,
-              "student_id": 466,
-              "name": "Jimmy Jared Christensen",
-              "enrollment": "ONT1PJYLCA15UG9I8RA6Q36JU6"
+              "studentHistoric_id": 548,
+              "student_id": 427,
+              "name": "Jon Juan Moran",
+              "enrollment": "IK1GVALCSZH5282IREAA4QJX8E"
             },
             {
-              "studentHistoric_id": 2368,
-              "student_id": 468,
-              "name": "Alan Martin Patrick",
-              "enrollment": "LT2XNJWGZOEAM8Q9HTB9SH3EL3"
+              "studentHistoric_id": 549,
+              "student_id": 316,
+              "name": "Lida Rhoda Sullivan",
+              "enrollment": "5EFZ65JXBOJQAE4RY33JGM5KC2"
             },
             {
-              "studentHistoric_id": 2370,
-              "student_id": 380,
-              "name": "Ronald Bruce Padilla",
-              "enrollment": "ARXJYUKN2UUUSA4BJVRUG14D0T"
+              "studentHistoric_id": 550,
+              "student_id": 310,
+              "name": "Jeremy Joshua Mendez",
+              "enrollment": "RC59QDX9KDTIQ3I202LMR54DW0"
             }
           ],
           "statusStudents": [
             {
               "status_id": 1,
-              "students_id": [
-                549,
-                590,
-                611,
-                466,
-                468,
-                380
-              ]
+              "students_id": []
             },
             {
               "status_id": 2,
-              "students_id": []
+              "students_id": [
+                334,
+                358
+              ]
             },
             {
               "status_id": 3,
-              "students_id": []
+              "students_id": [
+                415,
+                427
+              ]
             },
             {
               "status_id": 4,
-              "students_id": []
+              "students_id": [
+                316
+              ]
             },
             {
               "status_id": 5,
-              "students_id": []
+              "students_id": [
+                310
+              ]
             }
           ]
         }

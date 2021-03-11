@@ -1,6 +1,8 @@
 /*
 
-data[
+objeto de povoamento inicial -> organiza as classes pelo ano que entraram
+
+data[ //array de cursos
   {
     course_id: 1,
     students: [*todos estudantes do curso, em todos os anos],
@@ -8,19 +10,20 @@ data[
       *ex: 2018-2020 = [{2018}, {2019}, {2020}]
       {
         year: 2018,
-        *apenas 1°, exceção quando k==i - firstYear == year (nesse caso 2018)
+        *apenas 1°, exceção quando firstYear == year (nesse caso 2018), series: [{1, 2, 3...}]
         series: [
           {
             series: 1,
             statusStudents: [
-              statusYear --> year - (year + duracao - serie) ou year - yearEnd
+              //statusYear --> year - (year + duracao - serie) ou year - yearEnd
               {
                 statusYear: 2018,
                 status: [
-                  array de matrícula aprovados, reprovados, jubilados...
+                  //array de matrícula aprovados, reprovados, jubilados...
                   {
                     status_id: 1,
-                    enrollments: []
+                    enrollments: ["201815TII0335"] // array que relaciona a matrícula dos estudantes com
+                                                   //o id de seus respectivos status no ano
                   }
                 ]
               }
@@ -31,5 +34,34 @@ data[
     ]
   }
 ]
+
+____________________________________________________________________________________________________________
+
+objeto de virada de ano
+
+{
+  year: "2022" //ano que se encerra; sempre considera o último que possui registro, caso não haja nenhum registro
+               //considera o ano atual
+  data[
+    //array de todos cursos do sistema
+    {
+      course_id: 1,
+
+      currentClassStatus: [{ // array de séries do curso
+
+        series: 1
+        students: [], // array de estudantes da série
+        statusStudents: [{ // array que relaciona o id dos estudantes com o id de seus respectivos status no ano
+          status_id: 1,
+          students_id: [211, 223, 224]
+        }]
+      }],
+
+      nextClassStudents: [] // array vazio, será preenchido pelo frontend; são os alunos que vão
+                            //entrar na primeira série do curso, com o status de cursando
+    }
+
+  ]
+}
 
 */
