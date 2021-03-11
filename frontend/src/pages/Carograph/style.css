@@ -1,0 +1,223 @@
+/* CAROGRAPH */
+.carograph-page {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.carograph-page .side-menu {
+  min-width: 25vw;
+  max-width: 25vw;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: linear-gradient(-0deg, #426cf5, rgb(173, 192, 246));
+  background-position: center;
+  transition: margin .25s ease-out;
+  box-shadow: 0 0px 5px 3px #426cf5;
+  z-index: 2;
+}
+
+.carograph-page .without-content {
+  width: 75%;
+  align-self: center;
+}
+
+.carograph-page .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.carograph-page .profile-img {
+  width: 50%;
+  overflow: hidden;
+}
+
+.carograph-page .profile-img img {
+  width: 100%;
+}
+
+.carograph-page .profile-name {
+  color: black;
+  margin: 10% 0 0 0;
+  font-size: 20px;
+}
+
+.carograph-page .profile-enrollment {
+  color: black;
+  margin: 5% 0 10% 0;
+  font-size: 14px;
+}
+
+.carograph-page .options-menu {
+  flex-grow: 1;
+}
+
+.carograph-page .divider {
+  border: 1px solid black;
+}
+
+.carograph-page .options-btn {
+  width: 100%;
+  display: flex;
+  background-color: #426cf5c2;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px;
+  margin: 5% 0 0 0;
+}
+
+.carograph-page .options-btn:hover {
+  background-color: #426cf5;
+  color: #fff;
+  text-decoration: none;
+}
+
+.carograph-page .options-btn-label {
+  color: #fff;
+  text-decoration: none;
+}
+
+.carograph-page .options-btn:hover .options-btn-label {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.carograph-page .campus-name a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.carograph-page .campus-name a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.carograph-page .page-content {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  border: 0;
+}
+
+.carograph-page .select-bar {
+  background-color: rgb(173, 192, 246);
+  box-shadow: 0 4px 5px -2px #426cf5;
+  padding: 12px 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.carograph-page .menu-button {
+  margin-right: 16px;
+}
+
+.carograph-page .select-filter {
+  display: flex;
+  flex-grow: 1;
+}
+
+.carograph-page .select-filter form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carograph-page .select-item {
+  width: 25%;
+  padding-right: 6px;
+}
+
+.carograph-page .select-item select {
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.carograph-page .pedagogue-img {
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border: 1px solid #426cf5;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.carograph-page .carograph {
+  width: 100%;
+  padding: 12px;
+}
+
+.carograph-page .students-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+
+.carograph-page .student {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 270px;
+  margin: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #426cf5 !important;
+}
+
+.carograph-page .student img {
+  width: 100%;
+}
+
+.carograph-page .student-name {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 0 !important;
+}
+
+.carograph-page .student-name p {
+  width: 100%;
+  height: 36px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  color: black;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.carograph-page .student-status {
+  width: 100%;
+}
+
+.carograph-page .student-status p {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+@media (max-width: 1060px) {
+  .carograph-page .select-item {
+    width: 100%;
+    margin-bottom: 12px !important;
+  }
+}
