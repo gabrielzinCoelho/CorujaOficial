@@ -23,7 +23,6 @@ export default class Carograph extends Component {
 
     students: [],
     studentSelectedId: null,
-    studentSelectedStatus: null,
 
     //gambiarra
     minYear: 2018,
@@ -94,14 +93,7 @@ export default class Carograph extends Component {
           {this.state.studentSelectedId ? (
             <>
               <div className="profile">
-                <div className="profile-img" style={{
-                  border: this.state.studentSelectedStatus === 0 ?
-                    "1px solid green" :
-                    (this.state.studentSelectedStatus === 5 ?
-                      "1px solid green" :
-                      "1px solid red"
-                    )
-                }}>
+                <div className="profile-img">
                   <Image src={require('../../assets/yuri.jpg')} />
                 </div>
                 {
@@ -120,35 +112,14 @@ export default class Carograph extends Component {
                 }
               </div>
               <div className="options-menu">
-                <hr className="divider rounded" style={{
-                  border: this.state.studentSelectedStatus === 0 ?
-                    "1px solid green" :
-                    (this.state.studentSelectedStatus === 5 ?
-                      "1px solid green" :
-                      "1px solid red"
-                    )
-                }} />
+                <hr className="divider rounded"/>
                 <Link to={`/studentProfile/${this.state.studentSelectedId}`}>
-                  <div className="options-btn" style={{
-                    borderLeft: this.state.studentSelectedStatus === 0 ?
-                      "3px solid green" :
-                      (this.state.studentSelectedStatus === 5 ?
-                        "3px solid green" :
-                        "3px solid red"
-                      )
-                  }}>
+                  <div className="options-btn">
                     <span className="options-btn-label">Visualizar Perfil</span>
                   </div>
                 </Link>
                 <a href="attendance.html">
-                  <div className="options-btn" style={{
-                    borderLeft: this.state.studentSelectedStatus === 0 ?
-                      "3px solid green" :
-                      (this.state.studentSelectedStatus === 5 ?
-                        "3px solid green" :
-                        "3px solid red"
-                      )
-                  }}>
+                  <div className="options-btn">
                     <span className="options-btn-label">Fazer Atendimento</span>
                   </div>
                 </a>
@@ -325,7 +296,6 @@ export default class Carograph extends Component {
                   <Card className="student" id={student.student_id} onClick={() => {
                     this.setState({
                       studentSelectedId: student.student_id,
-                      studentSelectedStatus: student.status_id,
                       menuOpen: true,
                     })
                   }}>

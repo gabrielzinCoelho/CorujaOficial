@@ -36,6 +36,7 @@
 
 .carograph-page .profile-img {
   width: 50%;
+  border: 1px solid black;
   overflow: hidden;
 }
 
@@ -46,13 +47,13 @@
 .carograph-page .profile-name {
   color: black;
   margin: 10% 0 0 0;
-  font-size: 20px;
+  font-size: 1.75em;
 }
 
 .carograph-page .profile-enrollment {
   color: black;
   margin: 5% 0 10% 0;
-  font-size: 14px;
+  font-size: 1.2em;
 }
 
 .carograph-page .options-menu {
@@ -66,7 +67,8 @@
 .carograph-page .options-btn {
   width: 100%;
   display: flex;
-  background-color: #426cf5c2;
+  background-color: #426cf5;
+  border-left: 3px solid #fff;
   border-radius: 5px;
   font-weight: 500;
   text-decoration: none;
@@ -77,8 +79,8 @@
 }
 
 .carograph-page .options-btn:hover {
-  background-color: #426cf5;
-  color: #fff;
+  background-color: #fff;
+  border-left: 3px solid #426cf5;
   text-decoration: none;
 }
 
@@ -88,7 +90,7 @@
 }
 
 .carograph-page .options-btn:hover .options-btn-label {
-  color: #fff;
+  color: #426cf5;
   text-decoration: underline;
 }
 
@@ -120,6 +122,12 @@
 }
 
 .carograph-page .menu-button {
+  background-color: #fff;
+  margin-right: 16px;
+}
+
+.carograph-page .menu-button:disabled {
+  background-color: #e9ecef;
   margin-right: 16px;
 }
 
@@ -140,8 +148,10 @@
 }
 
 .carograph-page .select-item select {
-  font-size: 14px;
   flex-grow: 1;
+  font-size: 14px;
+  background-color: #fff;
+  color: black;
 }
 
 .carograph-page .pedagogue-img {
