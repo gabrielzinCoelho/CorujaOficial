@@ -14,6 +14,8 @@ const classPayload = use(resolve(__dirname, '../', 'factoryDatas', 'classesData.
 class CarographSeeder {
   async run() {
 
+    const schoolYearInit = 2018, schoolYearEnd = 2024
+
     const status = [], modality = [], courses = [], classes = []
     var previousIndexCourse = 0, previousIndexClass = 0
     //salva um array de instâncias de status criados pela factory
@@ -30,12 +32,18 @@ class CarographSeeder {
         const courseInstance = await Factory.model('App/Models/Course').make({
           name: classPayload[i].courses[j].name,
           duration: classPayload[i].courses[j].duration,
+          newYear: false
         })
         await modality[i].courses().save(courseInstance)
         courses[previousIndexCourse] = await Course.find(courseInstance.$attributes.id)
         //cria uma classe para cada série do curso
         for (let k = 0; k < classPayload[i].courses[j].duration; k++) {
-          const classInstance = await Factory.model('App/Models/Class').make({ series: k + 1 })
+          const classInstance = await Factory.model('App/Models/Class').make({
+            series: k + 1,
+            firstClassYear: schoolYearInit,
+            lastClassYear: schoolYearEnd,
+            newYear: false
+          })
           await courses[previousIndexCourse].classes().save(classInstance)
           classes[previousIndexClass] = await Class.find(classInstance.$attributes.id)
 

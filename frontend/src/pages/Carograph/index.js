@@ -24,9 +24,8 @@ export default class Carograph extends Component {
     students: [],
     studentSelectedId: null,
 
-    //gambiarra
-    minYear: 2018,
-    maxYear: 2022
+    minYear: null,
+    maxYear: null
   }
 
   async componentDidMount() {
@@ -57,6 +56,25 @@ export default class Carograph extends Component {
 
       this.setState({
         courseOptions: courses.data
+      })
+    }
+
+    if (prevState.seriesSelected !== this.state.seriesSelected && this.state.seriesSelected) {
+
+      const token = sessionStorage.getItem('token');
+
+      
+      const classInstance = await api.get(`/class/course/${this.state.courseSelectedId}/series/${this.state.seriesSelected}`, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      })
+
+      const {lastClassYear : maxYear, firstClassYear : minYear} = classInstance.data[0]
+
+      this.setState({
+        minYear,
+        maxYear
       })
     }
 

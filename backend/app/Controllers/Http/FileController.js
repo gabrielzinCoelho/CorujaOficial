@@ -2,6 +2,7 @@
 //REAFTORAÇÃO (OK)
 const crypto = require('crypto')
 const { extname, resolve } = require('path')
+const fs = require('fs')
 
 const File = use('App/Models/File')
 const Database = use('Database')
@@ -44,6 +45,40 @@ class FileController {
     }
 
   }
+
+  async index({request, response}){
+
+    const {file_id} = request.params
+
+    try{
+      const file = await File.findOrFail(file_id)
+      return file
+    }catch(error){
+      return response.status(406).json({ error: "Nenhum arquivo foi encontrado." })
+    }
+
+  }
+
+async destroy({request, response}){
+
+  //apagar imagem da pasta de uploads, remover instancia da imagem no banco,
+
+  const {file_id} = request.params
+
+  try{
+    const fileInstance = await File.findOrFail(file_id)
+    await fileInstance.delete()
+
+    fs.unlinkSync(resolve(__dirname, '..', '..', 'uploads', fileInstance.path))
+
+    return fileInstance
+
+  }catch(error){
+    return response.status(406).json({ error: "Nenhum arquivo foi encontrado." })
+  }
+
+
+}
 
 }
 

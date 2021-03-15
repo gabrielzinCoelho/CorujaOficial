@@ -16,7 +16,6 @@ class CreateStudentsSchema extends Schema {
         .references('id')
         .inTable('files')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE')
       table.integer('age')
       table.string('liveWith', 254)
       table.string('originCity', 254),

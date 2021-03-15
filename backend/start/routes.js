@@ -10,24 +10,53 @@ Route.get(
   'StudentHistoricController.show'
 ).middleware(['auth:jwt'])
 
+// virada de ano
+
 Route.get(
-  'carograph/seedCarographObject/yearStart/:yearStart/yearEnd/:yearEnd',
-  'StudentHistoricController.seedCarographObject'
+  'newYear/class/:class_id',
+  'NewYearController.new'
 )
 
 Route.get(
-  'carograph/newYearObject',
-  'StudentHistoricController.newYearObject'
+  'newYear/status',
+  'NewYearController.newYearStatus'
 )
 
 Route.post(
-  'carograph/newYear',
-  'StudentHistoricController.newYear'
+  'newYear',
+  'NewYearController.store'
 )
 
 Route.post(
-  'carograph/seedCarograph',
-  'StudentHistoricController.seedCarograph'
+  'newYear/nextClass',
+  'NewYearController.nextClass'
+)
+
+Route.delete(
+  'newYear/class/:class_id',
+  'NewYearController.destroy'
+)
+
+// front simulator
+
+Route.get(
+  'frontSimulator/newYear',
+  'FrontSimulatorController.newYearObject'
+)
+
+Route.post(
+  'frontSimulator/newYear',
+  'FrontSimulatorController.newYear'
+)
+
+Route.get(
+  'frontSimulator/seedCarograph/yearStart/:yearStart/yearEnd/:yearEnd',
+  'FrontSimulatorController.seedCarographObject'
+)
+
+Route.post(
+  'frontSimulator/seedCarograph',
+  'FrontSimulatorController.seedCarograph'
 )
 
 // modality
@@ -42,6 +71,13 @@ Route.get(
 Route.get(
   'courses/modality/:modality_id',
   'CourseController.index'
+).middleware(['auth:jwt'])
+
+// class
+
+Route.get(
+  'class/course/:course_id/series/:series',
+  'ClassController.index'
 ).middleware(['auth:jwt'])
 
 // student
@@ -95,6 +131,16 @@ Route.post(
   'files',
   'FileController.store'
 ).middleware(['auth:jwt'])
+
+Route.get(
+  'file/:file_id',
+  'FileController.index'
+)
+
+Route.delete(
+  'file/:file_id',
+  'FileController.destroy'
+)
 
 // alteração rota .get('carograph/seedCarographObject/yearStart/:yearStart/yearEnd/:yearEnd')
 // funcionalidade de virada de ano

@@ -2,22 +2,62 @@ perfil do pedagogo -> 	página do pedagogo
 			rota read by id
 			adicionar campos: telefone, endereço, idade * file_id
 
-página de virada de ano -> tabela turma x status da virada de ano x add virada de ano x excluir virada de ano 
+página de virada de ano -> tabela turma x status da virada de ano x add virada de ano x excluir virada de ano (ROTA JÁ CRIADA NO BACKEND)
 
 * virada de ano separada por turma
+* status da virada: coluna na tabela de classes
 * não terá mecanismos de verificação de virada de ano (sistema considera usuário ideal)
 * critério para definir ano: ano escolar -> pedagogo controla ano escolar (avançar ano)
 
-			-> refazer backend virada de ano (adaptar para turmas e series separadas)
+			-> refazer backend virada de ano (adaptar para turmas e series separadas) (OK, JÁ REFEITO)
 
 
 			-> planilha de virada de ano
 					. currentClassStatus: dados = nome, matrícula, imagem, idade, contato, status*
 					. nextClassStudents: dados = imagem, nome, matrícula, idade, contato 
 
-*status=cursando, o restante deve ser preenchido no perfil individual
+					  	*status=cursando, o restante deve ser preenchido no perfil individual
 
-
-________________________________________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 atendimento*
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+pedagogo: ver carógrafo e fazer atendimento
+
+pedagogo-admin: + virada de ano (virada de ano por turma tem que ser referenciada)
+
+admin: gerenciar pedagogos* e ano escolar -> tela para gerenciar pedagogos e virar ano escolar
+
+
+*deletar, adicionar e dar permissão de virada de ano pedagogo
+________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+imagem pedagogo menu: dropdown = ver perfil, virada de ano, gerenciar pedagogos e virada de ano escolar
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+Dependência de rotas backend:
+
+	- add rota class/course/courseID/serie/serieId: buscar maxYear e minYear para montar select carógrafo* (OK)
+
+	*montar if frontend
+
+	
+	- update rota /carograph/course/courseId/series/seriesID/year/YearNumber: remover atributo yearEntry, adicionar path (OK)
+
+	- update rota /student/studentID: adicionar atributo path (OK) *inner join: bug se o file id estiver nulo ou o file não existir -> BUG corrigido
+
+	- add rota para deletar de imagem: files/fileId (OK)
+
+*cascade File x Student (CORRIGIDO)
+
+Dependência do frontend:
+
+	- se path vier vazio mostrar imagem padrão
+	- arrumar gambiarra maxYear e minYear do carógrafo (OK)
+
+	- adicionar input file na foto de menu do perfil do usuário: se existir imagem: apagar imagem da pasta de uploads, remover instancia da imagem no banco, mover nova imagem, 
+salvar nova instancia da imagem no banco e alterar fileID na tabela de estudante 
+
+	- colocar status cursando com a cor neutra no carógrafo: preto/cinza/azul (atualmentese encontra com a cor vermelha)

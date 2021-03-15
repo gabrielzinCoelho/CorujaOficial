@@ -16,6 +16,7 @@ class CreateCoursesSchema extends Schema {
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
       table.integer('duration').notNullable()
+      table.boolean('newYear').notNullable()
       table.timestamps()
     })
   }

@@ -17,6 +17,7 @@ class CreateClassesSchema extends Schema {
       table.integer('series').notNullable()
       table.integer('lastClassYear').notNullable()
       table.integer('firstClassYear').notNullable()
+      table.boolean('newYear').notNullable()
       table.timestamps()
     })
   }
