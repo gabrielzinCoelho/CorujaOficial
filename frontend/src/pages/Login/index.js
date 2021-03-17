@@ -89,11 +89,16 @@ export default class Login extends Component {
   handleSubmit = async (e) => {
     e.preventDefault()
 
-    let token = ""
+
     const cpf = this.state.cpf.replace(/[^\d]+/g, '')
     try {
       const { data } = await api.post('/pedagogue/login', { cpf: cpf, password: this.state.password })
-      token = data.token
+
+      for (const item in data)
+        sessionStorage.setItem(item, data[item]);
+
+      this.setState({ redirect: true })
+
     } catch (err) {
       this.setState({
         alertSettings: {
@@ -108,8 +113,6 @@ export default class Login extends Component {
       return null;
     }
 
-    sessionStorage.setItem('token', token);
-    this.setState({ redirect: true })
   }
 
   render() {
@@ -184,7 +187,7 @@ export default class Login extends Component {
           handleClose={this.handleCloseAlert}
         />
 
-        { (() => { return (this.state.redirect) ? <Redirect push to='/carograph' /> : null })()}
+        {(() => { return (this.state.redirect) ? <Redirect push to='/carograph' /> : null })()}
       </>
     )
   }

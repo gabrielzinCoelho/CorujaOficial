@@ -7,7 +7,7 @@ class PedagogueController{
 
   async store({request, response}) {
 
-    const requiredFields = ["name", "password", "cpf", "email"]
+    const requiredFields = ["name", "password", "cpf", "email", "file_id"]
 
     for (let field of requiredFields){
       if(!(field in request.body))
@@ -21,6 +21,7 @@ class PedagogueController{
     pedagogue.email = request.body.email
     pedagogue.cpf = request.body.cpf
     pedagogue.password = request.body.password
+    pedagogue.file_id = request.body.file_id
 
     await pedagogue.save()
 

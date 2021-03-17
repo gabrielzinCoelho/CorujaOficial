@@ -54,6 +54,9 @@ class CarographSeeder {
 
     }
 
+    await Database.table('school_years').insert({
+      year: schoolYearEnd
+    })
 
   }
 

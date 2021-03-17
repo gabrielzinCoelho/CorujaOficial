@@ -11,6 +11,12 @@ class PedagogueSchema extends Schema {
       table.string('email', 254).notNullable().unique()
       table.string('password', 254).notNullable()
       table.string('cpf', 254).notNullable()
+      table
+        .integer('file_id')
+        .unsigned()
+        .references('id')
+        .inTable('files')
+        .onUpdate('CASCADE')
       table.string('token', 254).unique()
       table.datetime('token_created_at', { precision: 6 })
       table.timestamps()

@@ -33,7 +33,7 @@ Route.post(
 )
 
 Route.delete(
-  'newYear/class/:class_id',
+  'newYear/:instance/:instance_id',
   'NewYearController.destroy'
 )
 
@@ -130,17 +130,17 @@ Route.post(
 Route.post(
   'files',
   'FileController.store'
-).middleware(['auth:jwt'])
+)
 
 Route.get(
   'file/:file_id',
   'FileController.index'
-)
+).middleware(['auth:jwt'])
 
 Route.delete(
   'file/:file_id',
   'FileController.destroy'
-)
+).middleware(['auth:jwt'])
 
 // alteração rota .get('carograph/seedCarographObject/yearStart/:yearStart/yearEnd/:yearEnd')
 // funcionalidade de virada de ano

@@ -63,14 +63,14 @@ export default class Carograph extends Component {
 
       const token = sessionStorage.getItem('token');
 
-      
+
       const classInstance = await api.get(`/class/course/${this.state.courseSelectedId}/series/${this.state.seriesSelected}`, {
         headers: {
           "Authorization": `Bearer ${token}`
         }
       })
 
-      const {lastClassYear : maxYear, firstClassYear : minYear} = classInstance.data[0]
+      const { lastClassYear: maxYear, firstClassYear: minYear } = classInstance.data[0]
 
       this.setState({
         minYear,
@@ -110,27 +110,29 @@ export default class Carograph extends Component {
           }}>
           {this.state.studentSelectedId ? (
             <>
-              <div className="profile">
-                <div className="profile-img">
-                  <Image src={require('../../assets/yuri.jpg')} />
-                </div>
-                {
-                  (() => {
-                    for (let i = 0; i < this.state.students.length; i++) {
-                      if (this.state.students[i].student_id == this.state.studentSelectedId) {
-                        return (
-                          <>
+
+              {
+                (() => {
+                  for (let i = 0; i < this.state.students.length; i++) {
+                    if (this.state.students[i].student_id == this.state.studentSelectedId) {
+                      return (
+                        <>
+                          <div className="profile">
+                            <div className="profile-img">
+                              <Image src={require(`../../../../backend/app/uploads/${this.state.students[i].path}`)} />
+                            </div>
                             <h2 className="profile-name">{this.state.students[i].name}</h2>
                             <h2 className="profile-enrollment">{this.state.students[i].enrollment}</h2>
-                          </>
-                        )
-                      }
+                          </div>
+                        </>
+                      )
                     }
-                  })()
-                }
-              </div>
+                  }
+                })()
+              }
+
               <div className="options-menu">
-                <hr className="divider rounded"/>
+                <hr className="divider rounded" />
                 <Link to={`/studentProfile/${this.state.studentSelectedId}`}>
                   <div className="options-btn">
                     <span className="options-btn-label">Visualizar Perfil</span>
@@ -145,10 +147,10 @@ export default class Carograph extends Component {
               <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
             </>
           ) : (
-            <>
-              <Image className="without-content" src={require('../../assets/logo.png')} />
-            </>
-          )}
+              <>
+                <Image className="without-content" src={require('../../assets/logo.png')} />
+              </>
+            )}
         </div>
 
         <div className="page-content">
@@ -304,7 +306,7 @@ export default class Carograph extends Component {
                 </Form.Group>
               </Form>
             </div>
-            <img className="pedagogue-img" src={require('../../assets/yuri.jpg')} alt="" />
+            <img className="pedagogue-img" src={require(`../../../../backend/app/uploads/${sessionStorage.getItem('path')}`)} alt="" />
           </Navbar>
 
           <div className="carograph">
@@ -317,7 +319,7 @@ export default class Carograph extends Component {
                       menuOpen: true,
                     })
                   }}>
-                    <Card.Img variant="top" src={require('../../assets/yuri.jpg')} />
+                    <Card.Img variant="top" src={require(`../../../../backend/app/uploads/${student.path}`)} />
                     <Card.Title className="student-name"><p>{student.name}</p></Card.Title>
                     <Card.Text className="student-status" style={{
                       color: student.status_id === 0 ? "green" : (student.status_id === 5 ? "green" : "red")

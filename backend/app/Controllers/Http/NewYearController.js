@@ -30,7 +30,9 @@ class NewYearController {
     /*const yearDB = (await Database.table('student_historics').max('year as year'))[0].year
     const year = yearDB ? yearDB : Number(new Date().getFullYear())*/
 
-    const schoolYear = 2024
+    const schoolYearSearch = await Database.table('school_years').select('year').limit(1)
+    const schoolYear = schoolYearSearch[0].year
+
     const { class_id } = request.params
 
     const studentHistoric = await Database
@@ -110,7 +112,10 @@ class NewYearController {
 
     try {
 
-      const { year, class_id, students, statusStudents } = request.body
+      const { class_id, students, statusStudents } = request.body
+
+      const schoolYearSearch = await Database.table('school_years').select('year').limit(1)
+      const year = schoolYearSearch[0].year
 
       const statusInstances = await Status.all()
       const status = {}
@@ -249,7 +254,10 @@ class NewYearController {
 
     // criando a turma de calouros
 
-    const {course_id, year, students} = request.body
+    const {course_id, students} = request.body
+
+    const schoolYearSearch = await Database.table('school_years').select('year').limit(1)
+    const year = schoolYearSearch[0].year
 
     const courseInstance = await Course.find(course_id)
 
@@ -300,12 +308,37 @@ class NewYearController {
   }
 
   async destroy({ request, response }) {
-    return { success: true }
+
+    const {instance} = request.params
+
+    if(instance != "class" && instance != "course")
+      return response.status(406).json({ error: `Rota indefinida.` })
+
+    return instance == "class" ? (()=>{
+
+      // delete class newYear
+
+      const {instance_id : class_id} = request.params
+
+      return class_id
+
+    })() : (()=>{
+
+      // delete course newYear(calouros)
+
+      const {instance_id : course_id} = request.params
+
+      return course_id
+
+    })()
   }
 
   async newYearStatus({ request, response }) {
 
     let counter = false
+
+    const schoolYearSearch = await Database.table('school_years').select('year').limit(1)
+    const year = schoolYearSearch[0].year
 
     const newYearStatus = await Database
       .table('courses')
