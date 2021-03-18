@@ -7,7 +7,6 @@ import ResetPassword from './pages/ResetPassword'
 import Carograph from './pages/Carograph'
 import Old from './pages/Old'
  import StudentProfile from './pages/StudentProfile'
-// import Teste from './pages/Teste'
 
 export default class Routes extends Component {
     render() {
@@ -20,7 +19,6 @@ export default class Routes extends Component {
                     <Route path='/carograph' component={Carograph} />  
                     <Route path='/old' component={Old} />  
                     <Route path='/studentProfile/:id' component={StudentProfile} />   
-                    {/* <Route path='/teste' component={Teste} />   */}
                 </Switch>
             </BrowserRouter>
         )
