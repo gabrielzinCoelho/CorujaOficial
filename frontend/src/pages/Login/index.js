@@ -104,7 +104,7 @@ export default class Login extends Component {
         alertSettings: {
           open: true,
           alertTitle: "Erro",
-          alertMessage: "Falha no Login",
+          alertMessage: "Falha no Login.",
           alertSeverity: "error"
         },
         password: ""

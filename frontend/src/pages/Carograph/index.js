@@ -100,256 +100,258 @@ export default class Carograph extends Component {
 
   render() {
     return (
-      <div className="carograph-page">
+      <>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
         <Authentication redirectWhenLogged={false} redirectUrl="/" />
 
-        <div className="side-menu"
-          style={{
-            marginLeft: this.state.studentSelectedId ? (this.state.menuOpen ? "0" : "-25vw") : "-25vw"
-          }}>
-          {this.state.studentSelectedId ? (
-            <>
-              {
-                (() => {
-                  for (let i = 0; i < this.state.students.length; i++) {
-                    if (this.state.students[i].student_id == this.state.studentSelectedId) {
-                      return (
-                        <>
-                          <div className="profile">
-                            <div className="profile-img">
-                              <Image src={require(`../../../../backend/app/uploads/${this.state.students[i].path}`)} />
+        <div className="carograph-page">
+          <div className="side-menu"
+            style={{
+              marginLeft: this.state.studentSelectedId ? (this.state.menuOpen ? "0" : "-25vw") : "-25vw"
+            }}>
+            {this.state.studentSelectedId ? (
+              <>
+                {
+                  (() => {
+                    for (let i = 0; i < this.state.students.length; i++) {
+                      if (this.state.students[i].student_id == this.state.studentSelectedId) {
+                        return (
+                          <>
+                            <div className="profile">
+                              <div className="profile-img">
+                                <Image src={require(`../../../../backend/app/uploads/${this.state.students[i].path}`)} />
+                              </div>
+                              <h2 className="profile-name">{this.state.students[i].name}</h2>
+                              <h2 className="profile-enrollment">{this.state.students[i].enrollment}</h2>
                             </div>
-                            <h2 className="profile-name">{this.state.students[i].name}</h2>
-                            <h2 className="profile-enrollment">{this.state.students[i].enrollment}</h2>
-                          </div>
-                        </>
-                      )
+                          </>
+                        )
+                      }
                     }
-                  }
-                })()
-              }
+                  })()
+                }
 
-              <div className="options-menu">
-                <hr className="divider rounded" />
-                <Link to={`/studentProfile/${this.state.studentSelectedId}`}>
-                  <div className="options-btn">
-                    <span className="options-btn-label">Visualizar Perfil</span>
-                  </div>
-                </Link>
-                <a href="attendance.html">
-                  <div className="options-btn">
-                    <span className="options-btn-label">Fazer Atendimento</span>
-                  </div>
-                </a>
-              </div>
-              <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
-            </>
-          ) : (
-            <>
-              <Image className="without-content" src={require('../../assets/logo.png')} />
-            </>
-          )}
-        </div>
+                <div className="options-menu">
+                  <hr className="divider rounded" />
+                  <Link to={`/studentProfile/${this.state.studentSelectedId}`}>
+                    <div className="options-btn">
+                      <span className="options-btn-label">Visualizar Perfil</span>
+                    </div>
+                  </Link>
+                  <a href="attendance.html">
+                    <div className="options-btn">
+                      <span className="options-btn-label">Fazer Atendimento</span>
+                    </div>
+                  </a>
+                </div>
+                <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
+              </>
+            ) : (
+              <>
+                <Image className="without-content" src={require('../../assets/logo.png')} />
+              </>
+            )}
+          </div>
 
-        <div className="page-content">
-          <Navbar className="select-bar">
-            <Button variant="light" className="menu-button"
-              disabled={this.state.studentSelectedId ? 0 : 1}
-              onClick={(e) => {
-                this.setState({
-                  menuOpen: !this.state.menuOpen,
-                })
-              }}
-            >
-              <i class="fa fa-bars"></i>
-            </Button>
-            <div className="select-filter">
-              <Form inline>
-                <Form.Group className="select-item">
-                  <Form.Control as="select" custom disabled={this.state.disabledModality}
-                    onChange={(e) => {
-                      this.setState({
-                        modalitySelectedId: e.target.value,
-                        courseSelectedId: null,
-                        disabledCourse: Number.isInteger(parseInt(e.target.value)) ? false : true,
-                        seriesSelected: null,
-                        disabledSeries: true,
-                        yearSelected: null,
-                        disabledYear: true,
-                      })
-                    }}
-                  >
-                    {
-                      (() => {
-                        if (this.state.modalityOptions.length > 0) {
-                          let arrayModalities = []
-                          arrayModalities.push(<option value={null}>Forma:</option>)
+          <div className="page-content">
+            <Navbar className="select-bar">
+              <Button variant="light" className="menu-button"
+                disabled={this.state.studentSelectedId ? 0 : 1}
+                onClick={(e) => {
+                  this.setState({
+                    menuOpen: !this.state.menuOpen,
+                  })
+                }}
+              >
+                <i class="fa fa-bars"></i>
+              </Button>
+              <div className="select-filter">
+                <Form inline>
+                  <Form.Group className="select-item">
+                    <Form.Control as="select" custom disabled={this.state.disabledModality}
+                      onChange={(e) => {
+                        this.setState({
+                          modalitySelectedId: e.target.value,
+                          courseSelectedId: null,
+                          disabledCourse: Number.isInteger(parseInt(e.target.value)) ? false : true,
+                          seriesSelected: null,
+                          disabledSeries: true,
+                          yearSelected: null,
+                          disabledYear: true,
+                        })
+                      }}
+                    >
+                      {
+                        (() => {
+                          if (this.state.modalityOptions.length > 0) {
+                            let arrayModalities = []
+                            arrayModalities.push(<option value={null}>Forma:</option>)
 
-                          for (let j = 0; j < this.state.modalityOptions.length; j++) {
-                            if (this.state.modalitySelectedId == this.state.modalityOptions[j].id)
-                              arrayModalities.push(<option selected value={this.state.modalityOptions[j].id}>{this.state.modalityOptions[j].name}</option>)
-                            else
-                              arrayModalities.push(<option value={this.state.modalityOptions[j].id}>{this.state.modalityOptions[j].name}</option>)
+                            for (let j = 0; j < this.state.modalityOptions.length; j++) {
+                              if (this.state.modalitySelectedId == this.state.modalityOptions[j].id)
+                                arrayModalities.push(<option selected value={this.state.modalityOptions[j].id}>{this.state.modalityOptions[j].name}</option>)
+                              else
+                                arrayModalities.push(<option value={this.state.modalityOptions[j].id}>{this.state.modalityOptions[j].name}</option>)
+                            }
+
+                            return arrayModalities
                           }
 
-                          return arrayModalities
-                        }
+                          return <option selected>Forma:</option>
+                        })()
+                      }
+                    </Form.Control>
+                  </Form.Group>
 
-                        return <option selected>Forma:</option>
-                      })()
-                    }
-                  </Form.Control>
-                </Form.Group>
+                  <Form.Group className="select-item">
+                    <Form.Control as="select" custom disabled={this.state.disabledCourse}
+                      onChange={(e) => {
+                        this.setState({
+                          courseSelectedId: e.target.value,
+                          seriesSelected: null,
+                          disabledSeries: Number.isInteger(parseInt(e.target.value)) ? false : true,
+                          yearSelected: null,
+                          disabledYear: true,
+                        })
+                      }}
+                    >
+                      {
+                        (() => {
+                          if (this.state.courseOptions.length > 0 && this.state.modalitySelectedId) {
+                            let arrayCourses = []
+                            arrayCourses.push(<option value={null}>Curso:</option>)
 
-                <Form.Group className="select-item">
-                  <Form.Control as="select" custom disabled={this.state.disabledCourse}
-                    onChange={(e) => {
-                      this.setState({
-                        courseSelectedId: e.target.value,
-                        seriesSelected: null,
-                        disabledSeries: Number.isInteger(parseInt(e.target.value)) ? false : true,
-                        yearSelected: null,
-                        disabledYear: true,
-                      })
-                    }}
-                  >
-                    {
-                      (() => {
-                        if (this.state.courseOptions.length > 0 && this.state.modalitySelectedId) {
-                          let arrayCourses = []
-                          arrayCourses.push(<option value={null}>Curso:</option>)
+                            for (let j = 0; j < this.state.courseOptions.length; j++) {
+                              if (this.state.courseSelectedId == this.state.courseOptions[j].id)
+                                arrayCourses.push(<option selected value={this.state.courseOptions[j].id}>{this.state.courseOptions[j].name}</option>)
+                              else
+                                arrayCourses.push(<option value={this.state.courseOptions[j].id}>{this.state.courseOptions[j].name}</option>)
+                            }
 
-                          for (let j = 0; j < this.state.courseOptions.length; j++) {
-                            if (this.state.courseSelectedId == this.state.courseOptions[j].id)
-                              arrayCourses.push(<option selected value={this.state.courseOptions[j].id}>{this.state.courseOptions[j].name}</option>)
-                            else
-                              arrayCourses.push(<option value={this.state.courseOptions[j].id}>{this.state.courseOptions[j].name}</option>)
+                            return arrayCourses
                           }
 
-                          return arrayCourses
-                        }
+                          return <option selected>Curso:</option>
+                        })()
+                      }
+                    </Form.Control>
+                  </Form.Group>
 
-                        return <option selected>Curso:</option>
-                      })()
-                    }
-                  </Form.Control>
-                </Form.Group>
+                  <Form.Group className="select-item">
+                    <Form.Control as="select" custom disabled={this.state.disabledSeries}
+                      onChange={(e) => {
+                        this.setState({
+                          seriesSelected: e.target.value,
+                          yearSelected: null,
+                          disabledYear: Number.isInteger(parseInt(e.target.value)) ? false : true,
+                        })
+                      }}
+                    >
+                      {
+                        (() => {
+                          if (this.state.courseOptions.length > 0 && this.state.courseSelectedId) {
+                            let arraySeries = []
+                            arraySeries.push(<option selected value={null} >Série:</option>)
 
-                <Form.Group className="select-item">
-                  <Form.Control as="select" custom disabled={this.state.disabledSeries}
-                    onChange={(e) => {
-                      this.setState({
-                        seriesSelected: e.target.value,
-                        yearSelected: null,
-                        disabledYear: Number.isInteger(parseInt(e.target.value)) ? false : true,
-                      })
-                    }}
-                  >
-                    {
-                      (() => {
-                        if (this.state.courseOptions.length > 0 && this.state.courseSelectedId) {
-                          let arraySeries = []
-                          arraySeries.push(<option selected value={null} >Série:</option>)
+                            for (let j = 0; j < this.state.courseOptions.length; j++) {
+                              if (this.state.courseOptions[j].id == this.state.courseSelectedId) {
+                                for (let i = 1; i <= this.state.courseOptions[j].duration; i++) {
+                                  if (this.state.seriesSelected == i)
+                                    arraySeries.push(<option selected value={i}>{i}°</option>)
+                                  else
+                                    arraySeries.push(<option value={i}>{i}°</option>)
+                                }
 
-                          for (let j = 0; j < this.state.courseOptions.length; j++) {
-                            if (this.state.courseOptions[j].id == this.state.courseSelectedId) {
-                              for (let i = 1; i <= this.state.courseOptions[j].duration; i++) {
-                                if (this.state.seriesSelected == i)
-                                  arraySeries.push(<option selected value={i}>{i}°</option>)
-                                else
-                                  arraySeries.push(<option value={i}>{i}°</option>)
+                                return arraySeries
                               }
-
-                              return arraySeries
                             }
                           }
-                        }
 
-                        return <option selected>Série:</option>
-                      })()
-                    }
-                  </Form.Control>
-                </Form.Group>
+                          return <option selected>Série:</option>
+                        })()
+                      }
+                    </Form.Control>
+                  </Form.Group>
 
-                <Form.Group className="select-item">
-                  <Form.Control as="select" custom disabled={this.state.disabledYear}
-                    onChange={(e) => {
-                      this.setState({
-                        yearSelected: e.target.value,
-                        students: [],
-                        studentSelectedId: null
-                      })
-                    }}
-                  >
-                    {
-                      (() => {
-                        if (this.state.seriesSelected) {
-                          let arrayYears = []
-                          arrayYears.push(<option value={null}>Ano:</option>)
+                  <Form.Group className="select-item">
+                    <Form.Control as="select" custom disabled={this.state.disabledYear}
+                      onChange={(e) => {
+                        this.setState({
+                          yearSelected: e.target.value,
+                          students: [],
+                          studentSelectedId: null
+                        })
+                      }}
+                    >
+                      {
+                        (() => {
+                          if (this.state.seriesSelected) {
+                            let arrayYears = []
+                            arrayYears.push(<option value={null}>Ano:</option>)
 
-                          for (let j = this.state.minYear; j <= this.state.maxYear; j++) {
-                            if (this.state.yearSelected == j)
-                              arrayYears.push(<option selected value={j}>{j}</option>)
-                            else
-                              arrayYears.push(<option value={j}>{j}</option>)
+                            for (let j = this.state.minYear; j <= this.state.maxYear; j++) {
+                              if (this.state.yearSelected == j)
+                                arrayYears.push(<option selected value={j}>{j}</option>)
+                              else
+                                arrayYears.push(<option value={j}>{j}</option>)
+                            }
+
+                            return arrayYears
                           }
 
-                          return arrayYears
-                        }
-
-                        return <option selected>Ano:</option>
-                      })()
-                    }
-                  </Form.Control>
-                </Form.Group>
-              </Form>
-            </div>
-
-            <DropdownButton
-              drop="left"
-              title={<Image className="pedagogue-img" src={(path => {
-                path = path ? path : "default.jpg"
-                
-                return require(`../../../../backend/app/uploads/${path}`)
-              })(sessionStorage.getItem('path'))} alt="" />}
-            >
-              <Dropdown.Item eventKey="1">Ver Perfil</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Virada de Ano</Dropdown.Item>
-              <Dropdown.Item eventKey="3">Virada de Ano Escolar</Dropdown.Item>
-              <Dropdown.Item eventKey="4">Gerenciar Pedagogos</Dropdown.Item>
-            </DropdownButton>
-          </Navbar>
-
-          <div className="carograph">
-            <div className="students-container">
-              {
-                this.state.students.map(student => (
-                  <Card className="student" id={student.student_id} onClick={() => {
-                    this.setState({
-                      studentSelectedId: student.student_id,
-                      menuOpen: true,
-                    })
-                  }}>
-                    <Card.Img variant="top" src={require(`../../../../backend/app/uploads/${student.path}`)} />
-                    <Card.Title className="student-name"><p>{student.name}</p></Card.Title>
-                    <Card.Text className="student-status" style={{
-                      color: student.status_id === 0 ? "green" : (student.status_id === 5 ? "green" : "red")
-                    }}>
-                      {
-                        (student.year != student.statusYear) ?
-                          <p>{student.status} ({student.statusYear})</p>
-                          :
-                          <p>{student.status}</p>
+                          return <option selected>Ano:</option>
+                        })()
                       }
-                    </Card.Text>
-                  </Card>
-                ))
-              }
+                    </Form.Control>
+                  </Form.Group>
+                </Form>
+              </div>
+
+              <DropdownButton
+                drop="left"
+                title={<Image className="pedagogue-img" src={(path => {
+                  path = path ? path : "default.jpg"
+
+                  return require(`../../../../backend/app/uploads/${path}`)
+                })(sessionStorage.getItem('path'))} alt="" />}
+              >
+                <Dropdown.Item eventKey="1">Ver Perfil</Dropdown.Item>
+                <Dropdown.Item eventKey="2">Virada de Ano</Dropdown.Item>
+                <Dropdown.Item eventKey="3">Virada de Ano Escolar</Dropdown.Item>
+                <Dropdown.Item eventKey="4">Gerenciar Pedagogos</Dropdown.Item>
+              </DropdownButton>
+            </Navbar>
+
+            <div className="carograph">
+              <div className="students-container">
+                {
+                  this.state.students.map(student => (
+                    <Card className="student" id={student.student_id} onClick={() => {
+                      this.setState({
+                        studentSelectedId: student.student_id,
+                        menuOpen: true,
+                      })
+                    }}>
+                      <Card.Img variant="top" src={require(`../../../../backend/app/uploads/${student.path}`)} />
+                      <Card.Title className="student-name"><p>{student.name}</p></Card.Title>
+                      <Card.Text className="student-status" style={{
+                        color: student.status_id === 0 ? "green" : (student.status_id === 5 ? "green" : "red")
+                      }}>
+                        {
+                          (student.year != student.statusYear) ?
+                            <p>{student.status} ({student.statusYear})</p>
+                            :
+                            <p>{student.status}</p>
+                        }
+                      </Card.Text>
+                    </Card>
+                  ))
+                }
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }

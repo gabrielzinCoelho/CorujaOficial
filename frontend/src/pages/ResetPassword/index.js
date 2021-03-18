@@ -61,7 +61,7 @@ export default class ResetPassword extends Component {
         alertSettings: {
           open: true,
           alertTitle: "Cuidado!",
-          alertMessage: "As duas senhas devem ser idênticas",
+          alertMessage: "As duas senhas devem ser idênticas.",
           alertSeverity: "warning"
         },
       })
@@ -91,7 +91,7 @@ export default class ResetPassword extends Component {
       alertSettings: {
         open: true,
         alertTitle: "Redefinação de Senha realizada com sucesso",
-        alertMessage: `Sua nova senha definida está pronta para uso`,
+        alertMessage: `Sua nova senha definida está pronta para uso.`,
         alertSeverity: "success"
       },
       successReset: true
