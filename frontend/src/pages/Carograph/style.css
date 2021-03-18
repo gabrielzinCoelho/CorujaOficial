@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-image: linear-gradient(-0deg, #426cf5, rgb(173, 192, 246));
+  background-image: linear-gradient(-0deg, #426cf5, #adc0f6);
   background-position: center;
   transition: margin .25s ease-out;
   box-shadow: 0 0px 5px 3px #426cf5;
@@ -113,7 +113,7 @@
 }
 
 .carograph-page .select-bar {
-  background-color: rgb(173, 192, 246);
+  background-color: #adc0f6;
   box-shadow: 0 4px 5px -2px #426cf5;
   padding: 12px 12px;
   position: sticky;
@@ -154,6 +154,24 @@
   color: black;
 }
 
+.carograph-page .dropleft {
+  margin: 0 0 0 16px;
+}
+
+.carograph-page .dropleft button {
+  border-radius: 50%;
+  padding: 0;
+}
+
+.carograph-page .dropleft button::before {
+  display: none;
+}
+
+.carograph-page .dropdown-menu {
+  margin-right: 4px !important;
+  border: 1px solid #426cf5;
+}
+
 .carograph-page .pedagogue-img {
   height: 50px;
   min-width: 50px;
@@ -161,7 +179,6 @@
   border: 1px solid #426cf5;
   border-radius: 50%;
   cursor: pointer;
-  margin-left: 16px;
 }
 
 .carograph-page .carograph {

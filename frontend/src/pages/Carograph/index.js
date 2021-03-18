@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Image, Navbar, Form, Button, Card } from 'react-bootstrap'
+import { Image, Navbar, Form, Button, Card, Dropdown, DropdownButton } from 'react-bootstrap'
 
 import api from '../../services/api'
 import Authentication from '../components/Authentication'
@@ -110,7 +110,6 @@ export default class Carograph extends Component {
           }}>
           {this.state.studentSelectedId ? (
             <>
-
               {
                 (() => {
                   for (let i = 0; i < this.state.students.length; i++) {
@@ -147,10 +146,10 @@ export default class Carograph extends Component {
               <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
             </>
           ) : (
-              <>
-                <Image className="without-content" src={require('../../assets/logo.png')} />
-              </>
-            )}
+            <>
+              <Image className="without-content" src={require('../../assets/logo.png')} />
+            </>
+          )}
         </div>
 
         <div className="page-content">
@@ -306,7 +305,20 @@ export default class Carograph extends Component {
                 </Form.Group>
               </Form>
             </div>
-            <img className="pedagogue-img" src={require(`../../../../backend/app/uploads/${sessionStorage.getItem('path')}`)} alt="" />
+
+            <DropdownButton
+              drop="left"
+              title={<Image className="pedagogue-img" src={(path => {
+                path = path ? path : "default.jpg"
+                
+                return require(`../../../../backend/app/uploads/${path}`)
+              })(sessionStorage.getItem('path'))} alt="" />}
+            >
+              <Dropdown.Item eventKey="1">Ver Perfil</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Virada de Ano</Dropdown.Item>
+              <Dropdown.Item eventKey="3">Virada de Ano Escolar</Dropdown.Item>
+              <Dropdown.Item eventKey="4">Gerenciar Pedagogos</Dropdown.Item>
+            </DropdownButton>
           </Navbar>
 
           <div className="carograph">
@@ -337,7 +349,6 @@ export default class Carograph extends Component {
             </div>
           </div>
         </div>
-
       </div>
     )
   }
