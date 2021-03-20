@@ -9,7 +9,7 @@ class SessionController {
   async store({ request, response, auth }) {
 
     const { cpf, password } = request.body
-    const removeFields = ['password', "token_created_at", "created_at", "updated_at", "email",
+    const removeFields = ['password', "token_created_at", "created_at", "updated_at", "email", "file_id",
       "telephone", "age", "address", "address_complement"
     ]
 
@@ -21,10 +21,7 @@ class SessionController {
     }).fetch()
 
     const pedagogoData = pedagogueInstance.rows[0].toJSON()
-
-    for (const field of removeFields)
-      delete pedagogoData[field]
-
+    
     let path = ""
 
     try {
@@ -35,6 +32,9 @@ class SessionController {
     } catch (error) {
       path = "default.jpg"
     }
+
+    for (const field of removeFields)
+      delete pedagogoData[field]
 
     return { ...pedagogoData, path, token }
 

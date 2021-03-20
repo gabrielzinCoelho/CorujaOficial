@@ -50,7 +50,7 @@
   font-size: 1.75em;
 }
 
-.profile-page .profile-enrollment {
+.profile-page .profile-text {
   color: black;
   margin: 5% 0 10% 0;
   font-size: 1.2em;
@@ -91,6 +91,36 @@
 
 .profile-page .options-btn:hover .options-btn-label {
   color: #426cf5;
+  text-decoration: underline;
+}
+
+.profile-page .options-btn-quit {
+  width: 100%;
+  display: flex;
+  background-color: rgb(250, 59, 59);
+  border-left: 3px solid #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px;
+  margin: 5% 0 0 0;
+  overflow: hidden;
+}
+
+.profile-page .options-btn-quit:hover {
+  background-color: #fff;
+  border-left: 3px solid rgb(250, 59, 59);
+  text-decoration: none;
+}
+
+.profile-page .options-btn-quit-label {
+  color: #fff;
+  text-decoration: none;
+}
+
+.profile-page .options-btn-quit:hover .options-btn-quit-label {
+  color: rgb(250, 59, 59);
   text-decoration: underline;
 }
 
@@ -154,6 +184,10 @@
   border: 1px solid #426cf5;
 }
 
+.profile-page #quit {
+  color: rgb(250, 59, 59);
+}
+
 .profile-page .pedagogue-img {
   height: 50px;
   min-width: 50px;
@@ -163,7 +197,7 @@
   cursor: pointer;
 }
 
-.profile-page .student-profile {
+.profile-page .pedagogue-profile {
   width: 100%;
   padding: 12px;
 }

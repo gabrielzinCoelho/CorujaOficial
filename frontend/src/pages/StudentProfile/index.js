@@ -127,7 +127,7 @@ export default class StudentProfile extends Component {
                     <Image src={require(`../../../../backend/app/uploads/${this.state.student.path}`)} />
                   </div>
                   <h2 className="profile-name">{this.state.student.name}</h2>
-                  <h2 className="profile-enrollment">{this.state.student.enrollment}</h2>
+                  <h2 className="profile-text">{this.state.student.enrollment}</h2>
                 </div>
 
                 <div className="options-menu">
@@ -143,7 +143,7 @@ export default class StudentProfile extends Component {
                     </div>
                   </a>
                 </div>
-                <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
+                <span className="campus-name"><a href="$">Campus Divinópolis</a></span>
               </>
             ) : (
               <>
@@ -181,6 +181,7 @@ export default class StudentProfile extends Component {
                 <Dropdown.Item>Virada de Ano Escolar</Dropdown.Item>
                 <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
                 <Dropdown.Item href="/carograph">Ver Carógrafo</Dropdown.Item>
+                <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>
               </DropdownButton>
             </Navbar>
 

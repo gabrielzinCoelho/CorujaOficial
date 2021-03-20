@@ -144,7 +144,7 @@ export default class Carograph extends Component {
                     </div>
                   </a>
                 </div>
-                <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
+                <span className="campus-name"><a href="#">Campus Divinópolis</a></span>
               </>
             ) : (
               <>
@@ -319,6 +319,7 @@ export default class Carograph extends Component {
                 <Dropdown.Item>Virada de Ano</Dropdown.Item>
                 <Dropdown.Item>Virada de Ano Escolar</Dropdown.Item>
                 <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
+                <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>
               </DropdownButton>
             </Navbar>
 

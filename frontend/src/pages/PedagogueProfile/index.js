@@ -9,8 +9,8 @@ import './style.css'
 
 export default class PedagogueProfile extends Component {
   state = {
-    student: null,
-    studentInitialValues: null,
+    pedagogue: null,
+    pedagogueInitialValues: null,
     viewMode: true,
     menuOpen: true,
 
@@ -26,21 +26,22 @@ export default class PedagogueProfile extends Component {
     const { id } = this.props.match.params
     const token = sessionStorage.getItem('token');
 
-    const student = await api.get(`/student/${id}`, {
+    const pedagogue = await api.get(`/pedagogue/${id}`, {
       headers: {
         "Authorization": `Bearer ${token}`
       }
     })
 
-    for (let prop in student.data) {
-      if (student.data[prop] == null)
-        student.data[prop] = ""
+    for (let prop in pedagogue.data) {
+      if (pedagogue.data[prop] == null)
+        pedagogue.data[prop] = ""
     }
 
     this.setState({
-      student: student.data,
-      studentInitialValues: student.data
+      pedagogue: pedagogue.data,
+      pedagogueInitialValues: pedagogue.data
     })
+    console.log(this.state.pedagogue)
   }
 
   goToEditMode = () => {
@@ -49,32 +50,32 @@ export default class PedagogueProfile extends Component {
     })
   }
 
-  updateStudent = (forceData) => {
+  updatePedagogue = (forceData) => {
     this.setState((prevState) => ({
-      student: { ...prevState.student, ...forceData }
+      pedagogue: { ...prevState.pedagogue, ...forceData }
     }))
   }
 
   cancelEdit = () => {
     this.setState(prevState => ({
       viewMode: true,
-      student: prevState.studentInitialValues
+      pedagogue: prevState.pedagogueInitialValues
     }))
   }
 
   handleUpdate = async () => {
     const updateObject = {}
-    const notValidateFields = ["id", "course", "modality", "series", "path"]
+    const notValidateFields = ["id", "path"]
     const token = sessionStorage.getItem('token');
     let alertSettings = {}
 
-    for (let prop in this.state.student) {
+    for (let prop in this.state.pedagogue) {
       if (!notValidateFields.includes(prop))
-        updateObject[prop] = this.state.student[prop]
+        updateObject[prop] = this.state.pedagogue[prop]
     }
 
     console.log(updateObject)
-    const data = await api.put(`/student/${this.state.student.id}`, updateObject, {
+    const data = await api.put(`/pedagogue/${this.state.pedagogue.id}`, updateObject, {
       headers: {
         "Authorization": `Bearer ${token}`
       }
@@ -84,18 +85,18 @@ export default class PedagogueProfile extends Component {
       ({
         open: true,
         alertTitle: "Sucesso",
-        alertMessage: "Dados do aluno foram atualizados com sucesso.",
+        alertMessage: "Dados do pedagogo foram atualizados com sucesso.",
         alertSeverity: "success"
       }) : ({
         open: true,
         alertTitle: "Erro",
-        alertMessage: "Erro ao atualizar dados do aluno.",
+        alertMessage: "Erro ao atualizar dados do pedagogo.",
         alertSeverity: "error"
       })
 
     this.setState(prevState => ({
       viewMode: true,
-      studentInitialValues: prevState.student,
+      pedagogueInitialValues: prevState.pedagogue,
       alertSettings
     }))
   }
@@ -118,32 +119,33 @@ export default class PedagogueProfile extends Component {
         <div className="profile-page">
           <div className="side-menu"
             style={{
-              marginLeft: this.state.student ? (this.state.menuOpen ? "0" : "-25vw") : "-25w"
+              marginLeft: this.state.pedagogue ? (this.state.menuOpen ? "0" : "-25vw") : "-25w"
             }}>
-            {this.state.student ? (
+            {this.state.pedagogue ? (
               <>
                 <div className="profile">
                   <div className="profile-img">
-                    <Image src={require(`../../../../backend/app/uploads/${this.state.student.path}`)} />
+                    <Image src={require(`../../../../backend/app/uploads/${this.state.pedagogue.path}`)} />
                   </div>
-                  <h2 className="profile-name">{this.state.student.name}</h2>
-                  <h2 className="profile-enrollment">{this.state.student.enrollment}</h2>
+                  <h2 className="profile-name">{this.state.pedagogue.name}</h2>
+                  <h2 className="profile-text" style={{ margin: "5% 0 0 0" }}>{this.state.pedagogue.cpf}</h2>
+                  <h2 className="profile-text">{this.state.pedagogue.email}</h2>
                 </div>
 
                 <div className="options-menu">
                   <hr className="divider rounded" />
-                  <Link to={`/studentProfile/${this.state.student.id}`}>
+                  <a href="/carograph">
                     <div className="options-btn">
-                      <span className="options-btn-label">Visualizar Perfil</span>
+                      <span className="options-btn-label">Visualizar Carógrafo</span>
                     </div>
-                  </Link>
-                  <a href="attendance.html">
-                    <div className="options-btn">
-                      <span className="options-btn-label">Fazer Atendimento</span>
+                  </a>
+                  <a href="/" onClick={() => sessionStorage.clear()}>
+                    <div className="options-btn-quit">
+                      <span className="options-btn-quit-label">Sair</span>
                     </div>
                   </a>
                 </div>
-                <span className="campus-name"><a href="login.html">Campus Divinópolis</a></span>
+                <span className="campus-name"><a href="#">Campus Divinópolis</a></span>
               </>
             ) : (
               <>
@@ -179,41 +181,42 @@ export default class PedagogueProfile extends Component {
                 <Dropdown.Item>Virada de Ano</Dropdown.Item>
                 <Dropdown.Item>Virada de Ano Escolar</Dropdown.Item>
                 <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
-                <Dropdown.Item href="/">Ver Carógrafo</Dropdown.Item>
+                <Dropdown.Item href="/carograph">Ver Carógrafo</Dropdown.Item>
+                <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>
               </DropdownButton>
             </Navbar>
 
-            <div className="student-profile">
+            <div className="pedagogue-profile">
               <h3 className="group-title">Informações Pessoais</h3>
               <div className="group-infos">
                 <Form>
                   <Form.Row>
-                    <Form.Group as={Col} sm={6}>
+                    <Form.Group as={Col} sm={5}>
                       <Form.Label>Nome</Form.Label>
                       <Form.Control
                         required
                         disabled={this.state.viewMode ? true : false}
                         type="text"
                         placeholder="Nome"
-                        value={(this.state.student) ? this.state.student.name : ""}
+                        value={(this.state.pedagogue) ? this.state.pedagogue.name : ""}
                         onChange={
                           (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ name: e.target.value })
+                            this.updatePedagogue({ name: e.target.value })
                           } : null
                         }
                       />
                     </Form.Group>
-                    <Form.Group as={Col} sm={4}>
-                      <Form.Label>Matrícula</Form.Label>
+                    <Form.Group as={Col} sm={5}>
+                      <Form.Label>Email</Form.Label>
                       <Form.Control
                         required
                         disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Matrícula"
-                        value={(this.state.student) ? this.state.student.enrollment : ""}
+                        type="email"
+                        placeholder="Email"
+                        value={(this.state.pedagogue) ? this.state.pedagogue.email : ""}
                         onChange={
                           (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ enrollment: e.target.value })
+                            this.updatePedagogue({ email: e.target.value })
                           } : null
                         }
                       />
@@ -225,73 +228,10 @@ export default class PedagogueProfile extends Component {
                         disabled={this.state.viewMode ? true : false}
                         type="text"
                         placeholder="Idade"
-                        value={(this.state.student) ? this.state.student.age : ""}
+                        value={(this.state.pedagogue) ? this.state.pedagogue.age : ""}
                         onChange={
                           (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ age: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                  </Form.Row>
-
-                  <Form.Row>
-                    <Form.Group as={Col} sm={4}>
-                      <Form.Label>Modalidade</Form.Label>
-                      <Form.Control
-                        required
-                        disabled
-                        type="text"
-                        placeholder="Modalidade"
-                        value={(this.state.student) ? this.state.student.modality : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ modality: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} sm={4}>
-                      <Form.Label>Curso</Form.Label>
-                      <Form.Control
-                        required
-                        disabled
-                        type="text"
-                        placeholder="Curso"
-                        value={(this.state.student) ? this.state.student.course : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ course: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} sm={2}>
-                      <Form.Label>Série</Form.Label>
-                      <Form.Control
-                        required
-                        disabled
-                        type="text"
-                        placeholder="Série"
-                        value={(this.state.student) ? this.state.student.series : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ series: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} sm={2}>
-                      <Form.Label>Ano entrada</Form.Label>
-                      <Form.Control
-                        required
-                        disabled
-                        type="text"
-                        placeholder="Ano de entrada"
-                        value={(this.state.student) ? this.state.student.yearEntry : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ yearEntry: e.target.value })
+                            this.updatePedagogue({ age: e.target.value })
                           } : null
                         }
                       />

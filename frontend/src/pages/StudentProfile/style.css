@@ -50,7 +50,7 @@
   font-size: 1.75em;
 }
 
-.profile-page .profile-enrollment {
+.profile-page .profile-text {
   color: black;
   margin: 5% 0 10% 0;
   font-size: 1.2em;
@@ -152,6 +152,10 @@
 .profile-page .dropdown-menu {
   margin-right: 4px !important;
   border: 1px solid #426cf5;
+}
+
+.profile-page #quit {
+  color: rgb(250, 59, 59);
 }
 
 .profile-page .pedagogue-img {
