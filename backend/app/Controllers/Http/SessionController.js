@@ -9,7 +9,9 @@ class SessionController {
   async store({ request, response, auth }) {
 
     const { cpf, password } = request.body
-    const removeFields = ['password', "token_created_at", "created_at", "updated_at"]
+    const removeFields = ['password', "token_created_at", "created_at", "updated_at", "email", "file_id",
+      "telephone", "age", "address", "address_complement"
+    ]
 
     // já faz tratamento de erro - ausência de cpf e/ou senha
     const { token } = await auth.attempt(cpf, password)

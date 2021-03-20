@@ -37,6 +37,16 @@ Route.delete(
   'NewYearController.destroy'
 )
 
+//virada de ano escolar
+
+Route.get('newYearSchool',
+  'NewYearSchoolController.index'
+)
+
+Route.put('newYearSchool',
+  'NewYearSchoolController.update'
+)
+
 // front simulator
 
 Route.get(
@@ -123,6 +133,11 @@ Route.put(
 Route.post(
   '/pedagogue',
   'PedagogueController.store'
+)
+
+Route.get(
+  '/pedagogue/:id',
+  'PedagogueController.index'
 )
 
 // files

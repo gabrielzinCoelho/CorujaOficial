@@ -110,6 +110,12 @@ class NewYearController {
 
   async store({ request, response }) {
 
+    const testObject = {
+      classReproved: [],
+      classStatusSeted: [],
+      nextClassPassed: []
+    }
+
     try {
 
       const { class_id, students, statusStudents } = request.body
@@ -126,6 +132,10 @@ class NewYearController {
       })
 
       const classInstance = await Class.findOrFail(class_id)
+
+      if (classInstance.newYear)
+        throw `A classe já possui uma virada de ano referente a ela.`
+
       const courseInstance = await Course.find(classInstance.course_id)
 
       const lastSerie = (courseInstance.$attributes.duration == classInstance.series ? true : false)
@@ -158,6 +168,9 @@ class NewYearController {
           studentHistoricInstances[student_id].status_id = statusElement.status_id
           await studentHistoricInstances[student_id].save()
 
+          //cod referente testObject
+          testObject.classStatusSeted.push(studentHistoricInstances[student_id].$attributes.id)
+
           // se year == statusYear && aprovado-> year + 1/statusYear + 1, status_id: cursando (serie + 1)
           // se year == statusYear && não aprovado
           // -> year + 1/statusYear + 1, status_id: cursando (serie)
@@ -173,7 +186,8 @@ class NewYearController {
               statusYear: statusYearNextSerie
             })
 
-            //console.log(nextClassInstance)
+            //cod referente testObject
+            testObject.nextClassPassed.push(studentHistoric.toJSON().id)
 
             await studentInstances[student_id].historic().save(studentHistoric)
             await nextClassInstance.historic().save(studentHistoric) //next classInstance currentSeries.series + 1
@@ -187,6 +201,9 @@ class NewYearController {
               year: year + 1,
               statusYear: year + 1
             })
+
+            //cod referente testObject
+            testObject.classReproved.push(studentHistoric.toJSON().id)
 
             await studentInstances[student_id].historic().save(studentHistoric)
             await classInstance.historic().save(studentHistoric)
@@ -218,7 +235,7 @@ class NewYearController {
 
         for (const redundanceHistoric of redundanceHistoricInstances) {
 
-          await Database
+          const studentHistoric = await Database
             .table('student_historics')
             .insert({
               class_id: nextClassInstance.$attributes.id, // currentSeries.series + 1
@@ -227,6 +244,11 @@ class NewYearController {
               year: year + 1,
               statusYear: redundanceHistoric.statusYear
             })
+
+          //cod referente testObject
+          //console.log(studentHistoric)
+          testObject.nextClassPassed.push(studentHistoric)
+
         }
       }
 
@@ -242,6 +264,9 @@ class NewYearController {
       classInstance.newYear = true
       classInstance.save()
 
+      //cod referente testObject
+      console.log(testObject)
+
       return response.status(200).json({ success: "O sistema foi atualizado com sucesso." })
 
     }
@@ -254,12 +279,17 @@ class NewYearController {
 
     // criando a turma de calouros
 
-    const {course_id, students} = request.body
+    const testArray = []
+
+    const { course_id, students } = request.body
 
     const schoolYearSearch = await Database.table('school_years').select('year').limit(1)
     const year = schoolYearSearch[0].year
 
     const courseInstance = await Course.find(course_id)
+
+    if (courseInstance.newYear)
+      return response.status(406).json({ error: `A classe já possui uma virada de ano referente a ela.` })
 
     const classSearch = await Class.query().where({
       series: 1,
@@ -291,6 +321,9 @@ class NewYearController {
         statusYear: year + 1
       })
 
+      // cod referente testArray
+      testArray.push(studentHistoric.toJSON().id)
+
       await studentsNextClass[student].historic().save(studentHistoric)
       await classInstance.historic().save(studentHistoric)
       await status[1].historic().save(studentHistoric)
@@ -304,33 +337,231 @@ class NewYearController {
     courseInstance.newYear = true
     courseInstance.save()
 
+    //cod referente testArray
+    console.log({ calouros: testArray })
+
     return response.status(200).json({ success: "O sistema foi atualizado com sucesso." })
   }
 
   async destroy({ request, response }) {
 
-    const {instance} = request.params
+    const { instance } = request.params
 
-    if(instance != "class" && instance != "course")
+    if (instance != "class" && instance != "course")
       return response.status(406).json({ error: `Rota indefinida.` })
 
-    return instance == "class" ? (()=>{
+    const schoolYearSearch = await Database.table('school_years').select('year').limit(1)
+    const year = schoolYearSearch[0].year
+
+    return instance == "class" ? (async () => {
 
       // delete class newYear
 
-      const {instance_id : class_id} = request.params
+      const { instance_id: class_id } = request.params
 
-      return class_id
+      // verificando propria serie
 
-    })() : (()=>{
+      const classInstance = await Class.find(class_id)
+
+      if (!classInstance.newYear)
+        return response.status(406).json({ error: `A classe não possui nenhuma virada de ano referente a ela.` })
+
+      const searchReprovation = await classInstance.historic().where({
+        year: year + 1,
+        statusYear: year + 1,
+        status_id: 1 //cursando
+      }).fetch()
+
+      await Promise.all(searchReprovation.toJSON().map(async elementHistoric => {
+
+        //remover instancia do relacionamento
+
+        return new Promise(async (resolve, reject) => {
+
+          if (await this.detectionReprovation(year + 1, classInstance, elementHistoric.student_id)) {
+            console.log(`PRÓPRIA SÉRIE (REPROVADO): ${elementHistoric.id}`)
+
+            const elementHistoricInstance = await StudentHistoric.find(elementHistoric.id)
+            const elementDeleted = await elementHistoricInstance.delete()
+            //console.log(elementDeleted)
+          }
+
+          resolve()
+
+
+        })
+      }))
+
+      let lastSerie = {}, nextClassInstance = {}
+
+      const searchStatusUpdated = await classInstance.historic().where({
+        year: year,
+        statusYear: year,
+      }).fetch()
+
+      await Promise.all(searchStatusUpdated.toJSON().map(async elementHistoric => {
+
+        return new Promise(async (resolve, reject) => {
+
+          //setar status para cursando
+
+          const elementHistoricInstance = await StudentHistoric.find(elementHistoric.id)
+          elementHistoricInstance.status_id = 1
+          elementHistoricInstance.save()
+
+          //console.log(`PRÓPRIA SÉRIE (STATUS): ${elementHistoric.id} - status = ${elementHistoricInstance.status_id}`)
+
+          resolve()
+
+        })
+
+      }))
+
+      // verificando serie seguinte
+
+      const courseInstance = await Course.find(classInstance.course_id)
+
+      lastSerie = (courseInstance.$attributes.duration == classInstance.series ? true : false)
+
+      if (!lastSerie) {
+
+        const nextClassSearch = await Class.query().where({
+          series: classInstance.series + 1,
+          course_id: classInstance.course_id
+        }).fetch()
+
+        nextClassInstance = nextClassSearch.rows[0]
+
+        const searchAprovation = await nextClassInstance.historic().where({
+          year: year + 1,
+        }).fetch()
+
+        await Promise.all(searchAprovation.toJSON().map(async elementHistoric => {
+
+          return new Promise(async (resolve, reject) => {
+
+            if (elementHistoric.statusYear != elementHistoric.year || !(await this.detectionReprovation(year + 1, nextClassInstance, elementHistoric.student_id))) {
+
+              //remover instancia do relacionamento
+              //console.log(`NEXT SÉRIE (PASSOU): ${elementHistoric.id}`)
+              const elementHistoricInstance = await StudentHistoric.find(elementHistoric.id)
+              await elementHistoricInstance.delete()
+
+            }
+
+            resolve()
+
+          })
+
+        }))
+
+      }
+
+      const verifyEmptyClass = await classInstance.historic().where({
+        year: year + 1
+      }).fetch()
+
+      if (!verifyEmptyClass.toJSON().length)
+        classInstance.lastClassYear = year
+
+      if (!lastSerie) {
+
+        const verifyEmptyNextClass = await nextClassInstance.historic().where({
+          year: year + 1
+        }).fetch()
+
+        if (!verifyEmptyNextClass.toJSON().length) {
+          nextClassInstance.lastClassYear = year
+          nextClassInstance.save()
+        }
+
+
+      }
+
+      classInstance.newYear = false
+      classInstance.save()
+
+      return response.status(200).json({ success: "Virada de ano desfeita com sucesso!" })
+
+    })() : (async () => {
 
       // delete course newYear(calouros)
 
-      const {instance_id : course_id} = request.params
+      const { instance_id: course_id } = request.params
 
-      return course_id
+      const courseInstance = await Course.find(course_id)
+
+      if (!courseInstance.newYear)
+        return response.status(406).json({ error: `A classe não possui nenhuma virada de ano referente a ela.` })
+
+      const nextClassSearch = await Class.query().where({
+        series: 1,
+        course_id: courseInstance.id
+      }).fetch()
+
+      const nextClassInstance = nextClassSearch.rows[0]
+
+      const searchAprovation = await nextClassInstance.historic().where({
+        year: year + 1,
+        statusYear: year + 1,
+        status_id: 1, //cursando
+      }).fetch()
+
+      await Promise.all(searchAprovation.toJSON().map(async elementHistoric => {
+
+        return new Promise(async (resolve, reject) => {
+
+          if (!(await this.detectionReprovation(year + 1, nextClassInstance, elementHistoric.student_id))) {
+
+            //remover instancia do relacionamento (CASCADE) e aluno
+            const studentInstance = await Student.find(elementHistoric.student_id)
+            await studentInstance.delete()
+            console.log(`NEXT SÉRIE (CALOUROS): ${elementHistoric.id}`)
+
+          }
+
+          resolve()
+
+
+        })
+
+      }))
+
+      const verifyEmptyClass = await nextClassInstance.historic().where({
+        year: year + 1
+      }).fetch()
+
+      if (!verifyEmptyClass.toJSON().length) {
+        nextClassInstance.lastClassYear = year
+        nextClassInstance.save()
+      }
+
+
+      courseInstance.newYear = false
+      courseInstance.save()
+
+      return response.status(200).json({ success: "Virada de ano desfeita com sucesso!" })
 
     })()
+  }
+
+  async detectionReprovation(year, classInstance, student_id) {
+
+    //year e class_id que estou verificando as instâncias
+
+    //condições para dúvida -> statusYear = year, status = cursando
+
+    //diferenciador = outra instância, com mesmo student_id, na mesma série, year - 1, statusYear = year
+
+    const searchOldReprovation = await classInstance.historic().where({
+      year: year - 1,
+      statusYear: year - 1,
+      student_id,
+      status_id: 2 //reprovado
+    }).fetch()
+
+    return searchOldReprovation.toJSON().length ? true : false
+
   }
 
   async newYearStatus({ request, response }) {
