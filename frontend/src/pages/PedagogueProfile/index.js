@@ -7,7 +7,7 @@ import Alert from '../../pages/components/Alert'
 import Authentication from '../components/Authentication'
 import './style.css'
 
-export default class StudentProfile extends Component {
+export default class PedagogueProfile extends Component {
   state = {
     student: null,
     studentInitialValues: null,
@@ -176,11 +176,10 @@ export default class StudentProfile extends Component {
                   return require(`../../../../backend/app/uploads/${path}`)
                 })(sessionStorage.getItem('path'))} alt="" />}
               >
-                <Dropdown.Item href={`/pedagogueProfile/${sessionStorage.getItem('id')}`}>Ver Perfil</Dropdown.Item>
                 <Dropdown.Item>Virada de Ano</Dropdown.Item>
                 <Dropdown.Item>Virada de Ano Escolar</Dropdown.Item>
                 <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
-                <Dropdown.Item href="/carograph">Ver Carógrafo</Dropdown.Item>
+                <Dropdown.Item href="/">Ver Carógrafo</Dropdown.Item>
               </DropdownButton>
             </Navbar>
 

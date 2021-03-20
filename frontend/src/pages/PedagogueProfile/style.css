@@ -1,0 +1,204 @@
+/* CAROGRAPH */
+.profile-page {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-page .side-menu {
+  min-width: 25vw;
+  max-width: 25vw;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: linear-gradient(-0deg, #426cf5, #adc0f6);
+  background-position: center;
+  transition: margin .25s ease-out;
+  box-shadow: 0 0px 5px 3px #426cf5;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.profile-page .without-content {
+  width: 75%;
+  align-self: center;
+}
+
+.profile-page .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.profile-page .profile-img {
+  width: 50%;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.profile-page .profile-img img {
+  width: 100%;
+}
+
+.profile-page .profile-name {
+  color: black;
+  margin: 10% 0 0 0;
+  font-size: 1.75em;
+}
+
+.profile-page .profile-enrollment {
+  color: black;
+  margin: 5% 0 10% 0;
+  font-size: 1.2em;
+}
+
+.profile-page .options-menu {
+  flex-grow: 1;
+}
+
+.profile-page .divider {
+  border: 1px solid black;
+}
+
+.profile-page .options-btn {
+  width: 100%;
+  display: flex;
+  background-color: #426cf5;
+  border-left: 3px solid #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px;
+  margin: 5% 0 0 0;
+  overflow: hidden;
+}
+
+.profile-page .options-btn:hover {
+  background-color: #fff;
+  border-left: 3px solid #426cf5;
+  text-decoration: none;
+}
+
+.profile-page .options-btn-label {
+  color: #fff;
+  text-decoration: none;
+}
+
+.profile-page .options-btn:hover .options-btn-label {
+  color: #426cf5;
+  text-decoration: underline;
+}
+
+.profile-page .campus-name a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.profile-page .campus-name a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.profile-page .page-content {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  border: 0;
+}
+
+.profile-page .top-bar {
+  background-color: #adc0f6;
+  box-shadow: 0 4px 5px -2px #426cf5;
+  padding: 12px 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.profile-page .menu-button {
+  background-color: #fff;
+  margin: 0;
+}
+
+.profile-page .top-image {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.profile-page .logo-image {
+  height: 50px;
+}
+
+.profile-page .dropleft {
+  margin: 0;
+}
+
+.profile-page .dropleft button {
+  border-radius: 50%;
+  padding: 0;
+}
+
+.profile-page .dropleft button::before {
+  display: none;
+}
+
+.profile-page .dropdown-menu {
+  margin-right: 4px !important;
+  border: 1px solid #426cf5;
+}
+
+.profile-page .pedagogue-img {
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border: 1px solid #426cf5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-page .student-profile {
+  width: 100%;
+  padding: 12px;
+}
+
+.profile-page .group-title {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.profile-page .group-infos {
+  width: 100%;
+  padding: 12px;
+  margin: 0 0 16px 0  ;
+  background-color: #adc0f6;
+  border-radius: 5px;
+}
+
+.profile-page .profile-btn {
+  background-color: #adc0f6;
+  color: #426cf5;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.profile-page .profile-btn:hover {
+  background-color: #fff;
+  text-decoration: none;
+  color: #426cf5;
+}
+
+@media (width <= 767px) {
+  .profile-page .logo-image {
+    display: none;
+  }
+}

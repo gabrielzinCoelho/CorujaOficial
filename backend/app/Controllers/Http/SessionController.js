@@ -9,7 +9,7 @@ class SessionController {
   async store({ request, response, auth }) {
 
     const { cpf, password } = request.body
-    const removeFields = ['password', "token_created_at", "created_at", "updated_at", "email", "file_id",
+    const removeFields = ['password', "token_created_at", "created_at", "updated_at", "email",
       "telephone", "age", "address", "address_complement"
     ]
 

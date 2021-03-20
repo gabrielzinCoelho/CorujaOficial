@@ -315,10 +315,10 @@ export default class Carograph extends Component {
                   return require(`../../../../backend/app/uploads/${path}`)
                 })(sessionStorage.getItem('path'))} alt="" />}
               >
-                <Dropdown.Item eventKey="1">Ver Perfil</Dropdown.Item>
-                <Dropdown.Item eventKey="2">Virada de Ano</Dropdown.Item>
-                <Dropdown.Item eventKey="3">Virada de Ano Escolar</Dropdown.Item>
-                <Dropdown.Item eventKey="4">Gerenciar Pedagogos</Dropdown.Item>
+                <Dropdown.Item href={`/pedagogueProfile/${sessionStorage.getItem('id')}`}>Ver Perfil</Dropdown.Item>
+                <Dropdown.Item>Virada de Ano</Dropdown.Item>
+                <Dropdown.Item>Virada de Ano Escolar</Dropdown.Item>
+                <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
               </DropdownButton>
             </Navbar>
 

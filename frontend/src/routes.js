@@ -5,8 +5,8 @@ import Login from './pages/Login'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import Carograph from './pages/Carograph'
-import Old from './pages/Old'
- import StudentProfile from './pages/StudentProfile'
+import StudentProfile from './pages/StudentProfile'
+// import PedagogueProfile from './pages/PedagogueProfile'
 
 export default class Routes extends Component {
     render() {
@@ -17,8 +17,8 @@ export default class Routes extends Component {
                     <Route path='/forgotPassword' component={ForgotPassword} />
                     <Route path='/resetPassword/:token' component={ResetPassword} />
                     <Route path='/carograph' component={Carograph} />  
-                    <Route path='/old' component={Old} />  
                     <Route path='/studentProfile/:id' component={StudentProfile} />   
+                    {/* <Route path='/pedagogueProfile/:id' component={PedagogueProfile} />    */}
                 </Switch>
             </BrowserRouter>
         )

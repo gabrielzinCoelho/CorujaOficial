@@ -1,6 +1,7 @@
 'use strict'
 //REAFTORAÇÃO (OK)
 const Pedagogue = use('App/Models/Pedagogue')
+const File = use('App/Models/File')
 const Database = use('Database')
 
 class PedagogueController {
