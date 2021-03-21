@@ -73,7 +73,6 @@ export default class StudentProfile extends Component {
         updateObject[prop] = this.state.student[prop]
     }
 
-    console.log(updateObject)
     const data = await api.put(`/student/${this.state.student.id}`, updateObject, {
       headers: {
         "Authorization": `Bearer ${token}`

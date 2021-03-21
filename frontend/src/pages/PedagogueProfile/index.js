@@ -191,7 +191,7 @@ export default class PedagogueProfile extends Component {
               <div className="group-infos">
                 <Form>
                   <Form.Row>
-                    <Form.Group as={Col} sm={5}>
+                    <Form.Group as={Col} sm={6}>
                       <Form.Label>Nome</Form.Label>
                       <Form.Control
                         required
@@ -206,7 +206,7 @@ export default class PedagogueProfile extends Component {
                         }
                       />
                     </Form.Group>
-                    <Form.Group as={Col} sm={5}>
+                    <Form.Group as={Col} sm={6}>
                       <Form.Label>Email</Form.Label>
                       <Form.Control
                         required
@@ -221,7 +221,40 @@ export default class PedagogueProfile extends Component {
                         }
                       />
                     </Form.Group>
-                    <Form.Group as={Col} sm={2}>
+                  </Form.Row>
+
+                  <Form.Row>
+                    <Form.Group as={Col} sm={4}>
+                      <Form.Label>CPF</Form.Label>
+                      <Form.Control
+                        required
+                        disabled={this.state.viewMode ? true : false}
+                        type="text"
+                        placeholder="CPF"
+                        value={(this.state.pedagogue) ? this.state.pedagogue.cpf : ""}
+                        onChange={
+                          (!this.state.viewMode) ? (e) => {
+                            this.updatePedagogue({ cpf: e.target.value })
+                          } : null
+                        }
+                      />
+                    </Form.Group>
+                    <Form.Group as={Col} sm={4}>
+                      <Form.Label>Contato</Form.Label>
+                      <Form.Control
+                        required
+                        disabled={this.state.viewMode ? true : false}
+                        type="text"
+                        placeholder="Contato"
+                        value={(this.state.pedagogue) ? this.state.pedagogue.contact : ""}
+                        onChange={
+                          (!this.state.viewMode) ? (e) => {
+                            this.updatePedagogue({ contact: e.target.value })
+                          } : null
+                        }
+                      />
+                    </Form.Group>
+                    <Form.Group as={Col} sm={4}>
                       <Form.Label>Idade</Form.Label>
                       <Form.Control
                         required
@@ -237,99 +270,39 @@ export default class PedagogueProfile extends Component {
                       />
                     </Form.Group>
                   </Form.Row>
-
-                  <Form.Row>
-                    <Form.Group as={Col} sm={6}>
-                      <Form.Label>Problemas de saúde</Form.Label>
-                      <Form.Control
-                        required
-                        disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Problemas de saúde"
-                        value={(this.state.student) ? this.state.student.healthProblems : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ healthProblems: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} sm={4}>
-                      <Form.Label>Cidade de origem</Form.Label>
-                      <Form.Control
-                        required
-                        disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Cidade de origem"
-                        value={(this.state.student) ? this.state.student.originCity : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ originCity: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} sm={2}>
-                      <Form.Label>Mora com</Form.Label>
-                      <Form.Control
-                        required
-                        disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Mora com"
-                        value={(this.state.student) ? this.state.student.liveWith : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ liveWith: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                  </Form.Row>
                 </Form>
               </div>
 
-              <h3 className="group-title">Outras Informações</h3>
+              <h3 className="group-title">Endereço</h3>
               <div className="group-infos">
                 <Form>
                   <Form.Row>
                     <Form.Group as={Col} sm={6}>
-                      <Form.Label>Nome do Pai</Form.Label>
+                      <Form.Label>Cidade</Form.Label>
                       <Form.Control
+                        required
                         disabled={this.state.viewMode ? true : false}
                         type="text"
-                        placeholder="Nome do Pai"
-                        value={(this.state.student) ? this.state.student.nameFather : ""}
+                        placeholder="Cidade"
+                        value={(this.state.pedagogue) ? this.state.pedagogue.city : ""}
                         onChange={
                           (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ nameFather: e.target.value })
+                            this.updatePedagogue({ city: e.target.value })
                           } : null
                         }
                       />
                     </Form.Group>
-                    <Form.Group as={Col} sm={4}>
-                      <Form.Label>Profissão do Pai</Form.Label>
+                    <Form.Group as={Col} sm={6}>
+                      <Form.Label>Bairro</Form.Label>
                       <Form.Control
+                        required
                         disabled={this.state.viewMode ? true : false}
                         type="text"
-                        placeholder="Profissão do Pai"
-                        value={(this.state.student) ? this.state.student.professionFather : ""}
+                        placeholder="Bairro"
+                        value={(this.state.pedagogue) ? this.state.pedagogue.district : ""}
                         onChange={
                           (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ professionFather: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} sm={2}>
-                      <Form.Label>Tel. do Pai</Form.Label>
-                      <Form.Control
-                        disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Contato do Pai"
-                        value={(this.state.student) ? this.state.student.contactFather : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ contactFather: e.target.value })
+                            this.updatePedagogue({ district: e.target.value })
                           } : null
                         }
                       />
@@ -338,105 +311,46 @@ export default class PedagogueProfile extends Component {
 
                   <Form.Row>
                     <Form.Group as={Col} sm={6}>
-                      <Form.Label>Nome da Mãe</Form.Label>
+                      <Form.Label>Endereço</Form.Label>
                       <Form.Control
+                        required
                         disabled={this.state.viewMode ? true : false}
                         type="text"
-                        placeholder="Nome da Mãe"
-                        value={(this.state.student) ? this.state.student.nameMom : ""}
+                        placeholder="Endereço"
+                        value={(this.state.pedagogue) ? this.state.pedagogue.address : ""}
                         onChange={
                           (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ nameMom: e.target.value })
+                            this.updatePedagogue({ address: e.target.value })
                           } : null
                         }
                       />
                     </Form.Group>
-                    <Form.Group as={Col} sm={4}>
-                      <Form.Label>Profissão da Mãe</Form.Label>
+                    <Form.Group as={Col} sm={3}>
+                      <Form.Label>Número</Form.Label>
                       <Form.Control
+                        required
                         disabled={this.state.viewMode ? true : false}
                         type="text"
-                        placeholder="Profissão da Mãe"
-                        value={(this.state.student) ? this.state.student.professionMom : ""}
+                        placeholder="Número"
+                        value={(this.state.pedagogue) ? this.state.pedagogue.address_number : ""}
                         onChange={
                           (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ professionMom: e.target.value })
+                            this.updatePedagogue({ address_number: e.target.value })
                           } : null
                         }
                       />
                     </Form.Group>
-                    <Form.Group as={Col} sm={2}>
-                      <Form.Label>Tel. da Mãe</Form.Label>
+                    <Form.Group as={Col} sm={3}>
+                      <Form.Label>Complemento</Form.Label>
                       <Form.Control
+                        required
                         disabled={this.state.viewMode ? true : false}
                         type="text"
-                        placeholder="Contato da Mãe"
-                        value={(this.state.student) ? this.state.student.contactMom : ""}
+                        placeholder="Complemento"
+                        value={(this.state.pedagogue) ? this.state.pedagogue.address_complement : ""}
                         onChange={
                           (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ contactMom: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                  </Form.Row>
-
-                  <Form.Row>
-                    <Form.Group as={Col} sm={6}>
-                      <Form.Label>Fez Pré-CEFET</Form.Label>
-                      <Form.Control
-                        disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Fez Pré-CEFET"
-                        value={(this.state.student) ? this.state.student.preCefet : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ preCefet: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} sm={6}>
-                      <Form.Label>Última Escola</Form.Label>
-                      <Form.Control
-                        disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Última Escola"
-                        value={(this.state.student) ? this.state.student.lastSchool : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ lastSchool: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                  </Form.Row>
-
-                  <Form.Row>
-                    <Form.Group as={Col} sm={6}>
-                      <Form.Label>Atividades Extras</Form.Label>
-                      <Form.Control
-                        disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Atividades Extras"
-                        value={(this.state.student) ? this.state.student.extraActivities : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ extraActivities: e.target.value })
-                          } : null
-                        }
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} sm={6}>
-                      <Form.Label>Fez Parte do Ensino Médio</Form.Label>
-                      <Form.Control
-                        disabled={this.state.viewMode ? true : false}
-                        type="text"
-                        placeholder="Fez Parte do Ensino Médio"
-                        value={(this.state.student) ? this.state.student.highSchool : ""}
-                        onChange={
-                          (!this.state.viewMode) ? (e) => {
-                            this.updateStudent({ highSchool: e.target.value })
+                            this.updatePedagogue({ address_complement: e.target.value })
                           } : null
                         }
                       />
