@@ -40,7 +40,6 @@ export default class PedagogueProfile extends Component {
       pedagogue: pedagogue.data,
       pedagogueInitialValues: pedagogue.data
     })
-    console.log(this.state.pedagogue)
   }
 
   goToEditMode = () => {
@@ -73,7 +72,6 @@ export default class PedagogueProfile extends Component {
         updateObject[prop] = this.state.pedagogue[prop]
     }
 
-    console.log(updateObject)
     const data = await api.put(`/pedagogue/${this.state.pedagogue.id}`, updateObject, {
       headers: {
         "Authorization": `Bearer ${token}`
@@ -177,8 +175,8 @@ export default class PedagogueProfile extends Component {
                   return require(`../../../../backend/app/uploads/${path}`)
                 })(sessionStorage.getItem('path'))} alt="" />}
               >
-                <Dropdown.Item>Virada de Ano</Dropdown.Item>
-                <Dropdown.Item>Virada de Ano Escolar</Dropdown.Item>
+                <Dropdown.Item href="/newYear">Virada de Ano</Dropdown.Item>
+                <Dropdown.Item href="/newYearSchool">Ano Escolar</Dropdown.Item>
                 <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
                 <Dropdown.Item href="/carograph">Ver Carógrafo</Dropdown.Item>
                 <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>

@@ -7,6 +7,8 @@ import ResetPassword from './pages/ResetPassword'
 import Carograph from './pages/Carograph'
 import StudentProfile from './pages/StudentProfile'
 import PedagogueProfile from './pages/PedagogueProfile'
+import NewYearSchool from './pages/NewYearSchool'
+import NewYear from './pages/NewYear'
 
 export default class Routes extends Component {
     render() {
@@ -19,6 +21,8 @@ export default class Routes extends Component {
                     <Route path='/carograph' component={Carograph} />  
                     <Route path='/studentProfile/:id' component={StudentProfile} />   
                     <Route path='/pedagogueProfile/:id' component={PedagogueProfile} />   
+                    <Route path='/newYearSchool' component={NewYearSchool} />     
+                    <Route path='/newYear' component={NewYear} /> 
                 </Switch>
             </BrowserRouter>
         )
