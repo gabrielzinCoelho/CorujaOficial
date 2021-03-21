@@ -1,6 +1,8 @@
 'use strict'
 //REAFTORAÇÃO (OK)
 const Pedagogue = use('App/Models/Pedagogue')
+const File = use('App/Models/File')
+const Hash = use('Hash')
 const Database = use('Database')
 
 class PedagogueController {
@@ -8,6 +10,9 @@ class PedagogueController {
   async store({ request, response }) {
 
     const requiredFields = ["name", "password", "cpf", "email", "file_id"]
+    const createFields = ["name", "email", "password", "file_id", "age", "cpf", "city", "district",
+    "address", "address_number", "address_complement", "contact"]
+
 
     for (let field of requiredFields) {
       if (!(field in request.body))
@@ -17,15 +22,17 @@ class PedagogueController {
     }
 
     const pedagogue = new Pedagogue()
-    pedagogue.name = request.body.name
-    pedagogue.email = request.body.email
-    pedagogue.cpf = request.body.cpf
-    pedagogue.password = request.body.password
-    pedagogue.file_id = request.body.file_id
+
+    for(let field of createFields){
+
+      if(request.body[field])
+        pedagogue[field] = request.body[field]
+
+    }
 
     await pedagogue.save()
 
-    return pedagogue
+    return response.status(200).json(pedagogue)
 
   }
 
@@ -48,6 +55,8 @@ class PedagogueController {
 
     let path = ""
 
+    console.log(pedagogue.file_id)
+
     try {
       if (!pedagogue.file_id)
         throw "O pedagogo não possui foto cadastrada.";
@@ -58,6 +67,49 @@ class PedagogueController {
     }
 
     return { ...pedagogue, path }
+
+  }
+
+  async update({ request, response }) {
+
+    const updateFields = ["name", "email", "password", "file_id", "age", "cpf", "city", "district",
+      "address", "address_number", "address_complement", "contact"]
+
+    let checkFields = false
+
+    for (let field of updateFields) {
+      if (field in request.body) {
+
+        if(field == "password")
+          request.body.password = await Hash.make(request.body.password)
+
+        checkFields = true
+
+      }
+    }
+
+    if (!checkFields)
+      return response.status(406).json({
+        error: `Ao menos um dos campos do pedagogo deve ser atualizado.`
+      })
+
+    const { id } = request.params
+
+    const pedagogueInstance = await Pedagogue.find(id)
+
+    for(let field of updateFields){
+
+      if(request.body[field])
+        pedagogueInstance[field] = request.body[field]
+
+    }
+
+    pedagogueInstance.save()
+
+    return response.status(200).json({
+      message: "Os dados do pedagogo foram atualizados com sucesso.",
+    })
+
 
   }
 

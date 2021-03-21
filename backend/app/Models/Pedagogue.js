@@ -9,7 +9,7 @@ class Pedagogue extends Model {
   static boot () {
     super.boot()
 
-    this.addHook('beforeSave', async (pedagogueInstance) => {
+    this.addHook('beforeCreate', async (pedagogueInstance) => {
       pedagogueInstance.password = await Hash.make(pedagogueInstance.password)
     })
 

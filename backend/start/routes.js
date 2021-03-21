@@ -140,6 +140,11 @@ Route.get(
   'PedagogueController.index'
 )
 
+Route.put(
+  '/pedagogue/:id',
+  'PedagogueController.update'
+)
+
 // files
 
 Route.post(

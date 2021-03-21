@@ -22,9 +22,6 @@ class SessionController {
 
     const pedagogoData = pedagogueInstance.rows[0].toJSON()
 
-    for (const field of removeFields)
-      delete pedagogoData[field]
-
     let path = ""
 
     try {
@@ -35,6 +32,9 @@ class SessionController {
     } catch (error) {
       path = "default.jpg"
     }
+
+    for (const field of removeFields)
+      delete pedagogoData[field]
 
     return { ...pedagogoData, path, token }
 

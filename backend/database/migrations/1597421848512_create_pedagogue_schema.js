@@ -11,9 +11,6 @@ class PedagogueSchema extends Schema {
       table.string('email', 254).notNullable().unique()
       table.string('password', 254).notNullable()
       table.string('cpf', 254).notNullable()
-      table.string('address', 254).notNullable()
-      table.string('address_complement', 254).notNullable()
-      table.string('telephone', 15).notNullable()
       table.integer('age')
       table
         .integer('file_id')
@@ -21,11 +18,17 @@ class PedagogueSchema extends Schema {
         .references('id')
         .inTable('files')
         .onUpdate('CASCADE')
+      table.string('address', 254).notNullable()
+      table.string('address_number', 254).notNullable()
+      table.string('address_complement', 254).notNullable()
+      table.string('district', 254).notNullable()
+      table.string('city', 254).notNullable()
+      table.string('contact', 15).notNullable()
       table.string('token', 254).unique()
       table.datetime('token_created_at', { precision: 6 })
       table.timestamps()
     })
-    //telefone, endereço, idade,
+
   }
 
   down () {
