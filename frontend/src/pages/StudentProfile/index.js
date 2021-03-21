@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { Image, Navbar, Dropdown, DropdownButton, Form, Col, Button } from 'react-bootstrap'
 
 import api from '../../services/api'
@@ -131,11 +130,11 @@ export default class StudentProfile extends Component {
 
                 <div className="options-menu">
                   <hr className="divider rounded" />
-                  <Link to={`/studentProfile/${this.state.student.id}`}>
+                  <a href="/carograph">
                     <div className="options-btn">
-                      <span className="options-btn-label">Visualizar Perfil</span>
+                      <span className="options-btn-label">Visualizar Carógrafo</span>
                     </div>
-                  </Link>
+                  </a>
                   <a href="attendance.html">
                     <div className="options-btn">
                       <span className="options-btn-label">Fazer Atendimento</span>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { Image, Navbar, Dropdown, DropdownButton, Form, Col, Button } from 'react-bootstrap'
 
 import api from '../../services/api'
