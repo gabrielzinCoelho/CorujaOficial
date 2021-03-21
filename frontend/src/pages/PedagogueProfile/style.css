@@ -94,6 +94,36 @@
   text-decoration: underline;
 }
 
+.profile-page .options-btn-quit {
+  width: 100%;
+  display: flex;
+  background-color: rgb(250, 59, 59);
+  border-left: 3px solid #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px;
+  margin: 5% 0 0 0;
+  overflow: hidden;
+}
+
+.profile-page .options-btn-quit:hover {
+  background-color: #fff;
+  border-left: 3px solid rgb(250, 59, 59);
+  text-decoration: none;
+}
+
+.profile-page .options-btn-quit-label {
+  color: #fff;
+  text-decoration: none;
+}
+
+.profile-page .options-btn-quit:hover .options-btn-quit-label {
+  color: rgb(250, 59, 59);
+  text-decoration: underline;
+}
+
 .profile-page .campus-name a {
   color: #fff;
   text-decoration: none;
@@ -167,7 +197,7 @@
   cursor: pointer;
 }
 
-.profile-page .student-profile {
+.profile-page .pedagogue-profile {
   width: 100%;
   padding: 12px;
 }

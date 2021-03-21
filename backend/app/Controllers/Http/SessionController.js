@@ -21,7 +21,6 @@ class SessionController {
     }).fetch()
 
     const pedagogoData = pedagogueInstance.rows[0].toJSON()
-
     let path = ""
 
     try {
