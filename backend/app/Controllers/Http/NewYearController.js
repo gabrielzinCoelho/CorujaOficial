@@ -110,6 +110,8 @@ class NewYearController {
 
   async store({ request, response }) {
 
+    console.log("ENTROU - STORE NEW YEAR")
+
     const testObject = {
       classReproved: [],
       classStatusSeted: [],
@@ -254,7 +256,7 @@ class NewYearController {
 
       if (!lastSerie) {
         nextClassInstance.lastClassYear = year + 1
-        nextClassInstance.save()
+        await nextClassInstance.save()
       }
 
       if (hasReprove) {
@@ -262,11 +264,12 @@ class NewYearController {
       }
 
       classInstance.newYear = true
-      classInstance.save()
+      await classInstance.save()
 
       //cod referente testObject
       console.log(testObject)
 
+      console.log("SAIU - STORE NEW YEAR")
       return response.status(200).json({ success: "O sistema foi atualizado com sucesso." })
 
     }
@@ -306,6 +309,10 @@ class NewYearController {
       status[statusElement.$attributes.id] = statusElement
     })
 
+    students.map( (element, index) => {
+      students[index] = {...element, yearEntry: year}
+    })
+
     const studentsNextClassInstances = await Student.createMany(students)
 
     const studentsNextClass = {}
@@ -332,10 +339,10 @@ class NewYearController {
 
 
     classInstance.lastClassYear = year + 1
-    classInstance.save()
+    await classInstance.save()
 
     courseInstance.newYear = true
-    courseInstance.save()
+    await courseInstance.save()
 
     //cod referente testArray
     console.log({ calouros: testArray })
@@ -344,6 +351,8 @@ class NewYearController {
   }
 
   async destroy({ request, response }) {
+
+    console.log("ENTROU - DELETE NEW YEAR")
 
     const { instance } = request.params
 
@@ -472,15 +481,15 @@ class NewYearController {
 
         if (!verifyEmptyNextClass.toJSON().length) {
           nextClassInstance.lastClassYear = year
-          nextClassInstance.save()
+          await nextClassInstance.save()
         }
 
 
       }
 
       classInstance.newYear = false
-      classInstance.save()
-
+      await classInstance.save()
+      console.log("SAIU - DELETE NEW YEAR")
       return response.status(200).json({ success: "Virada de ano desfeita com sucesso!" })
 
     })() : (async () => {
@@ -533,13 +542,13 @@ class NewYearController {
 
       if (!verifyEmptyClass.toJSON().length) {
         nextClassInstance.lastClassYear = year
-        nextClassInstance.save()
+        await nextClassInstance.save()
       }
 
 
       courseInstance.newYear = false
-      courseInstance.save()
-
+      await courseInstance.save()
+      console.log("SAIU - DELETE NEW YEAR")
       return response.status(200).json({ success: "Virada de ano desfeita com sucesso!" })
 
     })()

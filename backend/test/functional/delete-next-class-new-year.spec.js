@@ -41,7 +41,9 @@ test(`verificar se os registros de studentHistoric antes e depois de uma virada 
       'statusYear'
     )
 
-  await (()=>{
+  const studentHistoricBeforeSorted = JSON.stringify(studentHistoricBefore.sort((a, b) => a.id > b.id ? 1 : -1))
+
+  await (() => {
     return new Promise(async (resolve, reject) => {
 
       await client.post(`${base_url}/newYear/nextClass`).send({
@@ -54,7 +56,7 @@ test(`verificar se os registros de studentHistoric antes e depois de uma virada 
     })
   })()
 
-  await (()=>{
+  await (() => {
     return new Promise(async (resolve, reject) => {
 
       await client.delete(`${base_url}/newYear/course/${course_id}`).end()
@@ -75,6 +77,9 @@ test(`verificar se os registros de studentHistoric antes e depois de uma virada 
       'statusYear'
     )
 
-  assert.equal(studentHistoricBefore, studentHistoricAfter)
+  const studentHistoricAfterSorted = JSON.stringify(studentHistoricAfter.sort((a, b) => a.id > b.id ? 1 : -1))
+
+  assert.equal(studentHistoricBeforeSorted, studentHistoricAfterSorted)
+
 
 }).timeout(0)

@@ -40,9 +40,31 @@ test(`verificar se os registros de studentHistoric antes e depois de uma virada 
       'statusYear'
     )
 
-  await client.post(`${base_url}/newYear`).send(responseData).end()
+  const studentHistoricBeforeSorted = JSON.stringify(studentHistoricBefore.sort((a, b) => a.id > b.id ? 1 : -1))
 
-  await client.delete(`${base_url}/newYear/class/${class_id}`).end()
+  await (() => {
+    return new Promise(async (resolve, reject) => {
+
+      const responseStore = await client.post(`${base_url}/newYear`).send(responseData).end()
+
+      console.log(responseStore.body)
+
+      resolve()
+
+    })
+  })()
+
+  await (() => {
+    return new Promise(async (resolve, reject) => {
+
+      const responseDelete = await client.delete(`${base_url}/newYear/class/${class_id}`).end()
+      console.log(responseDelete.body)
+
+      resolve()
+
+    })
+  })()
+
 
   const studentHistoricAfter = await Database
     .table('student_historics')
@@ -55,6 +77,8 @@ test(`verificar se os registros de studentHistoric antes e depois de uma virada 
       'statusYear'
     )
 
-  assert.equal(studentHistoricBefore, studentHistoricAfter)
+  const studentHistoricAfterSorted = JSON.stringify(studentHistoricAfter.sort((a, b) => a.id > b.id ? 1 : -1))
+
+  assert.equal(studentHistoricBeforeSorted, studentHistoricAfterSorted)
 
 }).timeout(0)

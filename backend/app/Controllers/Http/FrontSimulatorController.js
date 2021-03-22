@@ -8,11 +8,18 @@ const Student = use('App/Models/Student')
 const File = use('App/Models/File')
 const Database = use('Database')
 
+const crypto = require('crypto')
+const { extname, resolve : resolvePath } = require('path')
+const fs = require('fs')
+
 class FrontSimulatorController {
 
   async seedCarograph({ request, response }) {
 
     const { data } = request.body
+
+    let counterStudent = 0
+    const numPhotos = 25
 
     const statusInstances = await Status.all()
 
@@ -28,9 +35,39 @@ class FrontSimulatorController {
 
       const students = {}
 
-      studentsInstances.forEach((student, indexStudent) => {
-        students[student.$attributes.enrollment] = student
-      })
+      await Promise.all(studentsInstances.map(async student => {
+
+        return new Promise(async (resolve, reject) => {
+
+          students[student.$attributes.enrollment] = student
+
+          const pathName = `${crypto.randomBytes(16).toString('hex')}.jpg`
+
+          const file = await File.create({
+            path: pathName
+          })
+
+          const studentFile = await Student.find(student.$attributes.id)
+          studentFile.file_id = file.toJSON().id
+          await studentFile.save()
+
+          const fileNameSearch = `${((counterStudent % numPhotos) + 1)}.jpg`
+          const pathSource = resolvePath(__dirname, '..', '..', '..', '..', 'fotosSeed', String(fileNameSearch))
+          const pathDest = resolvePath(__dirname, '..', '..', 'uploads', pathName)
+
+          console.log(pathSource, pathDest, fileNameSearch, counterStudent)
+
+          fs.copyFile(pathSource, pathDest, (err) => {
+              if (err)
+                console.log("Error Found:", err);
+          })
+
+          counterStudent ++;
+          resolve()
+
+        })
+
+      }))
 
       const classesInstances = await Class.query().where({
         course_id: courseCarograph.course_id,
