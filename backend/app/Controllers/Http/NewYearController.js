@@ -7,6 +7,7 @@ const Status = use('App/Models/Status')
 const Student = use('App/Models/Student')
 const File = use('App/Models/File')
 const Database = use('Database')
+const Modality = use('App/Models/Modality')
 
 /*
 
@@ -43,7 +44,9 @@ class NewYearController {
         'students.name',
         'students.enrollment',
         'status.id as status_id',
-        'students.file_id'
+        'students.file_id',
+        'classes.course_id',
+        'classes.series'
         // path,
       )
       .innerJoin('classes', 'student_historics.class_id', 'classes.id')
@@ -55,8 +58,25 @@ class NewYearController {
         statusYear: schoolYear
       })
 
+      const {course_id, series} = studentHistoric[0]
+
+      const modalityData = await Database.table('courses').select(
+        'courses.id as course_id',
+        'courses.name as course',
+        'modalities.name as modality'
+      )
+      .innerJoin('modalities', 'modalities.id', 'courses.modality_id')
+      .where({
+        "courses.id": course_id
+      })
+
+      const {modality, course} = modalityData[0]
+
     return {
       year: schoolYear,
+      series,
+      modality,
+      course,
       class_id,
       students: await Promise.all(studentHistoric.map(async element => {
 
@@ -77,6 +97,7 @@ class NewYearController {
           name: element.name,
           enrollment: element.enrollment,
           path,
+          status_id: element.status_id
         }
       })),
       statusStudents: (() => {
@@ -309,8 +330,8 @@ class NewYearController {
       status[statusElement.$attributes.id] = statusElement
     })
 
-    students.map( (element, index) => {
-      students[index] = {...element, yearEntry: year}
+    students.map((element, index) => {
+      students[index] = { ...element, yearEntry: year }
     })
 
     const studentsNextClassInstances = await Student.createMany(students)
