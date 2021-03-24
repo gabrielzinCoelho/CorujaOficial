@@ -145,6 +145,7 @@ export default class NewYear extends Component {
                                       <Button
                                         className="table-button"
                                         disabled={serie.newYearStatus}
+                                        href={`/newYearWorksheet/${serie.class_id}`}
                                       >
                                         Fazer virada
                                       </Button>
@@ -153,7 +154,7 @@ export default class NewYear extends Component {
                                       <Button
                                         className="table-button"
                                         disabled={!serie.newYearStatus}
-                                        onClick={this.handleDeleteTurn(serie.class_id, "class")}
+                                        onClick={() => this.handleDeleteTurn(serie.class_id, "class")}
                                         style={{ color: "rgb(250, 59, 59)" }
                                         }>
                                         Desfazer virada
@@ -170,6 +171,7 @@ export default class NewYear extends Component {
                                   <Button
                                     className="table-button"
                                     disabled={course.nextClassStatus}
+                                    href={`/newYearWorksheetCourse/${course.course_id}`}
                                   >
                                     Fazer virada
                                       </Button>
@@ -178,7 +180,7 @@ export default class NewYear extends Component {
                                   <Button
                                     className="table-button"
                                     disabled={!course.nextClassStatus}
-                                    onClick={this.handleDeleteTurn(course.course_id, "course")}
+                                    onClick={() => this.handleDeleteTurn(course.course_id, "course")}
                                     style={{ color: "rgb(250, 59, 59)" }
                                     }>
                                     Desfazer virada

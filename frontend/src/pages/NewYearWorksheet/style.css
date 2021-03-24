@@ -1,0 +1,104 @@
+/* NEW YEAR WORKSHEET */
+.new-year-worksheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.new-year-worksheet .top-bar {
+  background-color: #adc0f6;
+  box-shadow: 0 4px 5px -2px #426cf5;
+  padding: 12px 12px;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.new-year-worksheet .back-button {
+  background-color: #fff;
+  margin: 0;
+}
+
+.new-year-worksheet .top-image {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.new-year-worksheet .logo-image {
+  height: 50px;
+}
+
+.new-year-worksheet .dropleft {
+  margin: 0;
+}
+
+.new-year-worksheet .dropleft button {
+  border-radius: 50%;
+  padding: 0;
+}
+
+.new-year-worksheet .dropleft button::before {
+  display: none;
+}
+
+.new-year-worksheet .dropdown-menu {
+  margin-right: 4px !important;
+  border: 1px solid #426cf5;
+}
+
+.new-year-worksheet #quit {
+  color: rgb(250, 59, 59);
+}
+
+.new-year-worksheet .page-content {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  border: 0;
+}
+
+.new-year-worksheet .pedagogue-img {
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border: 1px solid #426cf5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.new-year-worksheet .worksheet {
+  width: 100%;
+  padding: 12px;
+}
+
+.new-year-worksheet .course-name {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.new-year-worksheet .course-table {
+  background-color: #f3f3f3;
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.new-year-worksheet .student-info {
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.new-year-worksheet .student-image {
+  width: 120px;
+  height: 160px;
+}
+
+@media (width <= 767px) {
+  .new-year-worksheet .logo-image {
+    display: none;
+  }
+}

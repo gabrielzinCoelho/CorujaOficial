@@ -25,9 +25,9 @@ class GenerateObjectCarographSeeder {
   async run() {
 
     const yearStart = 2018 //2018-2024 (min: 30, max: 30)
-    const yearEnd = 2020
-    const maxStudentsPerClass = 10
-    const minStudentsPerClass = 10
+    const yearEnd = 2024
+    const maxStudentsPerClass = 20
+    const minStudentsPerClass = 20
 
     const coursesInstances = await Course.all()
     const statusInstances = await Status.all()

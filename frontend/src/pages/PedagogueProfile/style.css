@@ -35,13 +35,18 @@
 }
 
 .profile-page .profile-img {
-  width: 50%;
+  width: 144px;
+  height: 192px;
   border: 1px solid black;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-page .profile-img img {
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .profile-page .profile-name {

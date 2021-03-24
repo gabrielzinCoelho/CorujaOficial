@@ -35,13 +35,18 @@
 }
 
 .carograph-page .profile-img {
-  width: 50%;
+  width: 144px;
+  height: 192px;
   border: 1px solid black;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carograph-page .profile-img img {
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .carograph-page .profile-name {
@@ -209,8 +214,18 @@
   border: 1px solid #426cf5 !important;
 }
 
-.carograph-page .student img {
-  width: 100%;
+.carograph-page .student-img {
+  width: 148px;
+  height: 197.33px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carograph-page .student-img img {
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .carograph-page .student-name {

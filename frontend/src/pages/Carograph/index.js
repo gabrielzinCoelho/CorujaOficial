@@ -333,10 +333,12 @@ export default class Carograph extends Component {
                         menuOpen: true,
                       })
                     }}>
-                      <Card.Img variant="top" src={require(`../../../../backend/app/uploads/${student.path}`)} />
+                      <div className="student-img">
+                        <Card.Img variant="top" src={require(`../../../../backend/app/uploads/${student.path}`)} />
+                      </div>
                       <Card.Title className="student-name"><p>{student.name}</p></Card.Title>
                       <Card.Text className="student-status" style={{
-                        color: student.status_id === 0 ? "green" : (student.status_id === 5 ? "green" : "red")
+                        color: student.status_id === 1 ? "green" : (student.status_id === 5 ? "green" : "red")
                       }}>
                         {
                           (student.year != student.statusYear) ?
