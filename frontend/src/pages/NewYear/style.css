@@ -113,6 +113,12 @@
   border: 0;
 }
 
+.new-year .table-button:visited {
+  background-color: #f3f3f3;
+  color: #426cf5;
+  border: 0;
+}
+
 @media (width <= 767px) {
   .new-year .logo-image {
     display: none;

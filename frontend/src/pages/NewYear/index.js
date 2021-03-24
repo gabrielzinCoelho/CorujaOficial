@@ -171,7 +171,7 @@ export default class NewYear extends Component {
                                   <Button
                                     className="table-button"
                                     disabled={course.nextClassStatus}
-                                    href={`/newYearWorksheetCourse/${course.course_id}`}
+                                    href={`/newYearCourseWorksheet/${course.course}/${course.course_id}`}
                                   >
                                     Fazer virada
                                       </Button>

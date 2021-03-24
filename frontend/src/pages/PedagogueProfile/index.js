@@ -113,7 +113,7 @@ export default class PedagogueProfile extends Component {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
         <Authentication redirectWhenLogged={false} redirectUrl="/" />
 
-        <div className="profile-page">
+        <div className="profile-pedagogue-page">
           <div className="side-menu"
             style={{
               marginLeft: this.state.pedagogue ? (this.state.menuOpen ? "0" : "-25vw") : "-25w"

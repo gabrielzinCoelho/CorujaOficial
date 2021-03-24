@@ -154,7 +154,7 @@ export default class NewYearWorksheet extends Component {
                               <td className="student-info">{student.enrollment}</td>
                               <td className="student-info">
                                 <Form>
-                                  <Form.Group style={{ width: '100%' }} className="select-item">
+                                  <Form.Group className="select-item">
                                     <Form.Control as="select" style={{ width: '100%' }} custom disabled={this.state.disabledModality}
                                       onChange={(e) => this.handleUpdateStatus(student.student_id, e.target.value) }
                                     >
@@ -181,7 +181,7 @@ export default class NewYearWorksheet extends Component {
                       }
                     </tbody>
                   </Table>
-                  <Button className="profile-btn" onClick={this.handleTurnYear}>Enviar</Button>
+                  <Button className="submit-btn" onClick={this.handleTurnYear}>Realizar virada</Button>
                 </div>
               </div>
             ) :
