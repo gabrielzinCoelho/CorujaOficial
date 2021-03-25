@@ -41,7 +41,7 @@ class FileController {
 
     //o id da instância do arquivo salva no banco é retornada
     return {
-      fileId: fileInstanceId
+      fileId: fileInstanceId[0]
     }
 
   }

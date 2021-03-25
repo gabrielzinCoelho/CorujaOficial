@@ -3,6 +3,7 @@
 const Pedagogue = use('App/Models/Pedagogue')
 const Database = use('Database')
 const Mail = use('Mail')
+const Hash = use('Hash')
 
 const moment = require('moment')
 
@@ -69,7 +70,7 @@ class ForgotPasswordController {
 
       pedagogue.token = null
       pedagogue.token_created_at = null
-      pedagogue.password = password
+      pedagogue.password = await Hash.make(password)
 
       await pedagogue.save()
 
