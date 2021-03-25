@@ -155,7 +155,7 @@ export default class NewYearWorksheet extends Component {
                               <td className="student-info">
                                 <Form>
                                   <Form.Group className="select-item">
-                                    <Form.Control as="select" style={{ width: '100%' }} custom disabled={this.state.disabledModality}
+                                    <Form.Control as="select" style={{ width: '100%' }} custom
                                       onChange={(e) => this.handleUpdateStatus(student.student_id, e.target.value) }
                                     >
                                       {
