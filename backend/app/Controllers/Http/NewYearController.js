@@ -299,6 +299,34 @@ class NewYearController {
     }
   }
 
+  async newNextClass({request, response}){
+
+    const {course_id} = request.params
+
+    const schoolYearSearch = await Database.table('school_years').select('year').limit(1)
+    const schoolYear = schoolYearSearch[0].year
+
+    const modalityData = await Database.table('courses').select(
+      'courses.id as course_id',
+      'courses.name as course',
+      'modalities.name as modality'
+    )
+    .innerJoin('modalities', 'modalities.id', 'courses.modality_id')
+    .where({
+      "courses.id": course_id
+    })
+
+    const {modality, course} = modalityData[0]
+
+    return {
+      year: schoolYear,
+      modality,
+      course,
+      course_id,
+    }
+
+  }
+
   async nextClass({ request, response }) {
 
     // criando a turma de calouros

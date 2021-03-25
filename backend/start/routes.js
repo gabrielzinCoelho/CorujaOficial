@@ -18,6 +18,11 @@ Route.get(
 )
 
 Route.get(
+  'newYear/nextClass/course/:course_id',
+  'NewYearController.newNextClass'
+)
+
+Route.get(
   'newYear/status',
   'NewYearController.newYearStatus'
 )
