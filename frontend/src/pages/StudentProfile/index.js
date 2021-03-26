@@ -8,6 +8,10 @@ import './style.css'
 
 export default class StudentProfile extends Component {
   state = {
+
+    previewFile: "",
+    file: {},
+    
     student: null,
     studentInitialValues: null,
     viewMode: true,
@@ -72,11 +76,38 @@ export default class StudentProfile extends Component {
         updateObject[prop] = this.state.student[prop]
     }
 
+    if(this.state.previewFile){
+
+      const formData = new FormData()
+
+      formData.append('file', this.state.file, this.state.file.name)
+
+      const dataFile = await api.post(`/files`, formData, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      }) 
+
+      updateObject["file_id"] = dataFile.data.fileId
+
+    }
+      
+
     const data = await api.put(`/student/${this.state.student.id}`, updateObject, {
       headers: {
         "Authorization": `Bearer ${token}`
       }
     })
+
+    if(this.state.previewFile){
+
+      const dataFileRemoved = await api.delete(`/file/${this.state.student.file_id}`, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      })
+
+    }
 
     alertSettings = (200 <= data.status && data.status <= 299) ?
       ({
@@ -122,7 +153,15 @@ export default class StudentProfile extends Component {
               <>
                 <div className="profile">
                   <div className="profile-img">
-                    <Image src={require(`../../../../backend/app/uploads/${this.state.student.path}`)} />
+                    {(()=>{
+
+                    const path = this.state.previewFile ? this.state.previewFile : (
+                      require(`../../../../backend/app/uploads/${this.state.student.path}`)
+                      )
+                      return <Image src={path} />
+
+
+                    })()}
                   </div>
                   <h2 className="profile-name">{this.state.student.name}</h2>
                   <h2 className="profile-text">{this.state.student.enrollment}</h2>
@@ -501,6 +540,28 @@ export default class StudentProfile extends Component {
                         }
                       />
                     </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
+                    <Form.Group as={Col} sm={8}>
+                      <Form.File
+                        onChange={(e) => this.setState({
+                          file: e.target.files[0],
+                          previewFile: URL.createObjectURL(e.target.files[0])
+                        })}
+                        custom
+                        data-browse = "Procurar arquivo..."
+                        label = "Alterar imagem de perfil"
+                        disabled={this.state.viewMode ? true : false}
+                      />
+                    </Form.Group>
+                    <Button as={Col} sm={4} onClick={()=>{
+                      this.setState({
+                        previewFile: "",
+                        file: {}
+                      })
+                    }}
+                    disabled={this.state.viewMode ? true : false}
+                    >Remover</Button>
                   </Form.Row>
                 </Form>
               </div>
