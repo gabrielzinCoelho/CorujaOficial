@@ -10,6 +10,7 @@ import PedagogueProfile from './pages/PedagogueProfile'
 import NewYearSchool from './pages/NewYearSchool'
 import NewYear from './pages/NewYear'
 import NewYearWorksheet from './pages/NewYearWorksheet'
+import NewYearCourseWorksheet from './pages/NewYearCourseWorksheet'
 
 export default class Routes extends Component {
     render() {
@@ -25,6 +26,7 @@ export default class Routes extends Component {
                     <Route path='/newYearSchool' component={NewYearSchool} />     
                     <Route path='/newYear' component={NewYear} /> 
                     <Route path='/newYearWorksheet/:id' component={NewYearWorksheet} /> 
+                    <Route path='/NewYearCourseWorksheet/:id' component={NewYearCourseWorksheet} /> 
                 </Switch>
             </BrowserRouter>
         )
