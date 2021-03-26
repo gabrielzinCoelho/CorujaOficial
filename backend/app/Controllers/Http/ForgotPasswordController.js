@@ -34,7 +34,7 @@ class ForgotPasswordController {
         message => {
           message
             .to(pedagogue.email)
-            .from('yuri.farnesio@gmail.com' , 'test')
+            .from('Equipe Coruja')
             .subject('Redefinação de Senha')
         }
       )
