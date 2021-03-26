@@ -35,12 +35,12 @@ export default class NewYearWorksheet extends Component {
       }
     })
 
-    const numRows = 6
+    const numRows = 3
 
     const students = {}
 
-    for(let i=1; i<=numRows; i++)
-      students[i] =  {
+    for (let i = 1; i <= numRows; i++)
+      students[i] = {
         file: {},
         name: "",
         enrollment: "",
@@ -57,7 +57,7 @@ export default class NewYearWorksheet extends Component {
   }
 
   handleUpdateStudent = (student_id, forceValue) => {
-    
+
     this.setState(prevState => ({
       students: {
         ...prevState.students,
@@ -69,16 +69,16 @@ export default class NewYearWorksheet extends Component {
     }))
 
   }
-  
+
 
   handleTurnYear = async () => {
     const token = sessionStorage.getItem('token');
 
     const students = []
-    
-    for(const studentId in this.state.students){
 
-      if(!this.state.students[studentId].name)
+    for (const studentId in this.state.students) {
+
+      if (!this.state.students[studentId].name)
         continue;
 
       const formData = new FormData()
@@ -89,8 +89,8 @@ export default class NewYearWorksheet extends Component {
         headers: {
           "Authorization": `Bearer ${token}`
         }
-      }) 
-      
+      })
+
       students.push({
         name: this.state.students[studentId].name,
         enrollment: this.state.students[studentId].enrollment,
@@ -193,7 +193,6 @@ export default class NewYearWorksheet extends Component {
             >
               <Dropdown.Item href={`/pedagogueProfile/${sessionStorage.getItem('id')}`}>Ver Perfil</Dropdown.Item>
               <Dropdown.Item href="/newYearSchool">Ano Escolar</Dropdown.Item>
-              <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
               <Dropdown.Item href="/carograph">Ver Carógrafo</Dropdown.Item>
               <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>
             </DropdownButton>
@@ -224,26 +223,30 @@ export default class NewYearWorksheet extends Component {
                               <tr>
                                 <td className="student-info">
 
-                                <Form.File
-                                  onChange={(e) => this.handleUpdateStudent(student_id, {
-                                    file: e.target.files[0],
-                                    previewFile: URL.createObjectURL(e.target.files[0])
-                                  })}
-                                />
-                                {
+                                  <Form.File
+                                    onChange={(e) => this.handleUpdateStudent(student_id, {
+                                      file: e.target.files[0],
+                                      previewFile: URL.createObjectURL(e.target.files[0])
+                                    })}
+                                    style={{ marginBottom: "16px" }}
+                                    custom
+                                    data-browse = "Buscar..."
+                                    label = "Alterar imagem"
+                                  />
+                                  {
 
-                                  (()=>{
-                                    if(this.state.students[student_id].previewFile)
-                                      return <Image 
-                                              src={this.state.students[student_id].previewFile} 
-                                              style = {{
-                                                "max-width": "150px",
-                                                "max-height": "150px"
-                                              }}
-                                            />
-                                  })()
+                                    (() => {
+                                      if (this.state.students[student_id].previewFile)
+                                        return <Image
+                                          src={this.state.students[student_id].previewFile}
+                                          style={{
+                                            "max-width": "150px",
+                                            "max-height": "150px"
+                                          }}
+                                        />
+                                    })()
 
-                                }
+                                  }
                                 </td>
                                 <td className="student-info">
                                   <Form.Group className="select-item">
@@ -273,7 +276,7 @@ export default class NewYearWorksheet extends Component {
                                     </Form.Control>
                                   </Form.Group>
                                 </td>
-                                <td><Button className="table-button" onClick={()=>this.handleDelStudent(student_id)}>Deletar</Button></td>
+                                <td><Button className="table-button" onClick={() => this.handleDelStudent(student_id)}>Deletar</Button></td>
                               </tr>
                             </>)
 
@@ -284,8 +287,10 @@ export default class NewYearWorksheet extends Component {
                         })()
                       }
                       <tr>
-                        <Button className="table-button" onClick={this.handleAddStudent}>Adiconar</Button>
-                      </tr>                  
+                        <td className="student-info" colspan="4">
+                          <Button className="table-button" onClick={this.handleAddStudent}>Adiconar outro aluno</Button>
+                        </td>
+                      </tr>
                     </tbody>
                   </Table>
                   <Button className="submit-btn" onClick={this.handleTurnYear}>Realizar virada</Button>

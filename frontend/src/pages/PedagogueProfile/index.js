@@ -216,7 +216,6 @@ export default class PedagogueProfile extends Component {
               >
                 <Dropdown.Item href="/newYear">Virada de Ano</Dropdown.Item>
                 <Dropdown.Item href="/newYearSchool">Ano Escolar</Dropdown.Item>
-                <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
                 <Dropdown.Item href="/carograph">Ver Carógrafo</Dropdown.Item>
                 <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>
               </DropdownButton>
@@ -394,25 +393,32 @@ export default class PedagogueProfile extends Component {
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} sm={8}>
+                      <Form.Label>Alterar imagem de perfil</Form.Label>
                       <Form.File
                         onChange={(e) => this.setState({
                           file: e.target.files[0],
                           previewFile: URL.createObjectURL(e.target.files[0])
                         })}
                         custom
-                        data-browse = "Procurar arquivo..."
+                        data-browse = "Buscar..."
                         label = "Alterar imagem de perfil"
                         disabled={this.state.viewMode ? true : false}
                       />
                     </Form.Group>
-                    <Button as={Col} sm={4} onClick={()=>{
-                      this.setState({
-                        previewFile: "",
-                        file: {}
-                      })
-                    }}
-                    disabled={this.state.viewMode ? true : false}
-                    >Remover</Button>
+                    <Form.Group className="remove-image" as={Col} sm={4}>
+                      <Button
+                        onClick={() => {
+                          this.setState({
+                            previewFile: "",
+                            file: {}
+                          })
+                        }}
+                        className="remove-image-btn"
+                        disabled={this.state.viewMode ? true : false}
+                      >
+                        Remover
+                      </Button>
+                    </Form.Group>
                   </Form.Row>
                 </Form>
               </div>

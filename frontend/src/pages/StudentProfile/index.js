@@ -11,7 +11,7 @@ export default class StudentProfile extends Component {
 
     previewFile: "",
     file: {},
-    
+
     student: null,
     studentInitialValues: null,
     viewMode: true,
@@ -76,7 +76,7 @@ export default class StudentProfile extends Component {
         updateObject[prop] = this.state.student[prop]
     }
 
-    if(this.state.previewFile){
+    if (this.state.previewFile) {
 
       const formData = new FormData()
 
@@ -86,12 +86,12 @@ export default class StudentProfile extends Component {
         headers: {
           "Authorization": `Bearer ${token}`
         }
-      }) 
+      })
 
       updateObject["file_id"] = dataFile.data.fileId
 
     }
-      
+
 
     const data = await api.put(`/student/${this.state.student.id}`, updateObject, {
       headers: {
@@ -99,7 +99,7 @@ export default class StudentProfile extends Component {
       }
     })
 
-    if(this.state.previewFile){
+    if (this.state.previewFile) {
 
       const dataFileRemoved = await api.delete(`/file/${this.state.student.file_id}`, {
         headers: {
@@ -153,10 +153,10 @@ export default class StudentProfile extends Component {
               <>
                 <div className="profile">
                   <div className="profile-img">
-                    {(()=>{
+                    {(() => {
 
-                    const path = this.state.previewFile ? this.state.previewFile : (
-                      require(`../../../../backend/app/uploads/${this.state.student.path}`)
+                      const path = this.state.previewFile ? this.state.previewFile : (
+                        require(`../../../../backend/app/uploads/${this.state.student.path}`)
                       )
                       return <Image src={path} />
 
@@ -174,9 +174,9 @@ export default class StudentProfile extends Component {
                       <span className="options-btn-label">Visualizar Carógrafo</span>
                     </div>
                   </a>
-                  <a href="attendance.html">
-                    <div className="options-btn">
-                      <span className="options-btn-label">Fazer Atendimento</span>
+                  <a href="/" onClick={() => sessionStorage.clear()}>
+                    <div className="options-btn-quit">
+                      <span className="options-btn-quit-label">Sair</span>
                     </div>
                   </a>
                 </div>
@@ -216,7 +216,6 @@ export default class StudentProfile extends Component {
                 <Dropdown.Item href={`/pedagogueProfile/${sessionStorage.getItem('id')}`}>Ver Perfil</Dropdown.Item>
                 <Dropdown.Item href="/newYear">Virada de Ano</Dropdown.Item>
                 <Dropdown.Item href="/newYearSchool">Ano Escolar</Dropdown.Item>
-                <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
                 <Dropdown.Item href="/carograph">Ver Carógrafo</Dropdown.Item>
                 <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>
               </DropdownButton>
@@ -543,25 +542,32 @@ export default class StudentProfile extends Component {
                   </Form.Row>
                   <Form.Row>
                     <Form.Group as={Col} sm={8}>
+                      <Form.Label>Alterar imagem de perfil</Form.Label>
                       <Form.File
                         onChange={(e) => this.setState({
                           file: e.target.files[0],
                           previewFile: URL.createObjectURL(e.target.files[0])
                         })}
                         custom
-                        data-browse = "Procurar arquivo..."
-                        label = "Alterar imagem de perfil"
+                        data-browse="Buscar..."
+                        label="Alterar imagem de perfil"
                         disabled={this.state.viewMode ? true : false}
                       />
                     </Form.Group>
-                    <Button as={Col} sm={4} onClick={()=>{
-                      this.setState({
-                        previewFile: "",
-                        file: {}
-                      })
-                    }}
-                    disabled={this.state.viewMode ? true : false}
-                    >Remover</Button>
+                    <Form.Group className="remove-image" as={Col} sm={4}>
+                      <Button
+                        onClick={() => {
+                          this.setState({
+                            previewFile: "",
+                            file: {}
+                          })
+                        }}
+                        className="remove-image-btn"
+                        disabled={this.state.viewMode ? true : false}
+                      >
+                        Remover
+                      </Button>
+                    </Form.Group>
                   </Form.Row>
                 </Form>
               </div>

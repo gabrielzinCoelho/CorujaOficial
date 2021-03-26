@@ -109,7 +109,6 @@ export default class NewYear extends Component {
             >
               <Dropdown.Item href={`/pedagogueProfile/${sessionStorage.getItem('id')}`}>Ver Perfil</Dropdown.Item>
               <Dropdown.Item href="/newYearSchool">Ano Escolar</Dropdown.Item>
-              <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
               <Dropdown.Item href="/carograph">Ver Carógrafo</Dropdown.Item>
               <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>
             </DropdownButton>

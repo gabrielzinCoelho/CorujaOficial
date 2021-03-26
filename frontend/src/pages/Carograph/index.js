@@ -138,9 +138,9 @@ export default class Carograph extends Component {
                       <span className="options-btn-label">Visualizar Perfil</span>
                     </div>
                   </Link>
-                  <a href="attendance.html">
-                    <div className="options-btn">
-                      <span className="options-btn-label">Fazer Atendimento</span>
+                  <a href="/" onClick={() => sessionStorage.clear()}>
+                    <div className="options-btn-quit">
+                      <span className="options-btn-quit-label">Sair</span>
                     </div>
                   </a>
                 </div>
@@ -318,7 +318,6 @@ export default class Carograph extends Component {
                 <Dropdown.Item href={`/pedagogueProfile/${sessionStorage.getItem('id')}`}>Ver Perfil</Dropdown.Item>
                 <Dropdown.Item href="/newYear">Virada de Ano</Dropdown.Item>
                 <Dropdown.Item href="/newYearSchool">Ano Escolar</Dropdown.Item>
-                <Dropdown.Item>Gerenciar Pedagogos</Dropdown.Item>
                 <Dropdown.Item id="quit" href="/" onClick={() => sessionStorage.clear()}>Sair</Dropdown.Item>
               </DropdownButton>
             </Navbar>
